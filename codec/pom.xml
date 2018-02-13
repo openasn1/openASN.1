@@ -1,0 +1,167 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.github.openasn1</groupId>
+  <artifactId>openasn1-codec</artifactId>
+  <version>0.5.0b-SNAPSHOT</version>
+
+  <name>openASN.1 Codec</name>
+  <description>openASN.1 codec implementation</description>
+  <url>https://github.com/openasn1/openASN.1/codec</url>
+  
+  <licenses>
+    <license>
+      <name>GNU General Public License</name>
+      <url>https://www.gnu.org/licenses/gpl-3.0.en.html</url>
+    </license>
+  </licenses>
+
+  <developers>
+    <developer>
+      <name>Clayton Hoss</name>
+      <url>https://www.linkedin.com/in/clayton-hoss-1977767/</url>
+      <roles>
+        <role>Developer on this project</role>
+      </roles>
+    </developer>
+    <developer>
+      <name>Marc Weyland</name>
+      <roles>
+        <role>Developer on this project</role>
+      </roles>
+    </developer>
+  </developers>
+
+  <scm>
+    <connection>scm:git:git@github.com:openasn1/openASN.1/codec.git</connection>
+    <developerConnection>scm:git:git@github.com:openasn1/openASN.1/codec.git</developerConnection>
+    <url>https://github.com/openasn1/openASN.1/codec</url>
+    <tag>HEAD</tag>
+  </scm>
+  
+  <!-- 
+  <properties>
+    <utils.version>0.1.0</utils.version>
+  </properties>
+-->
+  <properties>
+    <jdk.version>1.8</jdk.version>
+    <compiler.fork>false</compiler.fork>
+    <maven-compiler-plugin-version>3.6.1</maven-compiler-plugin-version>
+  </properties>
+
+  <build>
+  <!--
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>license-maven-plugin</artifactId>
+        <configuration>
+          <licenseName>bc</licenseName>
+          <licenseResolver>${project.baseUri}/src/license</licenseResolver>
+          <inceptionYear>2016</inceptionYear>
+        </configuration>
+      </plugin>
+	  
+    </plugins>
+	-->
+	  <plugins>
+		<plugin>
+		  <groupId>org.apache.maven.plugins</groupId>
+		  <artifactId>maven-compiler-plugin</artifactId>
+		  <version>${maven-compiler-plugin-version}</version>
+		  <configuration>
+			<source>${jdk.version}</source>
+			<target>${jdk.version}</target>
+			<maxmem>512M</maxmem>
+			<fork>${compiler.fork}</fork>
+		  </configuration>
+		</plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-source-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>attach-sources</id>
+                <goals>
+                  <goal>jar</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-javadoc-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>attach-javadocs</id>
+                <goals>
+                  <goal>jar</goal>
+                </goals>
+                <configuration>
+                  <additionalparam>-Xdoclint:none</additionalparam>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+	  </plugins>
+	<!--
+	  <plugin>
+		  <groupId>org.apache.maven.plugins</groupId>
+		  <artifactId>maven-compiler-plugin</artifactId>
+		  <version>2.3.2</version>
+		  <configuration>
+			  <source>${java.version}</source>
+			  <target>${java.version}</target>
+		  </configuration>
+	  </plugin>
+	  <plugin>
+		  <artifactId>maven-assembly-plugin</artifactId>
+		  <version>2.3</version>
+		  <configuration>
+			  <descriptorRefs>
+				  <descriptorRef>jar-with-dependencies</descriptorRef>
+			  </descriptorRefs>
+		  </configuration>
+		  <executions>
+			  <execution>
+				  <phase>package</phase>
+				  <goals>
+					  <goal>single</goal>
+				  </goals>
+			  </execution>
+		  </executions>
+	  </plugin>
+	  <plugin>
+		  <groupId>org.apache.maven.plugins</groupId>
+		  <artifactId>maven-source-plugin</artifactId>
+		  <version>2.1.2</version>
+		  <executions>
+			  <execution>
+				  <id>attach-sources</id>
+				  <goals>
+					  <goal>jar</goal>
+				  </goals>
+			  </execution>
+		  </executions>
+	  </plugin>
+	  
+	  <plugin>
+		  <groupId>org.apache.maven.plugins</groupId>
+		  <artifactId>maven-gpg-plugin</artifactId>
+		  <executions>
+			  <execution>
+				  <id>sign-artifacts</id>
+				  <phase>verify</phase>
+				  <goals>
+					  <goal>sign</goal>
+				  </goals>
+			  </execution>
+		  </executions>
+	  </plugin>
+	-->
+	
+	
+  </build>
+
+</project>
