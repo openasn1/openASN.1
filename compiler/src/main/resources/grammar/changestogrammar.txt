@@ -1,0 +1,85 @@
+Revision 22 is the official X680 grammar
+
+
+-----------------------------------------------
+JavaCC Grammar:
+
+Known Bugs:
+Tokenizer and Rules for the XML Values is still buggy (Tokens are not matched as XML Tokens)
+Changed all XMLRUles from XML(C|B|H)String to CSTRING in
+XMLRestrictedCharacterStringValue (C)
+XMLOctetStringValue (H)
+XMLBitStringValue (B)
+
+Commented out the Token <SPACE_TKN:" ">
+Removed all empty Productions
+Commented out XMLNullValue - modified it to use the NULL_TKN instead of Epsilon
+Changed XMLBOOLEANVALUE from xmltrue and xmlfalse token to IDENTIFIER
+Changed the IntegerValue Production to remove the Identifier
+Added the following productions:
+	modulereference = typereference;
+	valuereference = identifier;
+	xmlasn1typename = typereference;
+	
+	namedvaluelist = {singlevalue} namedvalue | {multiplevalue} namedvaluelist kw_comma value;
+
+Changed the Production Type in many ways
+Commented out the Space Token in: XMLSpaceSeparatedList
+Changed Production  BooleanType to:
+		 void  BooleanType()  :{}{
+			<BOOLEAN_TKN> 
+		 }
+Changed the Production BitstringType to 1 Production
+		 
+Commented out the Builtintype in Production Type()
+Commented out the references to the following Productions
+ValueFromObject()
+XMLInstanceOfValue() 
+InstanceOfValue()
+XMLObjectClassFieldValue() 
+ObjectClassFieldValue() 
+TypeFromObject() 
+ValueSetFromObjects() 
+InstanceOfType() 
+ObjectClassFieldType()
+ParameterizedValue() 
+ParameterizedType() 
+ParameterizedValueSetType() 
+ObjectClassAssignment() 
+ObjectAssignment() 
+ObjectSetAssignment() 
+ParameterizedAssignment() 
+objectclassreference() 
+objectreference() 
+objectsetreference() 
+ParameterizedReference()
+ObjectSetElements() 
+GeneralConstraint() 
+OptionalExtensionMarker()
+
+
+Left Recursion
+
+Removed Productions TaggedValue	and XMLTaggedValue 
+Removed Productions	UElemens and IElems
+Removed Production ItemId 
+Removed ConstrainedType and pulled up the definition
+Commented out   // XMLValue() |  in Production XMLValue or Empty (infinite left recursion)
+Changed ObjIdComponentsList
+
+
+Javacc Limitations
+Changed order of rules in ObjIdComponents
+Reordered BuiltinType
+Changed Production Enumerations() to one glorious single statement 
+Changed Production ComponentTypeLists to fewer statements //TODO: do it with ALL sequence types
+Changed Production Componenttype to 1 Statement 
+Changed Production ElementSetSpecs to one Statement
+TypeConstraints
+InnerTypeConstraints
+
+Changed LowerEndpoint and UpperEndpoint to one Alternative
+
+Java Limitations
+Changed Class() to TagClass()
+Changed Enumeratation to ASNEnumaration

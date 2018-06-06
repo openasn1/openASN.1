@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>Property file for standard OID values</comment>
+	<entry key="itu-t">0</entry>
+	<entry key="itu-r">0</entry>
+	<entry key="ccitt">0</entry>
+	<entry key="iso">1</entry>
+	<entry key="joint-iso-itu-t">2</entry>
+	<entry key="joint-iso-ccitt">2</entry>
+
+	<entry key="recommendation">0</entry>
+	<entry key="m">13</entry>
+</properties>
+
+

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>ASN.1 AST Pass Configuration File</comment>
+	<entry key="compiler.plugin.amount">6</entry>
+
+	<entry key="compiler.plugin.plugin1.class">org.openasn1.compiler.stages.asn1ast.identifiermapping.IdentifierMapping</entry>
+	<entry key="compiler.plugin.plugin1.propertyfile">config/plugins/EmptyConfig.xml</entry>
+	<entry key="compiler.plugin.plugin1.copyast">false</entry>
+
+	<entry key="compiler.plugin.plugin2.class">org.openasn1.compiler.stages.asn1ast.tagging.AutomaticTagDecider</entry>
+	<entry key="compiler.plugin.plugin2.propertyfile">config/plugins/EmptyConfig.xml</entry>
+	<entry key="compiler.plugin.plugin2.copyast">false</entry>
+
+	<entry key="compiler.plugin.plugin3.class">org.openasn1.compiler.stages.asn1ast.componentsoftransformation.ComponentsOfTransformer</entry>
+	<entry key="compiler.plugin.plugin3.propertyfile">config/plugins/EmptyConfig.xml</entry>
+	<entry key="compiler.plugin.plugin3.copyast">false</entry>
+
+	<entry key="compiler.plugin.plugin4.class">org.openasn1.compiler.stages.asn1ast.tagging.AutomaticTagger</entry>
+	<entry key="compiler.plugin.plugin4.propertyfile">config/plugins/EmptyConfig.xml</entry>
+	<entry key="compiler.plugin.plugin4.copyast">false</entry>
+
+	<entry key="compiler.plugin.plugin5.class">org.openasn1.compiler.stages.asn1ast.tagging.TaggingEnvironmentMapper</entry>
+	<entry key="compiler.plugin.plugin5.propertyfile">config/plugins/EmptyConfig.xml</entry>
+	<entry key="compiler.plugin.plugin5.copyast">false</entry>
+
+	<entry key="compiler.plugin.plugin6.class">org.openasn1.compiler.stages.asn1ast.enumration.EnumerationValueExtractor</entry>
+	<entry key="compiler.plugin.plugin6.propertyfile">config/plugins/EmptyConfig.xml</entry>
+	<entry key="compiler.plugin.plugin6.copyast">false</entry>
+
+</properties>
+
+

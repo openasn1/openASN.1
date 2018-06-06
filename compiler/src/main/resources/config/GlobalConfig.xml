@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>Global Compiler Property File</comment>
+	<entry key="compiler.stage1.configfile">config/ASN1ASTPassConfig.xml</entry>
+	<entry key="compiler.stage2.configfile">config/OMAndASN1ASTPassConfig.xml</entry>
+	<entry key="compiler.values.oids.configfile">config/StandardOIDValues.xml</entry>
+	<entry key="compiler.templates.path">templates</entry>
+	<entry key="compiler.templates.linewidth">80</entry>
+	<entry key="compiler.codegeneration.output">output/src</entry>
+	<entry key="compiler.codegeneration.basepackage">itu.test</entry>
+</properties>
+
+

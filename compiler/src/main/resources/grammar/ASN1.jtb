@@ -1,0 +1,1418 @@
+/**
+* JTB file
+*/
+
+options {
+  JDK_VERSION = "1.5";
+  SANITY_CHECK = true;
+  LOOKAHEAD = 8;
+  UNICODE_INPUT = true;
+  STATIC = false;
+}
+
+PARSER_BEGIN(ASN1Parser) 
+
+package org.openasn1.parser.generated;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.InputStream;
+
+import org.openasn1.parser.generated.syntaxtree.*;
+import org.openasn1.parser.generated.visitor.*;
+
+
+public class ASN1Parser {
+  public static void main(String args[]) {
+    System.out.println("Reading Input File");
+    try {
+    	 String path;
+    	if (args.length < 1) {
+    	 path = "asn1specifications/M3100ASN1TypeModule2.asn";
+    	}
+    	else {
+    	 path = args[0];
+    	}
+        ASN1Parser p = new ASN1Parser(new FileInputStream(path));        
+        Node start = p.parse();
+      	Visitor v = new MyVisitor();
+      	start.accept(v);
+    } catch (Exception e) {
+      System.out.println("Oops.");
+      System.out.println(e.getMessage());
+    }
+  }
+  
+  public Node parse() throws ParseException {
+	return ModuleDefinition();
+  }
+  
+  public static Node parseFile(File file) throws FileNotFoundException,
+			ParseException {
+		 ASN1Parser p = new ASN1Parser(new FileReader(file));
+		 return p.parse();
+  }
+
+  public static Node parseFile(String file) throws FileNotFoundException,
+			ParseException {
+		ASN1Parser p = new ASN1Parser(new FileReader(file));
+		return p.parse();
+  }
+  
+  public static Node parseStream(InputStream s) throws ParseException{
+  	ASN1Parser p = new ASN1Parser(s);
+  	return p.parse();
+  }
+  
+}
+
+
+
+class MyVisitor extends DepthFirstVisitor {
+ public void visit(NodeToken n) { 
+  System.out.println("visit "+n.tokenImage);
+ }
+}
+PARSER_END(ASN1Parser)
+
+SKIP :
+{
+  " "
+| "\t"
+| "\n"
+| "\r"
+| <"--" ((~["\n","\r","-"])* ("-" (~["\n","\r","-"]))*)* ("--"|"-\n"|"-\r"|"-\r\n"|"\n"|"\r"|"\r\n")>
+| <"/*" (~["*"])* "*" (~["/"] (~["*"])* "*")* "/">
+}
+
+
+TOKEN: {
+   <ELLIPSIS_TKN:"...">
+}
+
+TOKEN :{
+	<DOTDOT_TKN:"..">
+}
+TOKEN:{ /* Keywords */
+	<STAR_TKN:"*">
+//  | <XMLTRUE_TKN:"true">
+//  | <XMLFALSE_TKN:"false">
+  | <AMPERSAND_TKN:"&">
+  | <ASSIGN_OP_TKN:"::=">
+  | <VERSIONBRACKET_START_TKN:"[[">
+  | <VERSIONBRACKET_END_TKN:"]]">
+  | <XMLENDTAGBRACKET_TKN:"</">
+  | <XMLTAGTERMINATINGBRACKET_TKN:"/>">
+  | <LEFT_BRACE_TKN:"{">
+  | <RIGHT_BRACE_TKN:"}">
+  | <LESSER_THAN_TKN:"<">
+  | <GREATER_THAN_TKN:">">
+  | <COMMA_TKN:",">
+  | <DOT_TKN:".">
+  | <LEFT_PARENTHESIS_TKN:"(">
+  | <RIGHT_PARENTHESIS_TKN:")">
+  | <LEFT_BRACKET_TKN:"[">
+  | <RIGHT_BRACKET_TKN:"]">
+  | <MINUS_TKN:"-">
+  | <COLON_TKN:":">
+  | <EQUAL_TKN:"=">
+  | <QUOTATION_TKN:"\"">
+  | <APOSTROPHE_TKN:"'">
+//  | <SPACE_TKN:" ">
+  | <SEMICOLON_TKN:";">
+  | <AT_TKN:"@">
+  | <BAR_TKN:"|">
+  | <EXCLAMATION_TKN:"!">
+  | <CIRCUMFLEX_TKN:"^">
+  | <ABSENT_TKN:"ABSENT">
+  | <ABSTRACT_SYNTAX_TKN:"ABSTRACT-SYNTAX">
+  | <ALL_TKN:"ALL">
+  | <APPLICATION_TKN:"APPLICATION">
+  | <AUTOMATIC_TKN:"AUTOMATIC">
+  | <BEGIN_TKN:"BEGIN">
+  | <BIT_TKN:"BIT">
+  | <BMPSTRING_TKN:"BMPString">
+  | <BOOLEAN_TKN:"BOOLEAN">
+  | <BY_TKN:"BY">
+  | <CHARACTER_TKN:"CHARACTER">
+  | <CHOICE_TKN:"CHOICE">
+  | <CLASS_TKN:"CLASS">
+  | <COMPONENT_TKN:"COMPONENT">
+  | <COMPONENTS_TKN:"COMPONENTS">
+  | <CONSTRAINED_TKN:"CONSTRAINED">
+  | <CONTAINING_TKN:"CONTAINING">
+  | <DEFAULT_TKN:"DEFAULT">
+  | <DEFINITIONS_TKN:"DEFINITIONS">
+  | <EMBEDDED_TKN:"EMBEDDED">
+  | <ENCODED_TKN:"ENCODED">
+  | <END_TKN:"END">
+  | <ENUMERATED_TKN:"ENUMERATED">
+  | <EXCEPT_TKN:"EXCEPT">
+  | <EXPLICIT_TKN:"EXPLICIT">
+  | <EXPORTS_TKN:"EXPORTS">
+  | <EXTENSIBILITY_TKN:"EXTENSIBILITY">
+  | <EXTERNAL_TKN:"EXTERNAL">
+  | <FALSE_TKN:"FALSE">
+  | <FROM_TKN:"FROM">
+  | <GENERALIZEDTIME_TKN:"GeneralizedTime">
+  | <GENERALSTRING_TKN:"GeneralString">
+  | <GRAPHICSTRING_TKN:"GraphicString">
+  | <IA5STRING_TKN:"IA5String">
+  | <IDENTIFIER_TKN:"IDENTIFIER">
+  | <IMPLICIT_TKN:"IMPLICIT">
+  | <IMPLIED_TKN:"IMPLIED">
+  | <IMPORTS_TKN:"IMPORTS">
+  | <INCLUDES_TKN:"INCLUDES">
+  | <INSTANCE_TKN:"INSTANCE">
+  | <INTEGER_TKN:"INTEGER">
+  | <INTERSECTION_TKN:"INTERSECTION">
+  | <ISO646STRING_TKN:"ISO646String">
+  | <MAX_TKN:"MAX">
+  | <MIN_TKN:"MIN">
+  | <MINUS_INFINITY_TKN:"MINUS-INFINITY">
+  | <NULL_TKN:"NULL">
+  | <NUMERICSTRING_TKN:"NumericString">
+  | <OBJECT_TKN:"OBJECT">
+  | <OBJECTDESCRIPTOR_TKN:"ObjectDescriptor">
+  | <OCTET_TKN:"OCTET">
+  | <OF_TKN:"OF">
+  | <OPTIONAL_TKN:"OPTIONAL">
+  | <PATTERN_TKN:"PATTERN">
+  | <PDV_TKN:"PDV">
+  | <PLUS_INFINITY_TKN:"PLUS-INFINITY">
+  | <PRESENT_TKN:"PRESENT">
+  | <PRINTABLESTRING_TKN:"PrintableString">
+  | <PRIVATE_TKN:"PRIVATE">
+  | <REAL_TKN:"REAL">
+  | <RELATIVE_OID_TKN:"RELATIVE-OID">
+  | <SEQUENCE_TKN:"SEQUENCE">
+  | <SET_TKN:"SET">
+  | <SIZE_TKN:"SIZE">
+  | <STRING_TKN:"STRING">
+  | <SYNTAX_TKN:"SYNTAX">
+  | <T61STRING_TKN:"T61String">
+  | <TAGS_TKN:"TAGS">
+  | <TELETEXSTRING_TKN:"TeletexString">
+  | <TRUE_TKN:"TRUE">
+  | <TYPE_IDENTIFIER_TKN:"TYPE-IDENTIFIER">
+  | <UNION_TKN:"UNION">
+  | <UNIQUE_TKN:"UNIQUE">
+  | <UNIVERSAL_TKN:"UNIVERSAL">
+  | <UNIVERSALSTRING_TKN:"UniversalString">
+  | <UTCTIME_TKN:"UTCTime">
+  | <UTF8STRING_TKN:"UTF8String">
+  | <VIDEOTEXSTRING_TKN:"VideotexString">
+  | <VISIBLESTRING_TKN:"VisibleString">
+  | <WITH_TKN:"WITH">
+}
+
+TOKEN: {  /*Manually Added Tokens */
+	<TYPEREFERENCE:["A"-"Z"](("-"["a"-"z", "A"-"Z", "0"-"9"])
+  	| ["a"-"z", "A"-"Z", "0"-"9"])*>
+  
+ |	<IDENTIFIER:["a"-"z"](("-"["a"-"z", "A"-"Z", "0"-"9"])
+	| ["a"-"z", "A"-"Z", "0"-"9"])*>
+	
+ |	<NUMBER:(["0"-"9"])+>
+ 
+ |  <HSTRING:"'" ([" ","0"-"9","a"-"f","A"-"F"])* "'" "H">
+
+ |  <BSTRING:"'" (["0","1"," "])* "'" "B">
+ 
+ |  <CSTRING:"\""(~["\""])*"\"">
+ 
+/* |	<XMLCSTRING:"\""(~["\""])+"\"">
+
+ |  <XMLBSTRING:"\"" (["0","1"," "])+ "\"" >
+ 
+ | 	<XMLHSTRING:"\"" (["0"-"9","a"-"f","A"-"F"," "])+ "\""> */
+ 
+ |  <REALNUMBER:(["0"-"9"])+ ("." (["0"-"9"])+)? (["e","E"] (["+", "-"])? (["0"-"9"])+)?>
+ 
+
+}
+
+ void modulereference():{} {
+ 	<TYPEREFERENCE>
+ }
+ 
+ void valuereference():{} {
+ 	<IDENTIFIER>
+ }
+ 
+  void xmlasn1typename():{} {
+ 	<TYPEREFERENCE>
+ }
+ 
+ void  NamedValueList():{} {
+ 	 NamedValue() (<COMMA_TKN> NamedValue())* 
+	
+ }
+
+ 
+ void  ModuleDefinition() :{}{
+	  ModuleIdentifier() 
+      <DEFINITIONS_TKN> 
+      [TagDefault()] 
+      [ExtensionDefault()] 
+      <ASSIGN_OP_TKN> 
+      <BEGIN_TKN> 
+      ModuleBody() 
+      <END_TKN> 
+	}
+
+ void  ModuleIdentifier() :{}{
+	 modulereference() 
+       [DefinitiveIdentifier()]
+ }
+
+ void  DefinitiveIdentifier() :{}{
+	 <LEFT_BRACE_TKN> DefinitiveObjIdComponentList() <RIGHT_BRACE_TKN> 
+	}
+
+ void  DefinitiveObjIdComponentList()  :{}{
+	 
+   (DefinitiveObjIdComponent())+
+ }
+
+ void  DefinitiveObjIdComponent()  :{}{
+
+    DefinitiveNameAndNumberForm() 	 
+  | NameForm() 
+  | DefinitiveNumberForm() 
+	}
+
+ void  DefinitiveNumberForm() :{}{
+	 <NUMBER>  
+	}
+
+ void  DefinitiveNameAndNumberForm() :{}{
+	 <IDENTIFIER> <LEFT_PARENTHESIS_TKN> DefinitiveNumberForm() <RIGHT_PARENTHESIS_TKN> 
+	}
+
+ void  TagDefault() :{}{
+	 
+   <EXPLICIT_TKN> <TAGS_TKN> 
+  | <IMPLICIT_TKN> <TAGS_TKN> 
+  | <AUTOMATIC_TKN> <TAGS_TKN> 
+	}
+
+ void  ExtensionDefault() :{}{
+	 
+   <EXTENSIBILITY_TKN> <IMPLIED_TKN>
+	}
+
+ void  ModuleBody() :{}{
+	 [Exports()] [Imports()] AssignmentList() 
+	}
+
+ void  Exports() :{}{
+	  <EXPORTS_TKN> [SymbolsExported()] <SEMICOLON_TKN> 
+  |   <EXPORTS_TKN> <ALL_TKN> <SEMICOLON_TKN> 
+	}
+
+ void  SymbolsExported() :{}{
+	 SymbolList() 
+	}
+
+ void  Imports() :{}{
+	  <IMPORTS_TKN> [SymbolsImported()] <SEMICOLON_TKN> 
+	}
+
+ void  SymbolsImported() :{}{
+	 SymbolsFromModuleList() 
+	}
+
+ void  SymbolsFromModuleList() :{}{
+	 
+      (SymbolsFromModule())+
+	}
+
+ void  SymbolsFromModule() :{}{
+	 SymbolList() <FROM_TKN> GlobalModuleReference() 
+	}
+
+ void  GlobalModuleReference() :{}{
+	 modulereference() [AssignedIdentifier()] 
+	}
+
+ void  AssignedIdentifier() :{}{
+	 ObjectIdentifierValue() 
+  |    DefinedValue() 
+ }
+
+ void  SymbolList()   :{}{
+	 Symbol() (<COMMA_TKN> Symbol())*
+	}
+
+ void  Symbol()  :{}{
+	 Reference() //| ParameterizedReference() 
+	}
+
+ void  Reference() :{}{
+	 
+   <TYPEREFERENCE> 
+  | valuereference() 
+//  | objectclassreference() 
+//  | objectreference() 
+//  | objectsetreference() 
+	}
+
+ void  AssignmentList() :{}{
+	  (Assignment())+ 
+	}
+
+ void  Assignment() :{}{
+	 
+   TypeAssignment() 
+  | ValueAssignment() 
+  | XMLValueAssignment() 
+  | ValueSetTypeAssignment() 
+//  | ObjectClassAssignment() 
+//  | ObjectAssignment() 
+//  | ObjectSetAssignment() 
+//  | ParameterizedAssignment() 
+	}
+
+ void  DefinedType() :{}{
+	 
+   ExternalTypeReference() 
+  | <TYPEREFERENCE> 
+//  | ParameterizedType() 
+//  | ParameterizedValueSetType() 
+	}
+
+ void  ExternalTypeReference() :{}{
+	 
+     modulereference() 
+     <DOT_TKN> 
+     <TYPEREFERENCE> 
+	}
+
+ void  NonParameterizedTypeName() :{}{
+	 
+   ExternalTypeReference() 
+  | <TYPEREFERENCE> 
+  | xmlasn1typename() 
+ }
+
+ void  DefinedValue() :{}{
+	 
+   ExternalValueReference() 
+  | valuereference() 
+//  | ParameterizedValue() 
+	}
+
+ void  ExternalValueReference() :{}{
+	 
+     modulereference() 
+     <DOT_TKN> 
+     valuereference() 
+	}
+
+ void  AbsoluteReference() :{}{
+	  
+     <AT_TKN> ModuleIdentifier() 
+     <DOT_TKN> 
+     ItemSpec() 
+	}
+
+ void  ItemSpec() :{}{
+	 
+   <TYPEREFERENCE> (<DOT_TKN> ComponentId() )*
+ }
+
+ void  ComponentId() :{}{
+	 
+   <IDENTIFIER> | <NUMBER>  | <STAR_TKN> 
+	}
+
+ void  TypeAssignment() :{}{
+	 <TYPEREFERENCE> 
+       <ASSIGN_OP_TKN> 
+       Type() 
+	}
+
+ void  ValueAssignment() :{}{
+	 valuereference() 
+       Type() 
+       <ASSIGN_OP_TKN> 
+       Value() 
+	}
+
+ void  XMLValueAssignment() :{}{
+	 
+   valuereference() 
+   <ASSIGN_OP_TKN> 
+   XMLTypedValue() 
+	}
+
+ void  XMLTypedValue() :{}{
+	 
+   <LESSER_THAN_TKN> <AMPERSAND_TKN> NonParameterizedTypeName()  <GREATER_THAN_TKN> 
+   XMLValue() 
+   <XMLENDTAGBRACKET_TKN> <AMPERSAND_TKN> NonParameterizedTypeName() <GREATER_THAN_TKN> 
+  | <LESSER_THAN_TKN> <AMPERSAND_TKN> NonParameterizedTypeName() <XMLTAGTERMINATINGBRACKET_TKN> 
+	}
+
+ void  ValueSetTypeAssignment() :{}{
+	 <TYPEREFERENCE> 
+       Type() 
+       <ASSIGN_OP_TKN> 
+       ValueSet() 
+	}
+
+ void  ValueSet() :{}{
+	 <LEFT_BRACE_TKN> ElementSetSpecs() <RIGHT_BRACE_TKN> 
+	}
+
+ void  Type() :{}{
+	 NormalConstrainedType() | TypeWithConstraint() 
+	}
+	
+ void NormalConstrainedType():{} {
+  (BuiltinType() | ReferencedType()) (Constraint())*
+ }
+
+ void  BuiltinType() :{}{
+	 
+   BitStringType() 
+  | BooleanType() 
+  | CharacterStringType() 
+  | ChoiceType() 
+  | EmbeddedPDVType() 
+  | EnumeratedType() 
+  | ExternalType() 
+//  | InstanceOfType() 
+  | IntegerType() 
+  | NullType() 
+//  | ObjectClassFieldType() 
+  | ObjectIdentifierType() 
+  | OctetStringType() 
+  | RealType() 
+  | RelativeOIDType() 
+  | SequenceOfType() 
+  | SequenceType() 
+  | SetOfType() 
+  | SetType() 
+  | TaggedType() 
+	}
+
+ void  NamedType() :{}{
+	 <IDENTIFIER>   Type() 
+	}
+
+ void  ReferencedType() :{}{
+	 
+   DefinedType() 
+  | UsefulType() 
+  | SelectionType() 
+//  | TypeFromObject() 
+//  | ValueSetFromObjects() 
+	}
+
+ void  Value()  :{}{
+	   BuiltinValue() | ReferencedValue() //| ObjectClassFieldValue() 
+	}
+
+ void  XMLValue() :{}{
+	 XMLBuiltinValue() //| XMLObjectClassFieldValue() 
+	}
+
+ void  BuiltinValue() :{}{
+	 
+   BitStringValue() 
+  | BooleanValue() 
+  | CharacterStringValue() 
+  | ChoiceValue() 
+  | EmbeddedPDVValue() 
+  | EnumeratedValue() 
+  | ExternalValue() 
+//  | InstanceOfValue() 
+  | IntegerValue() 
+  | NullValue() 
+  | ObjectIdentifierValue() 
+  | OctetStringValue() 
+  | RealValue() 
+  | RelativeOIDValue() 
+  | SequenceValue() 
+  | SequenceOfValue() 
+  | SetValue() 
+  | SetOfValue() 
+//  | TaggedValue() 
+	}
+
+ void  XMLBuiltinValue() :{}{
+	 
+   [XMLBitStringValue()] 
+  | XMLBooleanValue() 
+  | XMLCharacterStringValue() 
+  | XMLChoiceValue() 
+  | XMLEmbeddedPDVValue() 
+  | XMLEnumeratedValue() 
+  | XMLExternalValue() 
+//  | XMLInstanceOfValue() 
+  | XMLIntegerValue() 
+  | XMLNullValue() 
+  | XMLObjectIdentifierValue() 
+  | XMLOctetStringValue() 
+  | XMLRealValue() 
+  | XMLRelativeOIDValue() 
+  | [XMLSequenceValue()] 
+  | [XMLSequenceOfValue()] 
+  | [XMLSetValue()] 
+  | [XMLSetOfValue()] 
+//  | XMLTaggedValue() 
+	}
+
+ void  ReferencedValue() :{}{
+	 
+   DefinedValue() 
+ // | ValueFromObject() 
+	}
+
+ void  NamedValue() :{}{
+	 <IDENTIFIER> Value() 
+	}
+
+ void  XMLNamedValue() :{}{
+	 
+   <LESSER_THAN_TKN> <AMPERSAND_TKN> <IDENTIFIER>  <GREATER_THAN_TKN> XMLValue() <XMLENDTAGBRACKET_TKN> <AMPERSAND_TKN> <IDENTIFIER> <GREATER_THAN_TKN> 
+	}
+
+ void  BooleanType()  :{}{
+	<BOOLEAN_TKN> 
+ }
+
+ void  BooleanValue():{}{
+	 <TRUE_TKN> | <FALSE_TKN> 
+	}
+
+ void  XMLBooleanValue() :{}{
+	 
+   <LESSER_THAN_TKN> <AMPERSAND_TKN> <IDENTIFIER> <XMLTAGTERMINATINGBRACKET_TKN> 
+  | <LESSER_THAN_TKN> <AMPERSAND_TKN> <IDENTIFIER> <XMLTAGTERMINATINGBRACKET_TKN> 
+	}
+
+ void  IntegerType() :{}{
+	 
+    <INTEGER_TKN> [<LEFT_BRACE_TKN> NamedNumberList() <RIGHT_BRACE_TKN>]
+ }
+
+ void  NamedNumberList() :{}{
+	 
+   NamedNumber() (<COMMA_TKN> NamedNumber())* 
+ }
+
+ void  NamedNumber() :{}{
+	 
+    <IDENTIFIER> <LEFT_PARENTHESIS_TKN> SignedNumber() <RIGHT_PARENTHESIS_TKN> 
+  | <IDENTIFIER> <LEFT_PARENTHESIS_TKN> DefinedValue() <RIGHT_PARENTHESIS_TKN> 
+	}
+
+ void  SignedNumber() :{}{
+	 <NUMBER>  | <MINUS_TKN> <NUMBER>  
+	}
+
+ void  IntegerValue() :{}{
+	 SignedNumber() | <IDENTIFIER> 
+	}
+
+ void  XMLIntegerValue() :{}{
+	 
+   SignedNumber() 
+  | <LESSER_THAN_TKN> <AMPERSAND_TKN> <IDENTIFIER> <XMLTAGTERMINATINGBRACKET_TKN> 
+	}
+
+ void  EnumeratedType() :{}{
+	 
+   <ENUMERATED_TKN> <LEFT_BRACE_TKN> Enumerations() <RIGHT_BRACE_TKN> 
+	}
+
+ void  Enumerations() :{}{
+ //   RootEnumeration()  <COMMA_TKN>   <ELLIPSIS_TKN> [ExceptionSpec()] 
+   RootEnumeration()  [<COMMA_TKN>   <ELLIPSIS_TKN>] [ExceptionSpec()]  [<COMMA_TKN>   AdditionalEnumeration()] 
+ // | RootEnumeration() 
+  	
+ }
+
+ void  RootEnumeration() :{}{
+	 ASNEnumeration() 
+	}
+
+ void  AdditionalEnumeration() :{}{
+	 ASNEnumeration() 
+	}
+
+ void  ASNEnumeration() :{}{
+	 EnumerationItem() (<COMMA_TKN> EnumerationItem())* 
+	}
+
+ void  EnumerationItem() :{}{
+	 NamedNumber() | <IDENTIFIER> 
+	}
+
+ void  EnumeratedValue()  :{}{
+	 <IDENTIFIER> 
+	}
+
+ void  XMLEnumeratedValue() :{}{
+	 <LESSER_THAN_TKN> <AMPERSAND_TKN> <IDENTIFIER> <XMLTAGTERMINATINGBRACKET_TKN> 
+	}
+
+ void  RealType() :{}{
+	 <REAL_TKN> 
+	}
+
+ void  RealValue() :{}{
+	 
+   NumericRealValue() | SpecialRealValue() 
+	}
+
+ void  NumericRealValue() :{}{
+	 
+   <REALNUMBER> 
+  | <MINUS_TKN> <REALNUMBER> 
+  | SequenceValue()    
+	}
+
+ void  SpecialRealValue() :{}{
+	 
+   <PLUS_INFINITY_TKN> | <MINUS_INFINITY_TKN> 
+	}
+
+ void  XMLRealValue() :{}{
+	 
+   XMLNumericRealValue() | XMLSpecialRealValue() 
+	}
+
+ void  XMLNumericRealValue() :{}{
+	 
+   <REALNUMBER> 
+  | <MINUS_TKN> <REALNUMBER> 
+	}
+
+ void  XMLSpecialRealValue() :{}{
+	 
+   <LESSER_THAN_TKN> <AMPERSAND_TKN> <PLUS_INFINITY_TKN> <XMLTAGTERMINATINGBRACKET_TKN> | <LESSER_THAN_TKN> <AMPERSAND_TKN> <MINUS_INFINITY_TKN> <XMLTAGTERMINATINGBRACKET_TKN> 
+	}
+
+ void  BitStringType()    :{}{
+	  <BIT_TKN> <STRING_TKN> [<LEFT_BRACE_TKN> NamedBitList() <RIGHT_BRACE_TKN>] 
+	}
+
+ void  NamedBitList():{}{
+	  NamedBit() (<COMMA_TKN> NamedBit())* 
+	}
+
+ void  NamedBit():{}{
+	 <IDENTIFIER> <LEFT_PARENTHESIS_TKN> <NUMBER>  <RIGHT_PARENTHESIS_TKN> 
+  |   <IDENTIFIER> <LEFT_PARENTHESIS_TKN> DefinedValue() <RIGHT_PARENTHESIS_TKN> 
+	}
+
+ void  BitStringValue()   :{}{
+	 <BSTRING>  | <HSTRING>  | <LEFT_BRACE_TKN> IdentifierList() <RIGHT_BRACE_TKN> | <LEFT_BRACE_TKN>  <RIGHT_BRACE_TKN> | <CONTAINING_TKN> Value() 
+	}
+
+ void  IdentifierList()   :{}{
+	  <IDENTIFIER> (<COMMA_TKN> <IDENTIFIER>)*
+	}
+
+ void  XMLBitStringValue() :{}{
+	 
+   XMLTypedValue() 
+  | <CSTRING> 
+  | XMLIdentifierList() 
+	}
+
+ void  XMLIdentifierList() :{}{
+	 
+   (<LESSER_THAN_TKN> <AMPERSAND_TKN> <IDENTIFIER> <XMLTAGTERMINATINGBRACKET_TKN>)+ 
+ }
+
+ void  OctetStringType()  :{}{
+	 <OCTET_TKN> <STRING_TKN> 
+	}
+
+ void  OctetStringValue() :{}{
+	 <BSTRING>  | <HSTRING>  | <CONTAINING_TKN> Value() 
+	}
+
+ void  XMLOctetStringValue() :{}{
+	 
+   XMLTypedValue() 
+  | <CSTRING>  
+	}
+
+ void  NullType()      :{}{
+	 <NULL_TKN> 
+	}
+
+ void  NullValue()    :{}{
+	 <NULL_TKN> 
+	}
+
+ void  XMLNullValue() :{}{
+  <NULL_TKN>
+ }
+
+
+ void  SequenceType() :{}{
+	 
+    <SEQUENCE_TKN>  <LEFT_BRACE_TKN>  ExtensionAndException()  [OptionalExtensionMarker()]  <RIGHT_BRACE_TKN> 
+  | <SEQUENCE_TKN>  <LEFT_BRACE_TKN>  ComponentTypeLists()  <RIGHT_BRACE_TKN> 
+  |  <SEQUENCE_TKN> <LEFT_BRACE_TKN>  <RIGHT_BRACE_TKN> 
+ 
+	}
+
+ void  ExtensionAndException() :{}{
+	  <ELLIPSIS_TKN>  [ExceptionSpec()]
+	}
+
+ void  OptionalExtensionMarker() :{}{
+	  <COMMA_TKN>  <ELLIPSIS_TKN>
+	}
+
+ void  ComponentTypeLists() :{}{
+	 
+//   RootComponentTypeList()  <COMMA_TKN>  ExtensionAndException()  [ExtensionAdditions()] [OptionalExtensionMarker()] 
+     RootComponentTypeList()  [<COMMA_TKN>  ExtensionAndException()  [ExtensionAdditions()] [ExtensionEndMarker()  [<COMMA_TKN>  RootComponentTypeList()]]] 
+    | ExtensionAndException()  [ExtensionAdditions()]  [ExtensionEndMarker() [<COMMA_TKN> RootComponentTypeList()]] 
+//  | ExtensionAndException()  [ExtensionAdditions()]  [OptionalExtensionMarker()] 
+//  | RootComponentTypeList() 
+  	
+	}
+
+ void  RootComponentTypeList()  :{}{
+	  ComponentTypeList() 
+	}
+
+ void  ExtensionEndMarker()  :{}{
+	  <COMMA_TKN>  <ELLIPSIS_TKN> 
+	}
+
+ void  ExtensionAdditions()  :{}{
+	  <COMMA_TKN>  ExtensionAdditionList()
+	}
+
+ void  ExtensionAdditionList()  :{}{
+	  ExtensionAddition() (<COMMA_TKN>  ExtensionAddition())* 
+	}
+
+ void  ExtensionAddition()  :{}{
+	 ComponentType()  |  ExtensionAdditionGroup() 
+	}
+
+ void  ExtensionAdditionGroup()  :{}{
+	  <VERSIONBRACKET_START_TKN>  [VersionNumber()]  ComponentTypeList()  <VERSIONBRACKET_END_TKN> 
+	}
+
+ void  VersionNumber()  :{}{
+	   <NUMBER>   <COLON_TKN> 
+	}
+
+ void  ComponentTypeList()  :{}{
+	 ComponentType() (<COMMA_TKN> ComponentType())* 
+	}
+
+ void  ComponentType()  :{}{
+	
+    NamedType()  [<OPTIONAL_TKN> | <DEFAULT_TKN> Value()] 
+ // | NamedType()   
+ // | NamedType() 
+  | <COMPONENTS_TKN> <OF_TKN> Type() 
+	}
+
+ void  SequenceValue()    :{}{
+	 <LEFT_BRACE_TKN> ComponentValueList() <RIGHT_BRACE_TKN> | <LEFT_BRACE_TKN>  <RIGHT_BRACE_TKN> 
+	}
+
+ void  ComponentValueList() :{}{
+	 
+   NamedValue() (<COMMA_TKN> NamedValue())* 
+	}
+
+ void  XMLSequenceValue() :{}{
+	 
+   XMLComponentValueList() 
+	}
+
+ void  XMLComponentValueList() :{}{
+	 
+   (XMLNamedValue())+ 
+  }
+
+ void  SequenceOfType()  :{}{
+	 <SEQUENCE_TKN> <OF_TKN> Type() | <SEQUENCE_TKN> <OF_TKN> NamedType() 
+	}
+
+ void  SequenceOfValue() :{}{
+	 <LEFT_BRACE_TKN> ValueList() <RIGHT_BRACE_TKN> | <LEFT_BRACE_TKN> NamedValueList() <RIGHT_BRACE_TKN> | <LEFT_BRACE_TKN>  <RIGHT_BRACE_TKN> 
+	}
+
+ void  ValueList()    :{}{
+	 Value() (<COMMA_TKN> Value())* 
+	}
+
+ void  XMLSequenceOfValue() :{}{
+	 
+   XMLValueList() 
+  | XMLDelimitedItemList() 
+  | XMLSpaceSeparatedList() 
+	}
+
+ void  XMLValueList() :{}{
+	 
+   (XMLValueOrEmpty())+ 
+  }
+
+ void  XMLValueOrEmpty() :{}{
+	 
+  // XMLValue() | 
+   <LESSER_THAN_TKN> <AMPERSAND_TKN> NonParameterizedTypeName() <XMLTAGTERMINATINGBRACKET_TKN> 
+ }
+
+ void  XMLSpaceSeparatedList() :{}{
+	 
+   (XMLValueOrEmpty())+  
+ }
+
+ void  XMLDelimitedItemList() :{}{
+	 
+   XMLDelimitedItem() 
+  | XMLDelimitedItem() XMLDelimitedItemList() 
+	}
+
+ void  XMLDelimitedItem() :{}{
+	 
+   <LESSER_THAN_TKN> <AMPERSAND_TKN> NonParameterizedTypeName() <GREATER_THAN_TKN> XMLValue() 
+    <XMLENDTAGBRACKET_TKN> <AMPERSAND_TKN> NonParameterizedTypeName() <GREATER_THAN_TKN> 
+  | <LESSER_THAN_TKN> <AMPERSAND_TKN> <IDENTIFIER> <GREATER_THAN_TKN> XMLValue() <XMLENDTAGBRACKET_TKN> <AMPERSAND_TKN> <IDENTIFIER> <GREATER_THAN_TKN> 
+	}
+
+ void  SetType() :{}{
+	  <SET_TKN>  <LEFT_BRACE_TKN>  <RIGHT_BRACE_TKN> 
+  |  <SET_TKN>  <LEFT_BRACE_TKN>  ExtensionAndException()  [OptionalExtensionMarker()]  <RIGHT_BRACE_TKN> 
+  |  <SET_TKN> <LEFT_BRACE_TKN>  ComponentTypeLists()  <RIGHT_BRACE_TKN> 
+	}
+
+ void  SetValue()      :{}{
+	 <LEFT_BRACE_TKN> ComponentValueList() <RIGHT_BRACE_TKN> | <LEFT_BRACE_TKN>  <RIGHT_BRACE_TKN> 
+	}
+
+ void  XMLSetValue() :{}{
+	 XMLComponentValueList()
+	}
+
+ void  SetOfType()    :{}{
+	 <SET_TKN> <OF_TKN>  Type() | <SET_TKN> <OF_TKN>  NamedType() 
+	}
+
+ void  SetOfValue()   :{}{
+	 <LEFT_BRACE_TKN> ValueList() <RIGHT_BRACE_TKN> | <LEFT_BRACE_TKN> NamedValueList() <RIGHT_BRACE_TKN> | <LEFT_BRACE_TKN>  <RIGHT_BRACE_TKN> 
+	}
+
+ void  XMLSetOfValue() :{}{
+	 
+   XMLValueList() 
+  | XMLDelimitedItemList() 
+  | XMLSpaceSeparatedList() 
+	}
+
+ void  ChoiceType()    :{}{
+	 <CHOICE_TKN> <LEFT_BRACE_TKN> AlternativeTypeLists() <RIGHT_BRACE_TKN> 
+	}
+
+ void  AlternativeTypeLists() :{}{
+	 
+  RootAlternativeTypeList()  [<COMMA_TKN> ExtensionAndException()  [ExtensionAdditionAlternatives()]  [OptionalExtensionMarker()]] 
+	
+	}
+
+ void  RootAlternativeTypeList()  :{}{
+	  AlternativeTypeList() 
+	}
+
+ void  ExtensionAdditionAlternatives()  :{}{
+	  <COMMA_TKN>  ExtensionAdditionAlternativesList() 
+	}
+
+ void  ExtensionAdditionAlternativesList()  :{}{
+	 ExtensionAdditionAlternative() (<COMMA_TKN>  ExtensionAdditionAlternative())*
+	}
+
+ void  ExtensionAdditionAlternative()  :{}{
+	  ExtensionAdditionAlternativesGroup() | NamedType() 
+	}
+
+ void  ExtensionAdditionAlternativesGroup()  :{}{
+	  <VERSIONBRACKET_START_TKN>  [VersionNumber()]  AlternativeTypeList()  <VERSIONBRACKET_END_TKN> 
+	}
+
+ void  AlternativeTypeList() :{}{
+	   NamedType() (<COMMA_TKN> NamedType())* 
+	}
+
+ void  ChoiceValue()  :{}{
+	  <IDENTIFIER> <COLON_TKN> Value() 
+	}
+
+ void  XMLChoiceValue() :{}{
+	 <LESSER_THAN_TKN> <AMPERSAND_TKN> <IDENTIFIER> <GREATER_THAN_TKN> XMLValue() <XMLENDTAGBRACKET_TKN> <AMPERSAND_TKN> <IDENTIFIER> <GREATER_THAN_TKN> 
+	}
+
+ void  SelectionType()    :{}{
+	  <IDENTIFIER> <LESSER_THAN_TKN> Type() 
+	}
+
+ void  TaggedType()    :{}{
+      Tag() <IMPLICIT_TKN> Type() 
+  |    Tag() <EXPLICIT_TKN> Type() 
+  | Tag() Type() 	
+	}
+
+ void  Tag()       :{}{
+	   <LEFT_BRACKET_TKN> [TagClass()] ClassNumber() <RIGHT_BRACKET_TKN> 
+	}
+
+ void  ClassNumber()  :{}{
+	 <NUMBER>  | DefinedValue() 
+	}
+
+ void  TagClass()    :{}{
+	 <UNIVERSAL_TKN> 
+  |  <APPLICATION_TKN> 
+  |  <PRIVATE_TKN>  
+	}
+
+// void  TaggedValue()  :{}{
+//	 Value() 
+//	}
+//
+// void  XMLTaggedValue() :{}{
+//	 XMLValue() 
+//	}
+
+ void  EmbeddedPDVType() :{}{
+	   <EMBEDDED_TKN> <PDV_TKN> 
+	}
+
+ void  EmbeddedPDVValue() :{}{
+	    SequenceValue() 
+	}
+
+ void  XMLEmbeddedPDVValue() :{}{
+	 [XMLSequenceValue()] 
+	}
+
+ void  ExternalType() :{}{
+	 <EXTERNAL_TKN> 
+	}
+
+ void  ExternalValue() :{}{
+	 SequenceValue() 
+	}
+
+ void  XMLExternalValue() :{}{
+	 [XMLSequenceValue()] 
+	}
+
+ void  ObjectIdentifierType()  :{}{
+	 <OBJECT_TKN> <IDENTIFIER_TKN> 
+	}
+
+ void  ObjectIdentifierValue() :{}{
+	 <LEFT_BRACE_TKN> ObjIdComponentsList() <RIGHT_BRACE_TKN> 
+  |     <LEFT_BRACE_TKN> DefinedValue() ObjIdComponentsList() <RIGHT_BRACE_TKN> 
+	}
+
+ void  ObjIdComponentsList()  :{}{
+	  (ObjIdComponents())* 
+	}
+
+ void  ObjIdComponents()  :{}{
+	   NameAndNumberForm()
+  |	   NameForm() 
+  |    NumberForm()      
+  |    DefinedValue() 
+	}
+
+ void  NameForm()      :{}{
+	  <IDENTIFIER> 
+	}
+
+ void  NumberForm()     :{}{
+	  <NUMBER>  | DefinedValue() 
+	}
+
+ void  NameAndNumberForm() :{}{
+	  <IDENTIFIER> <LEFT_PARENTHESIS_TKN> NumberForm() <RIGHT_PARENTHESIS_TKN> 
+	}
+
+ void  XMLObjectIdentifierValue() :{}{
+	 
+   XMLObjIdComponentList() 
+	}
+
+ void  XMLObjIdComponentList() :{}{
+	 
+   XMLObjIdComponent() 
+  | XMLObjIdComponent() <AMPERSAND_TKN> <DOT_TKN> <AMPERSAND_TKN> XMLObjIdComponentList() 
+	}
+
+ void  XMLObjIdComponent() :{}{
+	 
+   NameForm() 
+  | XMLNumberForm() 
+  | XMLNameAndNumberForm() 
+	}
+
+ void  XMLNumberForm() :{}{
+	 <NUMBER>  
+	}
+
+ void  XMLNameAndNumberForm() :{}{
+	 
+   <IDENTIFIER> <AMPERSAND_TKN> <LEFT_PARENTHESIS_TKN> <AMPERSAND_TKN> XMLNumberForm() <AMPERSAND_TKN> <RIGHT_PARENTHESIS_TKN> 
+	}
+
+ void  RelativeOIDType() :{}{
+	 
+     <RELATIVE_OID_TKN> 
+	}
+
+ void  RelativeOIDValue() :{}{
+	 
+    <LEFT_BRACE_TKN> RelativeOIDComponentsList() <RIGHT_BRACE_TKN> 
+	}
+
+ void  RelativeOIDComponentsList() :{}{
+	 
+   RelativeOIDComponents() 
+  | RelativeOIDComponents() RelativeOIDComponentsList() 
+	}
+
+ void  RelativeOIDComponents() :{}{
+	 NumberForm() 
+  |      NameAndNumberForm() 
+  |        DefinedValue() 
+	}
+
+ void  XMLRelativeOIDValue() :{}{
+	 
+   XMLRelativeOIDComponentList() 
+	}
+
+ void  XMLRelativeOIDComponentList() :{}{
+	 
+   XMLRelativeOIDComponent() 
+  | XMLRelativeOIDComponent() <AMPERSAND_TKN> <DOT_TKN> <AMPERSAND_TKN> XMLRelativeOIDComponentList() 
+	}
+
+ void  XMLRelativeOIDComponent() :{}{
+	 
+   XMLNumberForm() 
+  | XMLNameAndNumberForm() 
+	}
+
+ void  CharacterStringType() :{}{
+	 RestrictedCharacterStringType() | UnrestrictedCharacterStringType() 
+	}
+
+ void  RestrictedCharacterStringType() :{}{
+	 
+   <BMPSTRING_TKN> 
+  | <GENERALSTRING_TKN> 
+  | <GRAPHICSTRING_TKN> 
+  | <IA5STRING_TKN> 
+  | <ISO646STRING_TKN> 
+  | <NUMERICSTRING_TKN> 
+  | <PRINTABLESTRING_TKN> 
+  | <TELETEXSTRING_TKN> 
+  | <T61STRING_TKN> 
+  | <UNIVERSALSTRING_TKN> 
+  | <UTF8STRING_TKN> 
+  | <VIDEOTEXSTRING_TKN> 
+  | <VISIBLESTRING_TKN> 
+	}
+
+ void  RestrictedCharacterStringValue() :{}{
+	 <CSTRING>  | CharacterStringList() | Quadruple() | Tuple() 
+	}
+
+ void  CharacterStringList()  :{}{
+	  <LEFT_BRACE_TKN> CharSyms() <RIGHT_BRACE_TKN> 
+	}
+
+ void  CharSyms()  :{}{
+	  CharsDefn() (<COMMA_TKN> CharsDefn())*
+	}
+
+ void  CharsDefn()  :{}{
+	  <CSTRING>  | Quadruple() | Tuple() | DefinedValue() 
+	}
+
+ void  Quadruple() :{}{
+	 <LEFT_BRACE_TKN>  Group()  <COMMA_TKN>  Plane()  <COMMA_TKN>  Row()  <COMMA_TKN>  Cell() <RIGHT_BRACE_TKN> 
+	}
+
+ void  Group()  :{}{
+	 <NUMBER>  
+	}
+
+ void  Plane()  :{}{
+	 <NUMBER>  
+	}
+
+ void  Row()   :{}{
+	 <NUMBER>  
+	}
+
+ void  Cell()   :{}{
+	 <NUMBER>  
+	}
+
+ void  Tuple() :{}{
+	 <LEFT_BRACE_TKN> TableColumn() <COMMA_TKN> TableRow() <RIGHT_BRACE_TKN> 
+	}
+
+ void  TableColumn() :{}{
+	 <NUMBER>  
+	}
+
+ void  TableRow() :{}{
+	 <NUMBER>  
+	}
+
+ void  XMLRestrictedCharacterStringValue() :{}{
+	 <CSTRING> 
+	}
+
+ void  UnrestrictedCharacterStringType() :{}{
+	 <CHARACTER_TKN> <STRING_TKN> 
+	}
+
+ void  CharacterStringValue() :{}{
+	 RestrictedCharacterStringValue() | UnrestrictedCharacterStringValue() 
+	}
+
+ void  XMLCharacterStringValue() :{}{
+	 
+  XMLRestrictedCharacterStringValue() 
+  |XMLUnrestrictedCharacterStringValue() 
+	}
+
+ void  UnrestrictedCharacterStringValue() :{}{
+	 SequenceValue() 
+	}
+
+ void  XMLUnrestrictedCharacterStringValue() :{}{
+	 [XMLSequenceValue()] 
+	}
+
+ void  UsefulType()    :{}{
+   <GENERALIZEDTIME_TKN> | 
+   <UTCTIME_TKN> | <OBJECTDESCRIPTOR_TKN> 
+  
+  
+	}
+
+/* void  ConstrainedType() :{}{
+	 
+   Type() Constraint() | TypeWithConstraint() 
+ } */
+
+ void  TypeWithConstraint() :{}{
+	 
+   <SET_TKN> Constraint() <OF_TKN> Type() 
+  | <SET_TKN> SizeConstraint() <OF_TKN> Type() 
+  | <SEQUENCE_TKN> Constraint() <OF_TKN> Type() 
+  | <SEQUENCE_TKN> SizeConstraint() <OF_TKN> Type() 
+  | <SET_TKN> Constraint() <OF_TKN> NamedType() 
+  | <SET_TKN> SizeConstraint() <OF_TKN> NamedType() 
+  | <SEQUENCE_TKN> Constraint() <OF_TKN> NamedType() 
+  | <SEQUENCE_TKN> SizeConstraint() <OF_TKN> NamedType() 
+	}
+
+ void  Constraint() :{}{
+	 <LEFT_PARENTHESIS_TKN> ConstraintSpec()  [ExceptionSpec()] <RIGHT_PARENTHESIS_TKN> 
+	}
+
+ void  ConstraintSpec() :{}{
+	  SubtypeConstraint() 
+//  |    GeneralConstraint() 
+	}
+
+ void  ExceptionSpec() :{}{
+	 <EXCLAMATION_TKN>  ExceptionIdentification()
+	}
+
+ void  ExceptionIdentification() :{}{
+	 SignedNumber() 
+  |     DefinedValue() 
+  |     Type() <COLON_TKN> Value() 
+	}
+
+ void  SubtypeConstraint() :{}{
+	 ElementSetSpecs() 
+	}
+
+ void  ElementSetSpecs() :{}{
+	 
+//   RootElementSetSpec() 
+//  | RootElementSetSpec()  <COMMA_TKN>   <ELLIPSIS_TKN> 
+   RootElementSetSpec()  [<COMMA_TKN>  <ELLIPSIS_TKN>  [<COMMA_TKN>  AdditionalElementSetSpec()]] 
+	}
+
+ void  RootElementSetSpec() :{}{
+	 ElementSetSpec() 
+	}
+
+ void  AdditionalElementSetSpec() :{}{
+	 ElementSetSpec() 
+	}
+
+ void  ElementSetSpec() :{}{
+	 Unions() | <ALL_TKN>  Exclusions() 
+	}
+
+ void  Unions() :{}{
+	  Intersections() (UnionMark() Intersections())*
+	}
+
+
+ void  Intersections() :{}{
+	 IntersectionElements() (IntersectionMark() IntersectionElements())* 
+	}
+
+
+ void  IntersectionElements() :{}{
+	 Elements() [Exclusions()] 
+	}
+
+ void  Elems() :{}{
+	 Elements() 
+	}
+
+ void  Exclusions() :{}{
+	 <EXCEPT_TKN> Elements() 
+	}
+
+ void  UnionMark()  :{}{
+	  <BAR_TKN> | <UNION_TKN> 
+	}
+
+ void  IntersectionMark()  :{}{
+	  <CIRCUMFLEX_TKN> | <INTERSECTION_TKN> 
+	}
+
+ void  Elements()  :{}{
+	 SubtypeElements() 
+//  |  ObjectSetElements() 
+  |  <LEFT_PARENTHESIS_TKN> ElementSetSpec() <RIGHT_PARENTHESIS_TKN> 
+	}
+
+ void  SubtypeElements() :{}{
+
+   ValueRange() 	 
+  | ContainedSubtype() 
+  | PermittedAlphabet() 
+  | SizeConstraint() 
+  | TypeConstraint() 
+  | InnerTypeConstraints() 
+  | SingleValue() 
+  | PatternConstraint() 
+	}
+
+ void PatternConstraint():{} {
+   <PATTERN_TKN> Value()
+ }
+ 
+ void  SingleValue()    :{}{
+	  Value() 
+	}
+
+ void  ContainedSubtype() :{}{
+	 [Includes()] Type() 
+	}
+
+ void  Includes() :{}{
+	 <INCLUDES_TKN>
+	}
+
+ void  ValueRange() :{}{
+	 LowerEndpoint() <DOTDOT_TKN> UpperEndpoint() 
+	}
+
+ void  LowerEndpoint()  :{}{
+	   LowerEndValue() [<LESSER_THAN_TKN>] 
+	}
+
+ void  UpperEndpoint()  :{}{
+	 [<LESSER_THAN_TKN>] UpperEndValue() 
+	}
+
+ void  LowerEndValue() :{}{
+	  <MIN_TKN> | Value() 
+	}
+
+ void  UpperEndValue() :{}{
+	  <MAX_TKN> | Value()  
+	}
+
+ void  SizeConstraint() :{}{
+	 <SIZE_TKN> Constraint() 
+	}
+
+ void  PermittedAlphabet() :{}{
+	 <FROM_TKN> Constraint() 
+	}
+
+ void  TypeConstraint() :{}{
+	 Type() 
+	}
+
+ void  InnerTypeConstraints() :{}{
+	 
+   <WITH_TKN> <COMPONENT_TKN> (SingleTypeConstraint()  | MultipleTypeConstraints())
+  //| <WITH_TKN> <COMPONENTS_TKN> MultipleTypeConstraints() 
+	}
+
+ void  SingleTypeConstraint():{}{
+	 Constraint() 
+	}
+
+ void  MultipleTypeConstraints() :{}{
+	 FullSpecification() | PartialSpecification() 
+	}
+
+ void  FullSpecification()   :{}{
+	 <LEFT_BRACE_TKN> TypeConstraints() <RIGHT_BRACE_TKN> 
+	}
+
+ void  PartialSpecification() :{}{
+	 <LEFT_BRACE_TKN>  <ELLIPSIS_TKN>   <COMMA_TKN>   TypeConstraints() <RIGHT_BRACE_TKN> 
+	}
+
+ void  TypeConstraints() :{}{
+ 	  NamedConstraint() (<COMMA_TKN> NamedConstraint())*    
+	}
+
+ void  NamedConstraint() :{}{
+	 <IDENTIFIER> ComponentConstraint() 
+	}
+
+ void  ComponentConstraint() :{}{
+	 [ValueConstraint()] [PresenceConstraint()] 
+	}
+
+ void  ValueConstraint() :{}{
+	  Constraint()
+	}
+
+ void  PresenceConstraint()  :{}{
+	 <PRESENT_TKN> | <ABSENT_TKN> | <OPTIONAL_TKN>
+}
+
