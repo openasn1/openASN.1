@@ -16,7 +16,7 @@
  *   GNU Lesser General Public License for more details.
  *
  *   You should have received a copy of the GNU Lesser General Public License
- *   along with openASN.1. If not, see <http://www.gnu.com.github.licenses/>.
+ *   along with openASN.1. If not, see <http://www.gnu.org/licenses/>.
  * 
  */
 package com.github.openasn1.codec.constraints;
@@ -35,8 +35,8 @@ public class ConstraintExtension implements Constraint {
 	 * ConstraintExtension conforming to the production
 	 * "(" extensionRootConstraint, ...(, extensionAdditionConstraint)? ")"
 	 * 
-	 * @param extensionRootConstraint is extensionRootConstraint
-	 * @param extensionAdditionConstraint is extensionAdditionConstraint
+	 * @param extensionRootConstraint
+	 * @param extensionAdditionConstraint
 	 */
 	public ConstraintExtension(Constraint extensionRootConstraint, Constraint extensionAdditionConstraint) {
 		if (extensionRootConstraint == null) {
@@ -50,7 +50,7 @@ public class ConstraintExtension implements Constraint {
 	 * ConstraintExtension conforming to the production
 	 * "(" extensionRootConstraint, ... ")"
 	 * 
-	 * @param extensionRootConstraint is extensionRootConstraint
+	 * @param extensionRootConstraint
 	 */
 	public ConstraintExtension(Constraint extensionRootConstraint) {
 		this(extensionRootConstraint, null);

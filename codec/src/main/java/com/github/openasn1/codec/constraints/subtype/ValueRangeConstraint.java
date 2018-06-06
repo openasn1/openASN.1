@@ -16,7 +16,7 @@
  *   GNU Lesser General Public License for more details.
  *
  *   You should have received a copy of the GNU Lesser General Public License
- *   along with openASN.1. If not, see <http://www.gnu.com.github.licenses/>.
+ *   along with openASN.1. If not, see <http://www.gnu.org/licenses/>.
  * 
  */
 package com.github.openasn1.codec.constraints.subtype;
@@ -156,7 +156,7 @@ abstract public class ValueRangeConstraint<T> extends ConstraintImpl {
 	 * 
 	 * Example: 
 	 * 	(MIN..5) would give null
-	 *  (1..5) would give (Integer)1
+	 *  (1..5) would give <Integer>1
 	 *  
 	 * @return the defined lower bound or null
 	 */
@@ -171,7 +171,7 @@ abstract public class ValueRangeConstraint<T> extends ConstraintImpl {
 	 *  
 	 * Example: 
 	 * 	(MIN..MAX) would give null
-	 *  (1..5) would give (Integer)5
+	 *  (1..5) would give <Integer>5
 	 *    
 	 * @return the defined upper bound or null
 	 */	

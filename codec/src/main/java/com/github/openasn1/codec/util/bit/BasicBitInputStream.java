@@ -16,7 +16,7 @@
  *   GNU Lesser General Public License for more details.
  *
  *   You should have received a copy of the GNU Lesser General Public License
- *   along with openASN.1. If not, see <http://www.gnu.com.github.licenses/>.
+ *   along with openASN.1. If not, see <http://www.gnu.org/licenses/>.
  * 
  */
 package com.github.openasn1.codec.util.bit;
@@ -45,7 +45,7 @@ public class BasicBitInputStream implements BitInputStream {
 	}	
 
 	/**
-	 * @see com.github.openasn1.codec.util.bit.BitInputStream#readBytes(int)
+	 * @see com.github.openasn1.codec.util.bit.BitInputStreamInterface#readBytes(int)
 	 */
 	synchronized public int[] readBytes(int bytes) throws IOException {
 		if (this.in == null) {
@@ -62,7 +62,7 @@ public class BasicBitInputStream implements BitInputStream {
 	}
 
 	/**
-	 * @see com.github.openasn1.codec.util.bit.BitInputStream#readByte()
+	 * @see com.github.openasn1.codec.util.bit.BitInputStreamInterface#readByte()
 	 */
 	synchronized public int readByte() throws IOException {
 		if (this.in == null) {
@@ -87,7 +87,7 @@ public class BasicBitInputStream implements BitInputStream {
 	}
 	
 	/**
-	 * @see com.github.openasn1.codec.util.bit.BitInputStream#readBits(int)
+	 * @see com.github.openasn1.codec.util.bit.BitInputStreamInterface#readBits(int)
 	 */
 	synchronized public int readBits(int bits) throws IOException {
 		if (this.in == null) {
@@ -111,7 +111,7 @@ public class BasicBitInputStream implements BitInputStream {
 	}
 	
 	/**
-	 * @see com.github.openasn1.codec.util.bit.BitInputStream#readBit()
+	 * @see com.github.openasn1.codec.util.bit.BitInputStreamInterface#readBit()
 	 */
 	synchronized public int readBit() throws IOException {
 		if (this.in == null)
@@ -139,7 +139,7 @@ public class BasicBitInputStream implements BitInputStream {
 	}
 
 	/**
-	 * @see com.github.openasn1.codec.util.bit.BitInputStream#close()
+	 * @see com.github.openasn1.codec.util.bit.BitInputStreamInterface#close()
 	 */
 	public void close() throws IOException {
 		this.in.close();

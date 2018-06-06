@@ -16,7 +16,7 @@
  *   GNU Lesser General Public License for more details.
  *
  *   You should have received a copy of the GNU Lesser General Public License
- *   along with openASN.1. If not, see <http://www.gnu.com.github.licenses/>.
+ *   along with openASN.1. If not, see <http://www.gnu.org/licenses/>.
  * 
  */
 package com.github.openasn1.codec.coder.typecoder;
@@ -30,7 +30,7 @@ import com.github.openasn1.codec.coder.ASN1Decoder;
 /**
  * @author Marc Weyland
  *
- * @param <T> is a generic sequence type
+ * @param <T>
  */
 public class SequenceOfDecoder<T> extends TypeDecoder<List<T>> {
 	private TypeDecoder<T> decoderPrototype = null;

@@ -16,7 +16,7 @@
  *   GNU Lesser General Public License for more details.
  *
  *   You should have received a copy of the GNU Lesser General Public License
- *   along with openASN.1. If not, see <http://www.gnu.com.github.licenses/>.
+ *   along with openASN.1. If not, see <http://www.gnu.org/licenses/>.
  * 
  */
 package com.github.openasn1.codec.util.bit;
@@ -31,18 +31,16 @@ public interface BitOutputStream {
 	/**
 	 * Writes an array of bytes.
 	 *  
-	 * @param byteArray is byteArray
-	 * @throws IOException is the exception
+	 * @param byteData
+	 * @throws IOException
 	 */
 	public abstract void writeBytes(byte[] byteArray) throws IOException;
 
 	/**
 	 * Writes only a part of a given byte.
 	 * 
-	 * @param byteData is byteData
 	 * @param start	The start of the byte part. start=0 means the high order bit of the byte 
 	 * @param end	The end of the byte part. end=7 means the low order bit of the byte 
-	 * @throws IOException is the exception
 	 */
 	public abstract void writeBytePartly(byte byteData, int start, int end)
 			throws IOException;
@@ -50,24 +48,24 @@ public interface BitOutputStream {
 	/**
 	 * Writes a whole byte
 	 * 
-	 * @param byteData is byteData
-	 * @throws IOException is the exception
+	 * @param byteData
+	 * @throws IOException
 	 */
 	public abstract void writeByte(byte byteData) throws IOException;
 
 	/**
 	 * Writes only as much bits as neccessary to encode the value of the byte
 	 *  
-	 * @param byteData is byteData
-	 * @throws IOException is the exception
+	 * @param byteData
+	 * @throws IOException
 	 */
 	public abstract void writeByteCompact(byte byteData) throws IOException;
 
 	/**
 	 * Writes the bits from a BitField object
 	 *  
-	 * @param bitField is bitfield
-	 * @throws IOException is the exception
+	 * @param byteData
+	 * @throws IOException
 	 */
 	public abstract void writeBits(BitField bitField) throws IOException;
 
@@ -76,22 +74,24 @@ public interface BitOutputStream {
 	 * 
 	 * Values might be '1' or '0'.
 	 *  
-	 * @param bit is int
-	 * @throws IOException is the exception
+	 * @param byteData
+	 * @throws IOException
 	 */	
 	public abstract void writeBit(int bit) throws IOException;
 
 	/**
 	 * Flushes the buffer to be written out.
 	 *  
-	 * @throws IOException is the exception
+	 * @param byteData
+	 * @throws IOException
 	 */
 	public abstract void flush() throws IOException;
 
 	/**
 	 * Closes the stream.
 	 *  
-	 * @throws IOException is the exception
+	 * @param byteData
+	 * @throws IOException
 	 */
 	public abstract void close() throws IOException;
 	

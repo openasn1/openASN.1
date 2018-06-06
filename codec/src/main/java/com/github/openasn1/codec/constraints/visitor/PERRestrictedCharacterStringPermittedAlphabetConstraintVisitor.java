@@ -16,7 +16,7 @@
  *   GNU Lesser General Public License for more details.
  *
  *   You should have received a copy of the GNU Lesser General Public License
- *   along with openASN.1. If not, see <http://www.gnu.com.github.licenses/>.
+ *   along with openASN.1. If not, see <http://www.gnu.org/licenses/>.
  * 
  */
 package com.github.openasn1.codec.constraints.visitor;
@@ -374,6 +374,7 @@ public class PERRestrictedCharacterStringPermittedAlphabetConstraintVisitor exte
 	 *    	 that constraint is simply completely ignored."
 	 * 
 	 * @see "X.691-0207 B.2.2.2"
+	 * @see com.github.openasn1.codec.constraints.visitor.SimpleConstraintVisitor#visit(com.github.openasn1.codec.constraints.ConstraintList)
 	 */
 	@Override
 	public void visit(ConstraintSerialisation constraint) {

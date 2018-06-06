@@ -16,7 +16,7 @@
  *   GNU Lesser General Public License for more details.
  *
  *   You should have received a copy of the GNU Lesser General Public License
- *   along with openASN.1. If not, see <http://www.gnu.com.github.licenses/>.
+ *   along with openASN.1. If not, see <http://www.gnu.org/licenses/>.
  * 
  */
 package com.github.openasn1.codec.constraints;
@@ -32,9 +32,9 @@ abstract public class ConstraintList {
 	private ArrayList<Constraint> constraintList = new ArrayList<Constraint>();
 	
 	/**
-	 * Creates a constraint list putting all constraints into an ArrayList Constraint
+	 * Creates a constraint list putting all constraints into an ArrayList<Constraint> 
 	 * 
-	 * @param constraints is constraints
+	 * @param operands
 	 */	
 	public ConstraintList(Constraint ... constraints) {
 		java.util.Collections.addAll(this.constraintList, constraints);

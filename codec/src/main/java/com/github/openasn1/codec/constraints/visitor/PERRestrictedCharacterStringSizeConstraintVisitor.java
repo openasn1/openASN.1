@@ -16,7 +16,7 @@
  *   GNU Lesser General Public License for more details.
  *
  *   You should have received a copy of the GNU Lesser General Public License
- *   along with openASN.1. If not, see <http://www.gnu.com.github.licenses/>.
+ *   along with openASN.1. If not, see <http://www.gnu.org/licenses/>.
  * 
  */
 package com.github.openasn1.codec.constraints.visitor;
@@ -382,7 +382,10 @@ public class PERRestrictedCharacterStringSizeConstraintVisitor extends PERVisibl
 	public boolean isFixedSize() {
 		return getMinimumSize() == getMaximumSize();
 	}
-
+	
+	/**
+	 * @see com.github.openasn1.codec.constraints.visitor.DefaultConstraintVisitor#visit(com.github.openasn1.codec.constraints.subtype.SizeConstraint)
+	 */
 	@Override
 	public void visit(SizeConstraint constraint) {
 		super.visit(constraint);
@@ -404,6 +407,9 @@ public class PERRestrictedCharacterStringSizeConstraintVisitor extends PERVisibl
 		setExtensible(visitor.isExtensible());
 	}
 
+	/**
+	 * @see com.github.openasn1.codec.constraints.visitor.DefaultConstraintVisitor#visit(com.github.openasn1.codec.constraints.subtype.SingleValueConstraint)
+	 */
 	@Override
 	public <T> void visit(SingleValueConstraint<T> constraint) {
 		super.visit(constraint);
@@ -865,6 +871,7 @@ public class PERRestrictedCharacterStringSizeConstraintVisitor extends PERVisibl
 	 *    	 that constraint is simply completely ignored."
 	 * 
 	 * @see "X.691-0207 B.2.2.2"
+	 * @see com.github.openasn1.codec.constraints.visitor.SimpleConstraintVisitor#visit(com.github.openasn1.codec.constraints.ConstraintList)
 	 */
 	@Override
 	public void visit(ConstraintSerialisation constraint) {
@@ -965,6 +972,7 @@ public class PERRestrictedCharacterStringSizeConstraintVisitor extends PERVisibl
 	 * 		 the EXCEPT is PER-visible or not."
 	 * 
 	 * @see "X.691-0207 9.3.19"
+	 * @see com.github.openasn1.codec.constraints.visitor.DefaultConstraintVisitor#visit(com.github.openasn1.codec.constraints.ConstraintExcept)
 	 */
 	@Override
 	public void visit(ConstraintExcept constraint) {
@@ -983,6 +991,9 @@ public class PERRestrictedCharacterStringSizeConstraintVisitor extends PERVisibl
 		setExtensible(operandAVisitor.isExtensible());
 	}
 
+	/**
+	 * @see com.github.openasn1.codec.constraints.visitor.ConstraintVisitorImpl#visit(com.github.openasn1.codec.constraints.subtype.ExtensibleConstraint)
+	 */
 	@Override
 	public void visit(ConstraintExtension constraint) {
 		super.visit(constraint);
