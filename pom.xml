@@ -9,12 +9,63 @@
     <packaging>pom</packaging>
     <version>0.5.0b-SNAPSHOT</version>
     <name>openASN.1</name>
+	
+  <description>openASN.1 implementation</description>
+  <url>https://github.com/openasn1/openASN.1</url>
+  
+    <scm>
+    <connection>scm:git:git@github.com:openasn1/openASN.1.git</connection>
+    <developerConnection>scm:git:git@github.com:openasn1/openASN.1.git</developerConnection>
+    <url>https://github.com/openasn1/openASN.1</url>
+    <tag>HEAD</tag>
+  </scm>
+  
+    <distributionManagement>
+  <snapshotRepository>
+    <id>sonatype-nexus-snapshots</id>
+    <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+  </snapshotRepository>
+  <repository>
+    <id>nexus-releases</id>
+    <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+  </repository>
+</distributionManagement>
+  
+    <licenses>
+    <license>
+      <name>GNU General Public License</name>
+      <url>https://www.gnu.org/licenses/gpl-3.0.en.html</url>
+    </license>
+  </licenses>
+  
+    <developers>
+    <developer>
+      <name>Clayton Hoss</name>
+      <url>https://www.linkedin.com/in/clayton-hoss-1977767/</url>
+      <roles>
+        <role>Developer on this project</role>
+      </roles>
+    </developer>
+    <developer>
+      <name>Marc Weyland</name>
+      <roles>
+        <role>Developer on this project</role>
+      </roles>
+    </developer>
+  </developers>
 
     <modules>
         <module>codec</module>
         <module>compiler</module>
     </modules>
 
+	  <properties>
+    <jdk.version>1.8</jdk.version>
+    <compiler.fork>false</compiler.fork>
+    <maven-compiler-plugin-version>3.6.1</maven-compiler-plugin-version>
+	<nexus-staging-maven-plugin-version>1.6.7</nexus-staging-maven-plugin-version>
+  </properties>
+  
     <build>
         <pluginManagement>
             <plugins>
@@ -38,4 +89,67 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+	
+<profiles>
+	<profile>
+		<id>release</id>
+		<build>
+		  <plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-javadoc-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>attach-javadocs</id>
+                <goals>
+                  <goal>jar</goal>
+                </goals>
+                <configuration>
+                  <additionalparam>-Xdoclint:none</additionalparam>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+			<plugin>
+				<groupId>org.sonatype.plugins</groupId>
+				<artifactId>nexus-staging-maven-plugin</artifactId>
+				<version>${nexus-staging-maven-plugin-version}</version>
+				<extensions>true</extensions>
+				<configuration>
+					<serverId>nexus-releases</serverId>
+					<nexusUrl>https://oss.sonatype.org/</nexusUrl>
+					<autoReleaseAfterClose>true</autoReleaseAfterClose>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-gpg-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>sign-artifacts</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>sign</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		  </plugins>
+		</build>
+	</profile>
+</profiles>
+
 </project>

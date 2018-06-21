@@ -13,29 +13,6 @@
   <name>openASN.1 Compiler</name>
   <description>openASN.1 compiler implementation</description>
   <url>https://github.com/openasn1/openASN.1/compiler</url>
-  
-  <licenses>
-    <license>
-      <name>GNU General Public License</name>
-      <url>https://www.gnu.org/licenses/gpl-3.0.en.html</url>
-    </license>
-  </licenses>
-
-  <developers>
-    <developer>
-      <name>Clayton Hoss</name>
-      <url>https://www.linkedin.com/in/clayton-hoss-1977767/</url>
-      <roles>
-        <role>Developer on this project</role>
-      </roles>
-    </developer>
-    <developer>
-      <name>Marc Weyland</name>
-      <roles>
-        <role>Developer on this project</role>
-      </roles>
-    </developer>
-  </developers>
 
   <scm>
     <connection>scm:git:git@github.com:openasn1/openASN.1/compiler.git</connection>
@@ -49,23 +26,6 @@
     <utils.version>0.1.0</utils.version>
   </properties>
 -->
-  <properties>
-    <jdk.version>1.8</jdk.version>
-    <compiler.fork>false</compiler.fork>
-    <maven-compiler-plugin-version>3.6.1</maven-compiler-plugin-version>
-	<nexus-staging-maven-plugin-version>1.6.7</nexus-staging-maven-plugin-version>
-  </properties>
-  
-  <distributionManagement>
-  <snapshotRepository>
-    <id>sonatype-nexus-snapshots</id>
-    <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-  </snapshotRepository>
-  <repository>
-    <id>nexus-releases</id>
-    <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-  </repository>
-</distributionManagement>
   
   <dependencies>
 
@@ -170,7 +130,7 @@
 						<version>${nexus-staging-maven-plugin-version}</version>
 						<extensions>true</extensions>
 						<configuration>
-							<serverId>ossrh</serverId>
+							<serverId>nexus-releases</serverId>
 							<nexusUrl>https://oss.sonatype.org/</nexusUrl>
 							<autoReleaseAfterClose>true</autoReleaseAfterClose>
 						</configuration>
