@@ -48,7 +48,19 @@
     <jdk.version>1.8</jdk.version>
     <compiler.fork>false</compiler.fork>
     <maven-compiler-plugin-version>3.6.1</maven-compiler-plugin-version>
+	<nexus-staging-maven-plugin-version>1.6.7</nexus-staging-maven-plugin-version>
   </properties>
+  
+  <distributionManagement>
+  <snapshotRepository>
+    <id>sonatype-nexus-snapshots</id>
+    <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+  </snapshotRepository>
+  <repository>
+    <id>nexus-releases</id>
+    <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+  </repository>
+</distributionManagement>
   
   <dependencies>
 
@@ -146,6 +158,33 @@
             </executions>
           </plugin>
 		  -->
+		  
+		  		  <plugin>
+						<groupId>org.sonatype.plugins</groupId>
+						<artifactId>nexus-staging-maven-plugin</artifactId>
+						<version>${nexus-staging-maven-plugin-version}</version>
+						<extensions>true</extensions>
+						<configuration>
+							<serverId>ossrh</serverId>
+							<nexusUrl>https://oss.sonatype.org/</nexusUrl>
+							<autoReleaseAfterClose>true</autoReleaseAfterClose>
+						</configuration>
+					</plugin>
+					
+					<plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-gpg-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>sign-artifacts</id>
+<phase>verify</phase>
+            <goals>
+              <goal>sign</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+	  
 	  </plugins>
 	<!--
 	  <plugin>
