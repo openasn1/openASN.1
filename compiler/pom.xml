@@ -2,13 +2,13 @@
   <parent>
     <groupId>com.github.openasn1</groupId>
     <artifactId>openASN.1-parent</artifactId>
-    <version>0.5.0b-SNAPSHOT</version>
+    <version>0.5.0b</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.github.openasn1</groupId>
   <artifactId>openasn1-compiler</artifactId>
-  <version>0.5.0b-SNAPSHOT</version>
+  <version>0.5.0b</version>
 
   <name>openASN.1 Compiler</name>
   <description>openASN.1 compiler implementation</description>
@@ -56,7 +56,7 @@
         <dependency>
             <groupId>com.github.openasn1</groupId>
             <artifactId>openasn1-codec</artifactId>
-            <version>0.5.0b-SNAPSHOT</version>
+            <version>0.5.0b</version>
         </dependency>
 		
 		<dependency>
