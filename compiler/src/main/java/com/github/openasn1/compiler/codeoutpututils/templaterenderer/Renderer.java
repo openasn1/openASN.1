@@ -43,7 +43,7 @@ abstract public class Renderer {
 	}
 
 	/**
-	 * @param outputStream the outputStream to set
+	 * @param writer the outputStream to set
 	 */
 	public void setWriter(Writer writer) {
 		this.writer = writer;

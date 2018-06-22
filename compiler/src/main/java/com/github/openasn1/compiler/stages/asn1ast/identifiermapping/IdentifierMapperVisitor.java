@@ -151,9 +151,6 @@ public class IdentifierMapperVisitor extends DepthFirstVisitor {
 
     }
 
-    /**
-     *
-     */
     public IdentifierMapperVisitor(SymbolTable st, ASN1ASTNodeInfos infos, Mode mode) {
         this.symtab = st;
         this.nodeinfos = infos;
@@ -167,9 +164,6 @@ public class IdentifierMapperVisitor extends DepthFirstVisitor {
         super.visit(n);
     }
 
-    /**
-     * @see com.github.openasn1.parser.generated.visitor.DepthFirstVisitor#visit(com.github.openasn1.parser.generated.syntaxtree.DefinedType)
-     */
     @SuppressWarnings("synthetic-access")
     @Override
     public void visit(DefinedType n) {
@@ -182,9 +176,7 @@ public class IdentifierMapperVisitor extends DepthFirstVisitor {
         super.visit(n);
     }
 
-    /**
-     * @see com.github.openasn1.parser.generated.visitor.DepthFirstVisitor#visit(com.github.openasn1.parser.generated.syntaxtree.DefinedValue)
-     */
+
     @SuppressWarnings("synthetic-access")
     @Override
     public void visit(DefinedValue n) {
@@ -197,9 +189,6 @@ public class IdentifierMapperVisitor extends DepthFirstVisitor {
         super.visit(n);
     }
 
-    /**
-     * @see com.github.openasn1.parser.generated.visitor.DepthFirstVisitor#visit(com.github.openasn1.parser.generated.syntaxtree.Value)
-     */
     @Override
     public void visit(Value n) {
         if (!getMode().doValueMapping()) {

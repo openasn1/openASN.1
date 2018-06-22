@@ -4,14 +4,14 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeChoice -> XMLTypedValue()
- *       | &lt;CSTRING&gt;
- *       | XMLIdentifierList()
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 public class XMLBitStringValue implements Node {
    private Node parent;
    public NodeChoice nodeChoice;

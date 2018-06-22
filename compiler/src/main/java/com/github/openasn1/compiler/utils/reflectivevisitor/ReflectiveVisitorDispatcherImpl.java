@@ -36,9 +36,6 @@ public class ReflectiveVisitorDispatcherImpl implements ReflectiveVisitorDispatc
 		return instance;
 	}
 	
-	/**
-	 * @see visitors.ReflectiveVisitorDispatcher#dispatch(visitors.ReflectiveVisitor, java.lang.Object)
-	 */
 	public boolean dispatch(ReflectiveVisitor reflectiveVisitor, Object object) {
 		return dispatch(reflectiveVisitor, object, object.getClass());
 	}

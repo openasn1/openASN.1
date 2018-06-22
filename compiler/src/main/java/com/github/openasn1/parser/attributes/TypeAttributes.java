@@ -61,17 +61,12 @@ public class TypeAttributes {
 
 		private ASN1ASTNodeInfos nodeInfos;
 
-		/**
-		 * @param nodeInfos
-		 */
+
 		public IsTypeExtensibleVisitor(ASN1ASTNodeInfos nodeInfos) {
 			super();
 			this.nodeInfos = nodeInfos;
 		}
 
-		/**
-		 * @see com.github.openasn1.parser.generated.visitor.DepthFirstVisitor#visit(com.github.openasn1.parser.generated.syntaxtree.NodeToken)
-		 */
 		@Override
 		public void visit(NodeToken n) {
 			if (n.kind == ASN1ParserConstants.ELLIPSIS_TKN) {
@@ -95,33 +90,21 @@ public class TypeAttributes {
 			this.extensible = extensible;
 		}
 
-		/**
-		 * @see com.github.openasn1.parser.generated.visitor.DepthFirstVisitor#visit(com.github.openasn1.parser.generated.syntaxtree.Constraint)
-		 */
 		@Override
 		public void visit(Constraint n) {
 			// Abort visiting
 		}
 
-		/**
-		 * @see com.github.openasn1.parser.generated.visitor.DepthFirstVisitor#visit(com.github.openasn1.parser.generated.syntaxtree.ExtensionAdditionAlternatives)
-		 */
 		@Override
 		public void visit(ExtensionAdditionAlternatives n) {
 			// Abort visiting
 		}
 
-		/**
-		 * @see com.github.openasn1.parser.generated.visitor.DepthFirstVisitor#visit(com.github.openasn1.parser.generated.syntaxtree.RootAlternativeTypeList)
-		 */
 		@Override
 		public void visit(RootAlternativeTypeList n) {
 			// Abort visiting
 		}
 
-		/**
-		 * @see com.github.openasn1.parser.generated.visitor.DepthFirstVisitor#visit(com.github.openasn1.parser.generated.syntaxtree.AdditionalEnumeration)
-		 */
 		@Override
 		public void visit(AdditionalEnumeration n) {
 			// Abort visiting
@@ -132,25 +115,16 @@ public class TypeAttributes {
 			// Abort visiting
 		}
 
-		/**
-		 * @see com.github.openasn1.parser.generated.visitor.DepthFirstVisitor#visit(com.github.openasn1.parser.generated.syntaxtree.RootComponentTypeList)
-		 */
 		@Override
 		public void visit(RootComponentTypeList n) {
 			// Abort visiting
 		}
 
-		/**
-		 * @see com.github.openasn1.parser.generated.visitor.DepthFirstVisitor#visit(com.github.openasn1.parser.generated.syntaxtree.ExtensionAdditions)
-		 */
 		@Override
 		public void visit(ExtensionAdditions n) {
 			// Abort visiting
 		}
 
-		/**
-		 * @see com.github.openasn1.parser.generated.visitor.DepthFirstVisitor#visit(com.github.openasn1.parser.generated.syntaxtree.DefinedType)
-		 */
 		@Override
 		public void visit(Type n) {
 			if (TypeAttributes.isDefinedType(n)) {

@@ -4,14 +4,14 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeChoice -> &lt;UNIVERSAL_TKN&gt;
- *       | &lt;APPLICATION_TKN&gt;
- *       | &lt;PRIVATE_TKN&gt;
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 public class TagClass implements Node {
    private Node parent;
    public NodeChoice nodeChoice;

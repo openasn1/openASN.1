@@ -4,16 +4,16 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeToken -> &lt;LEFT_BRACE_TKN&gt;
- * nodeToken1 -> &lt;ELLIPSIS_TKN&gt;
- * nodeToken2 -> &lt;COMMA_TKN&gt;
- * typeConstraints -> TypeConstraints()
- * nodeToken3 -> &lt;RIGHT_BRACE_TKN&gt;
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 public class PartialSpecification implements Node {
    private Node parent;
    public NodeToken nodeToken;

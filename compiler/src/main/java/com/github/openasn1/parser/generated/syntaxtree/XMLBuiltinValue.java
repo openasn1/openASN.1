@@ -4,28 +4,28 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeChoice -> [ XMLBitStringValue() ]
- *       | XMLBooleanValue()
- *       | XMLCharacterStringValue()
- *       | XMLChoiceValue()
- *       | XMLEmbeddedPDVValue()
- *       | XMLEnumeratedValue()
- *       | XMLExternalValue()
- *       | XMLIntegerValue()
- *       | XMLNullValue()
- *       | XMLObjectIdentifierValue()
- *       | XMLOctetStringValue()
- *       | XMLRealValue()
- *       | XMLRelativeOIDValue()
- *       | [ XMLSequenceValue() ]
- *       | [ XMLSequenceOfValue() ]
- *       | [ XMLSetValue() ]
- *       | [ XMLSetOfValue() ]
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 public class XMLBuiltinValue implements Node {
    private Node parent;
    public NodeChoice nodeChoice;

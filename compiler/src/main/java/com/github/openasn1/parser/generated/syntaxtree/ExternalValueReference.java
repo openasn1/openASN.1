@@ -4,14 +4,14 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * modulereference -> modulereference()
- * nodeToken -> &lt;DOT_TKN&gt;
- * valuereference -> valuereference()
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 public class ExternalValueReference implements Node {
    private Node parent;
    public modulereference modulereference;

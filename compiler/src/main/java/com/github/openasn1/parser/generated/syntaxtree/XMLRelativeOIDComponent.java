@@ -4,13 +4,13 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeChoice -> XMLNumberForm()
- *       | XMLNameAndNumberForm()
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
 public class XMLRelativeOIDComponent implements Node {
    private Node parent;
    public NodeChoice nodeChoice;

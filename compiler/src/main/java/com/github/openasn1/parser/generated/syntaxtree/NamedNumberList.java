@@ -4,13 +4,13 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * namedNumber -> NamedNumber()
- * nodeListOptional -> ( &lt;COMMA_TKN&gt; NamedNumber() )*
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
 public class NamedNumberList implements Node {
    private Node parent;
    public NamedNumber namedNumber;

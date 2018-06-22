@@ -92,7 +92,7 @@ abstract public class PEREncoder implements ASN1Encoder {
 	/**
 	 * Sets the octet alignment of this encoder
 	 * 
-	 * @param isOctetAligned true if octet alignment should be kept
+	 * @param octetAligned true if octet alignment should be kept
 	 */
 	public void setOctetAligned(boolean octetAligned) {
 		this.isOctetAligned = octetAligned;
@@ -142,7 +142,9 @@ abstract public class PEREncoder implements ASN1Encoder {
 	 * 
 	 * Note: NULL PER encoding does not generate bits on the line 
 	 * 
-	 * @see com.github.openasn1.codec.coder.ASN1Encoder#encodeAsNull(java.lang.Object, com.github.openasn1.codec.coder.typecoder.TypeInformation)
+	 * @param typeInformation is the typeInformation
+	 * @see com.github.openasn1.codec.coder.ASN1Encoder#encodeAsNull(com.github.openasn1.codec.coder.typecoder.TypeInformation)
+	 * @throws java.io.IOException is the exception
 	 */
 	public void encodeAsNull(TypeInformation typeInformation) throws IOException {
 		/**
@@ -153,7 +155,9 @@ abstract public class PEREncoder implements ASN1Encoder {
 	/**
      * Encoding of the octet string type. The encoding is a sequence of eight
      * bits.
-     * 
+     * @param values is the value
+     * @param typeInformation is the type information
+     * @throws java.io.IOException is the exception
      * @see "X.691-0207 16"
      */
 	public void encodeAsOctetString(byte[] values, TypeInformation typeInformation) throws IOException {
@@ -170,7 +174,10 @@ abstract public class PEREncoder implements ASN1Encoder {
      * Note: There is no difference between the UNALIGNED and the ALIGNED
      * variant.
      * 
+     * @param value is the value
+     * @param typeInformation is the type information
      * @see "X.691-0207 11"
+     * @throws java.io.IOException is the exception
      */
 	public void encodeAsBoolean(boolean value, TypeInformation typeInformation) throws IOException {
 		if (value == true) {
@@ -186,7 +193,11 @@ abstract public class PEREncoder implements ASN1Encoder {
      * Puts the integer into a field which is a fixed number of bits specified
      * by the 'bits' parameter
      * 
+     * @param value is the integer value
+     * @param bits is the value of the fixed number of bits
      * @see "X.691-0207 10.3.5"
+     * @throws java.io.IOException is the exception
+     * @return BitField value
      */
 	protected BitField encodeAsNonNegativeBinaryIntegerIntoBits(int value, int bits) throws IOException {
 		if (value < 0) {
@@ -209,7 +220,11 @@ abstract public class PEREncoder implements ASN1Encoder {
      * Puts the integer into a field which is a fixed number of octets specified
      * by the 'octets' parameter. Only one or two octets are permittet.
      * 
+     * @param value is the integer value
+     * @param octets is the value of the fixed number of octets
      * @see "X.691-0207 10.3.5"
+     * @throws java.io.IOException is the exception
+     * @return BitField value
      */
 	protected BitField encodeAsNonNegativeBinaryIntegerIntoOctets(int value, int octets) throws IOException {
 		if (value < 0) {
@@ -234,7 +249,10 @@ abstract public class PEREncoder implements ASN1Encoder {
      * number of octets, or a field that is the minimum number of octets needed
      * to hold it.
      * 
+     * @param value is the integer value
      * @see "X.691-0207 10.3.6"
+     * @throws java.io.IOException is the exception
+     * @return BitField value
      */
 	protected BitField encodeAsNonNegativeBinaryInteger(int value) throws IOException {
 		if (value < 0) {
@@ -262,7 +280,10 @@ abstract public class PEREncoder implements ASN1Encoder {
      * A signed integer is put into a field that is the minumum number of octets
      * needed to hold it
      * 
+     * @param value is the signed integer
      * @see "X.691-0207 10.4"
+     * @throws java.io.IOException is the exception
+     * @return BitField value
      */
 	protected BitField encodeAs2sComplementBinaryInteger(int value) throws IOException {
 		byte signBit = (byte) ((value >> 24) & BITPATTERN_10000000);
@@ -292,7 +313,9 @@ abstract public class PEREncoder implements ASN1Encoder {
      * is potentially unlimited due to the presence of an extension marker.
      * (e.g. a choice index)
      * 
+     * @param value is the whole number that is expected to be small
      * @see "X.691-0207 10.6"
+     * @throws java.io.IOException is the exception
      */
 	protected void encodeNormallySmallNonNegativeWholeNumber(int value) throws IOException {
 		if (value < 0) {
@@ -327,7 +350,12 @@ abstract public class PEREncoder implements ASN1Encoder {
      * octets is first encoded in a length field L (Note: the procedures of this
      * method always produce the indefinite length case)
      * 
+     * @param value is the value of whole number
+     * @param lowerBound The offset from the lower bound (value-lowerBound) is placed into the
+     *        minimum number of octets as a non-negative-binary-integer
      * @see "X.691-0207 10.7"
+     * @throws java.io.IOException is the exception
+     * @return is BitField value
      */
 	protected BitField encodeSemiConstrainedWholeNumber(int value, int lowerBound) throws IOException {
 		if (value < lowerBound) {
@@ -348,7 +376,9 @@ abstract public class PEREncoder implements ASN1Encoder {
 	/**
      * Encodes a component as if it were a open type field.
      * 
+     * @param typeEncoder is the encoder of the given type
      * @see "X.691-0207 10.2"
+     * @throws java.io.IOException is the exception
      */
 	synchronized protected void encodeAsOpenTypeField(TypeEncoder typeEncoder) throws IOException {
 		BitOutputStream oldStream = getBitOutputStream();
@@ -377,8 +407,11 @@ abstract public class PEREncoder implements ASN1Encoder {
      * Note: The ObjectIdentifier type is encoded using the content octets of a
      * BER preceeded by a length determinant.
      * 
+     * @param value is the list of values
+     * @param typeInformation is typeInformation
      * @see "X.691-0207 23"
      * @see "X.690-0207 8.19"
+     * @throws java.io.IOException is the exception
      */
 	public void encodeAsObjectIdentifier(List<Integer> value, TypeInformation typeInformation) throws IOException {
 		int firstObjectIdentifierComponent = value.get(0);
@@ -444,7 +477,11 @@ abstract public class PEREncoder implements ASN1Encoder {
          * TODO: handle fragmentation
          */
 	}
-
+	/**
+        * @param firstSubIdentifier is firstSubIdentifier
+        * @throws java.io.IOException is the exception
+        * @return DynamicBitField value of the dynamic bit field
+	*/
 	private DynamicBitField encodeObjectIdentifierSubIdentifier(int firstSubIdentifier) {
 		int bitLength = Math.max(0, (int) Math.ceil(Math.log(firstSubIdentifier) / Math.log(2))) + 1;
 		int paddingBits = (7 - bitLength % 7) % 7;
@@ -485,10 +522,13 @@ abstract public class PEREncoder implements ASN1Encoder {
      * amount of bits used is 8 bits since the amount of bits used in the
      * ALIGNED variant has to be a power of two.
      * 
+     * @param value is the value
+     * @param typeInformation is the typeInformation
      * @see "X.691-0207 27"
      * @see "X.680-0207 37.1"
      * @see <a href="http://www.itscj.ipsj.or.jp/ISO-IR/006.pdf">ISO Character
      *      Set Table 006</a>
+     * @throws java.io.IOException is the exception
      */
 	public void encodeAsVisibleString(String value, TypeInformation typeInformation) throws IOException {
 		if (!typeInformation.hasConstraint()) {
@@ -511,6 +551,9 @@ abstract public class PEREncoder implements ASN1Encoder {
      *      Set Table 001</a>
      * @see <a href="http://www.itscj.ipsj.or.jp/ISO-IR/006.pdf">ISO Character
      *      Set Table 006</a>
+     * @param value is the value
+     * @param typeInformation is the typeInformation
+     * @throws java.io.IOException is the exception
      */
 	public void encodeAsIA5String(String value, TypeInformation typeInformation) throws IOException {
 		if (!typeInformation.hasConstraint()) {
@@ -527,6 +570,9 @@ abstract public class PEREncoder implements ASN1Encoder {
      * X.680-0207 37.4 Table 8.
      * 
      * @see "X.680-0207 37.4 Table 8"
+     * @param value is the value
+     * @param typeInformation is the typeInformation
+     * @throws java.io.IOException is the exception
      */
 	public void encodeAsPrintableString(String value, TypeInformation typeInformation) throws IOException {
 		if (!typeInformation.hasConstraint()) {
@@ -543,6 +589,9 @@ abstract public class PEREncoder implements ASN1Encoder {
      * X.680-0207 37.4 Table 7.
      * 
      * @see "X.680-0207 37.4 Table 7"
+     * @param value is the value
+     * @param typeInformation is the typeInformation
+     * @throws java.io.IOException is the exception
      */
 	public void encodeAsNumericString(String value, TypeInformation typeInformation) throws IOException {
 		if (!typeInformation.hasConstraint()) {
@@ -563,6 +612,9 @@ abstract public class PEREncoder implements ASN1Encoder {
      * X.680-0207 37.15.
      * 
      * @see "X.680-0207 37.15"
+     * @param value is the value
+     * @param typeInformation is the typeInformation
+     * @throws java.io.IOException is the exception
      */
 	public void encodeAsBMPString(String value, TypeInformation typeInformation) throws IOException {
 		if (!typeInformation.hasConstraint()) {
@@ -693,10 +745,6 @@ abstract public class PEREncoder implements ASN1Encoder {
 		}
 	}
 
-	/**
-     * @see com.github.openasn1.codec.coder.ASN1Encoder#encodeAsEnumerated(java.lang.Enum,
-     *      com.github.openasn1.codec.coder.typecoder.TypeInformation)
-     */
 	public <T extends Enum> void encodeAsEnumerated(HashMap<T, EnumeratedItemTypeInformation> enumTypeMap, T value, TypeInformation typeInformation) throws IOException {
 		EnumeratedItemTypeInformation valueTypeInformation = enumTypeMap.get(value);
 
@@ -1137,7 +1185,10 @@ abstract public class PEREncoder implements ASN1Encoder {
      * 2's-complement-binary-integer. Explicit length encoding is needed. The
      * encoded bit-field is octet-aligned.
      * 
+     * @param value is the value
      * @see "X.691-0207 10.8"
+     * @throws IOException is the exception
+     * @return BitField is the value of BitField
      */
 	protected BitField encodeUnconstrainedWholeNumber(int value) throws IOException {
 		// encodes the value as a 2's complement binary integer
@@ -1157,6 +1208,9 @@ abstract public class PEREncoder implements ASN1Encoder {
      * Encoding of the sequence type
      * 
      * @see "X.691-0207 18"
+     * @param typeInformation is the typeInformation
+     * @param componentEncoderList is the list of encoder components
+     * @throws IOException is the exception
      */
 	public synchronized void encodeAsSequence(List<TypeEncoder> componentEncoderList, TypeInformation typeInformation) throws IOException {
 		// pseudocode
@@ -1555,6 +1609,9 @@ abstract public class PEREncoder implements ASN1Encoder {
      * Encoding of a not bounded above length determinant (ALIGNED variant)
      * 
      * @see "X.691-0207 10.9.3"
+     * @param length is the length of field
+     * @param lowerBound is lowerBound
+     * @throws IOException is the exception
      */
 	protected void encodeLengthField(int length, int lowerBound) throws IOException {
 		if (length < lowerBound) {
@@ -1585,6 +1642,10 @@ abstract public class PEREncoder implements ASN1Encoder {
      * Encoding of a "fully bounded" length determinant (ALIGNED variant)
      * 
      * @see "X.691-0207 10.9.3"
+     * @param length is the length of field
+     * @param lowerBound is lowerBound
+     * @param upperBound is upperBound
+     * @throws IOException is the exception
      */
 	protected void encodeLengthField(int length, int lowerBound, int upperBound) throws IOException {
 		if (length > upperBound) {
@@ -1621,7 +1682,12 @@ abstract public class PEREncoder implements ASN1Encoder {
      * The encoding of the value depends on the range (4 cases): 1. "range" is
      * less than or equal to 255 2. "range" is exactly 256 3. "range" is greater
      * than 256 and less than or equal to 64K 4. "range" is greater than 64K
-     * 
+     *
+     * @param value is value
+     * @param lowerBound is lowerBound
+     * @param upperBound is upperBound
+     * @throws IOException is the exception
+     * @return BitField is BitField
      * @see "X.691-0207 10.5.7"
      */
 	protected BitField encodeConstrainedWholeNumber(int value, int lowerBound, int upperBound) throws IOException {

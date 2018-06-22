@@ -45,7 +45,7 @@ public class BasicBitInputStream implements BitInputStream {
 	}	
 
 	/**
-	 * @see com.github.openasn1.codec.util.bit.BitInputStreamInterface#readBytes(int)
+	 * @see com.github.openasn1.codec.util.bit.BitInputStream#readBytes(int)
 	 */
 	synchronized public int[] readBytes(int bytes) throws IOException {
 		if (this.in == null) {
@@ -62,7 +62,7 @@ public class BasicBitInputStream implements BitInputStream {
 	}
 
 	/**
-	 * @see com.github.openasn1.codec.util.bit.BitInputStreamInterface#readByte()
+	 * @see com.github.openasn1.codec.util.bit.BitInputStream#readByte()
 	 */
 	synchronized public int readByte() throws IOException {
 		if (this.in == null) {
@@ -87,7 +87,7 @@ public class BasicBitInputStream implements BitInputStream {
 	}
 	
 	/**
-	 * @see com.github.openasn1.codec.util.bit.BitInputStreamInterface#readBits(int)
+	 * @see com.github.openasn1.codec.util.bit.BitInputStream#readBits(int)
 	 */
 	synchronized public int readBits(int bits) throws IOException {
 		if (this.in == null) {
@@ -111,7 +111,7 @@ public class BasicBitInputStream implements BitInputStream {
 	}
 	
 	/**
-	 * @see com.github.openasn1.codec.util.bit.BitInputStreamInterface#readBit()
+	 * @see com.github.openasn1.codec.util.bit.BitInputStream#readBit()
 	 */
 	synchronized public int readBit() throws IOException {
 		if (this.in == null)
@@ -139,7 +139,7 @@ public class BasicBitInputStream implements BitInputStream {
 	}
 
 	/**
-	 * @see com.github.openasn1.codec.util.bit.BitInputStreamInterface#close()
+	 * @see com.github.openasn1.codec.util.bit.BitInputStream#close()
 	 */
 	public void close() throws IOException {
 		this.in.close();

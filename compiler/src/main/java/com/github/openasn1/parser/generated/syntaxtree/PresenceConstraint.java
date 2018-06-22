@@ -4,14 +4,14 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeChoice -> &lt;PRESENT_TKN&gt;
- *       | &lt;ABSENT_TKN&gt;
- *       | &lt;OPTIONAL_TKN&gt;
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 public class PresenceConstraint implements Node {
    private Node parent;
    public NodeChoice nodeChoice;

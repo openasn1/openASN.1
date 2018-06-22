@@ -82,8 +82,8 @@ public class ClassInformationHolder {
 	 * the assignment. The local Variable name must be the same as the name of
 	 * the member variable.
 	 *
-	 * @param member
-	 * @param codeSnippet
+	 * @param member is member
+	 * @param codeSnippet is codeSnippet
 	 */
 	public void addCustomSetterCode(String member, String codeSnippet) {
 		if (!getSetterCode().containsKey(member)) {
@@ -98,8 +98,8 @@ public class ClassInformationHolder {
 	 * This Code is for adding custom code to the setter, which is used before
 	 * the return statement. The member Variable should be accessed via this.
 	 *
-	 * @param member
-	 * @param codeSnippet
+	 * @param member is member
+	 * @param codeSnippet is codeSnippet
 	 */
 
 	public void addCustomGetterCode(String member, String codeSnippet) {

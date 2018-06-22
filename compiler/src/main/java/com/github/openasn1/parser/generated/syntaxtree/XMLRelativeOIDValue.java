@@ -4,12 +4,12 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * xMLRelativeOIDComponentList -> XMLRelativeOIDComponentList()
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
 public class XMLRelativeOIDValue implements Node {
    private Node parent;
    public XMLRelativeOIDComponentList xMLRelativeOIDComponentList;

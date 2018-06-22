@@ -4,20 +4,20 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeToken -> &lt;LESSER_THAN_TKN&gt;
- * nodeToken1 -> &lt;AMPERSAND_TKN&gt;
- * nodeToken2 -> &lt;IDENTIFIER&gt;
- * nodeToken3 -> &lt;GREATER_THAN_TKN&gt;
- * xMLValue -> XMLValue()
- * nodeToken4 -> &lt;XMLENDTAGBRACKET_TKN&gt;
- * nodeToken5 -> &lt;AMPERSAND_TKN&gt;
- * nodeToken6 -> &lt;IDENTIFIER&gt;
- * nodeToken7 -> &lt;GREATER_THAN_TKN&gt;
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 public class XMLNamedValue implements Node {
    private Node parent;
    public NodeToken nodeToken;

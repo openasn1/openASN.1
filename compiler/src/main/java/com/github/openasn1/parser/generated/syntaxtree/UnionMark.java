@@ -4,13 +4,13 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeChoice -> &lt;BAR_TKN&gt;
- *       | &lt;UNION_TKN&gt;
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
 public class UnionMark implements Node {
    private Node parent;
    public NodeChoice nodeChoice;

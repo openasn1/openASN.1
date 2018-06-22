@@ -4,9 +4,9 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Represents an grammar optional node, e.g. ( A )? or [ A ]
- */
+
+ 
+ 
 public class NodeOptional implements Node {
    public NodeOptional() {
       node = null;

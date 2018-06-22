@@ -4,18 +4,18 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeToken -> &lt;IDENTIFIER&gt;
- * nodeToken1 -> &lt;AMPERSAND_TKN&gt;
- * nodeToken2 -> &lt;LEFT_PARENTHESIS_TKN&gt;
- * nodeToken3 -> &lt;AMPERSAND_TKN&gt;
- * xMLNumberForm -> XMLNumberForm()
- * nodeToken4 -> &lt;AMPERSAND_TKN&gt;
- * nodeToken5 -> &lt;RIGHT_PARENTHESIS_TKN&gt;
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 public class XMLNameAndNumberForm implements Node {
    private Node parent;
    public NodeToken nodeToken;

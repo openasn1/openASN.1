@@ -4,15 +4,15 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeToken -> &lt;LEFT_BRACKET_TKN&gt;
- * nodeOptional -> [ TagClass() ]
- * classNumber -> ClassNumber()
- * nodeToken1 -> &lt;RIGHT_BRACKET_TKN&gt;
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 public class Tag implements Node {
    private Node parent;
    public NodeToken nodeToken;

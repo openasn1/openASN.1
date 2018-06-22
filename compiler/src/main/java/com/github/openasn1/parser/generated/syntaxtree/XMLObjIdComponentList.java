@@ -4,13 +4,13 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeChoice -> XMLObjIdComponent()
- *       | XMLObjIdComponent() &lt;AMPERSAND_TKN&gt; &lt;DOT_TKN&gt; &lt;AMPERSAND_TKN&gt; XMLObjIdComponentList()
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
 public class XMLObjIdComponentList implements Node {
    private Node parent;
    public NodeChoice nodeChoice;

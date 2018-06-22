@@ -4,12 +4,12 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * reference -> Reference()
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
 public class Symbol implements Node {
    private Node parent;
    public Reference reference;

@@ -4,13 +4,13 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeToken -> &lt;COMMA_TKN&gt;
- * extensionAdditionAlternativesList -> ExtensionAdditionAlternativesList()
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
 public class ExtensionAdditionAlternatives implements Node {
    private Node parent;
    public NodeToken nodeToken;

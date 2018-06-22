@@ -7,9 +7,9 @@ import java.util.*;
 
 import com.github.openasn1.parser.generated.syntaxtree.*;
 
-/**
- * All GJ void visitors must implement this interface.
- */
+
+ 
+ 
 
 public interface GJVoidVisitor<A> {
 
@@ -27,1924 +27,1924 @@ public interface GJVoidVisitor<A> {
    // User-generated visitor methods below
    //
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;TYPEREFERENCE&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public void visit(modulereference n, A argu);
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;IDENTIFIER&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public void visit(valuereference n, A argu);
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;TYPEREFERENCE&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public void visit(xmlasn1typename n, A argu);
 
-   /**
-    * <PRE>
-    * namedValue -> NamedValue()
-    * nodeListOptional -> ( &lt;COMMA_TKN&gt; NamedValue() )*
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(NamedValueList n, A argu);
 
-   /**
-    * <PRE>
-    * moduleIdentifier -> ModuleIdentifier()
-    * nodeToken -> &lt;DEFINITIONS_TKN&gt;
-    * nodeOptional -> [ TagDefault() ]
-    * nodeOptional1 -> [ ExtensionDefault() ]
-    * nodeToken1 -> &lt;ASSIGN_OP_TKN&gt;
-    * nodeToken2 -> &lt;BEGIN_TKN&gt;
-    * moduleBody -> ModuleBody()
-    * nodeToken3 -> &lt;END_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
    public void visit(ModuleDefinition n, A argu);
 
-   /**
-    * <PRE>
-    * modulereference -> modulereference()
-    * nodeOptional -> [ DefinitiveIdentifier() ]
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(ModuleIdentifier n, A argu);
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;LEFT_BRACE_TKN&gt;
-    * definitiveObjIdComponentList -> DefinitiveObjIdComponentList()
-    * nodeToken1 -> &lt;RIGHT_BRACE_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public void visit(DefinitiveIdentifier n, A argu);
 
-   /**
-    * <PRE>
-    * nodeList -> ( DefinitiveObjIdComponent() )+
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public void visit(DefinitiveObjIdComponentList n, A argu);
 
-   /**
-    * <PRE>
-    * nodeChoice -> DefinitiveNameAndNumberForm()
-    *       | NameForm()
-    *       | DefinitiveNumberForm()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public void visit(DefinitiveObjIdComponent n, A argu);
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;NUMBER&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public void visit(DefinitiveNumberForm n, A argu);
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;IDENTIFIER&gt;
-    * nodeToken1 -> &lt;LEFT_PARENTHESIS_TKN&gt;
-    * definitiveNumberForm -> DefinitiveNumberForm()
-    * nodeToken2 -> &lt;RIGHT_PARENTHESIS_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
+    
    public void visit(DefinitiveNameAndNumberForm n, A argu);
 
-   /**
-    * <PRE>
-    * nodeChoice -> &lt;EXPLICIT_TKN&gt; &lt;TAGS_TKN&gt;
-    *       | &lt;IMPLICIT_TKN&gt; &lt;TAGS_TKN&gt;
-    *       | &lt;AUTOMATIC_TKN&gt; &lt;TAGS_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public void visit(TagDefault n, A argu);
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;EXTENSIBILITY_TKN&gt;
-    * nodeToken1 -> &lt;IMPLIED_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(ExtensionDefault n, A argu);
 
-   /**
-    * <PRE>
-    * nodeOptional -> [ Exports() ]
-    * nodeOptional1 -> [ Imports() ]
-    * assignmentList -> AssignmentList()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public void visit(ModuleBody n, A argu);
 
-   /**
-    * <PRE>
-    * nodeChoice -> &lt;EXPORTS_TKN&gt; [ SymbolsExported() ] &lt;SEMICOLON_TKN&gt;
-    *       | &lt;EXPORTS_TKN&gt; &lt;ALL_TKN&gt; &lt;SEMICOLON_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(Exports n, A argu);
 
-   /**
-    * <PRE>
-    * symbolList -> SymbolList()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public void visit(SymbolsExported n, A argu);
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;IMPORTS_TKN&gt;
-    * nodeOptional -> [ SymbolsImported() ]
-    * nodeToken1 -> &lt;SEMICOLON_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public void visit(Imports n, A argu);
 
-   /**
-    * <PRE>
-    * symbolsFromModuleList -> SymbolsFromModuleList()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public void visit(SymbolsImported n, A argu);
 
-   /**
-    * <PRE>
-    * nodeList -> ( SymbolsFromModule() )+
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public void visit(SymbolsFromModuleList n, A argu);
 
-   /**
-    * <PRE>
-    * symbolList -> SymbolList()
-    * nodeToken -> &lt;FROM_TKN&gt;
-    * globalModuleReference -> GlobalModuleReference()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public void visit(SymbolsFromModule n, A argu);
 
-   /**
-    * <PRE>
-    * modulereference -> modulereference()
-    * nodeOptional -> [ AssignedIdentifier() ]
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(GlobalModuleReference n, A argu);
 
-   /**
-    * <PRE>
-    * nodeChoice -> ObjectIdentifierValue()
-    *       | DefinedValue()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(AssignedIdentifier n, A argu);
 
-   /**
-    * <PRE>
-    * symbol -> Symbol()
-    * nodeListOptional -> ( &lt;COMMA_TKN&gt; Symbol() )*
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(SymbolList n, A argu);
 
-   /**
-    * <PRE>
-    * reference -> Reference()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public void visit(Symbol n, A argu);
 
-   /**
-    * <PRE>
-    * nodeChoice -> &lt;TYPEREFERENCE&gt;
-    *       | valuereference()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(Reference n, A argu);
 
-   /**
-    * <PRE>
-    * nodeList -> ( Assignment() )+
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public void visit(AssignmentList n, A argu);
 
-   /**
-    * <PRE>
-    * nodeChoice -> TypeAssignment()
-    *       | ValueAssignment()
-    *       | XMLValueAssignment()
-    *       | ValueSetTypeAssignment()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
+    
    public void visit(Assignment n, A argu);
 
-   /**
-    * <PRE>
-    * nodeChoice -> ExternalTypeReference()
-    *       | &lt;TYPEREFERENCE&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(DefinedType n, A argu);
 
-   /**
-    * <PRE>
-    * modulereference -> modulereference()
-    * nodeToken -> &lt;DOT_TKN&gt;
-    * nodeToken1 -> &lt;TYPEREFERENCE&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public void visit(ExternalTypeReference n, A argu);
 
-   /**
-    * <PRE>
-    * nodeChoice -> ExternalTypeReference()
-    *       | &lt;TYPEREFERENCE&gt;
-    *       | xmlasn1typename()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public void visit(NonParameterizedTypeName n, A argu);
 
-   /**
-    * <PRE>
-    * nodeChoice -> ExternalValueReference()
-    *       | valuereference()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(DefinedValue n, A argu);
 
-   /**
-    * <PRE>
-    * modulereference -> modulereference()
-    * nodeToken -> &lt;DOT_TKN&gt;
-    * valuereference -> valuereference()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public void visit(ExternalValueReference n, A argu);
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;AT_TKN&gt;
-    * moduleIdentifier -> ModuleIdentifier()
-    * nodeToken1 -> &lt;DOT_TKN&gt;
-    * itemSpec -> ItemSpec()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
+    
    public void visit(AbsoluteReference n, A argu);
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;TYPEREFERENCE&gt;
-    * nodeListOptional -> ( &lt;DOT_TKN&gt; ComponentId() )*
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(ItemSpec n, A argu);
 
-   /**
-    * <PRE>
-    * nodeChoice -> &lt;IDENTIFIER&gt;
-    *       | &lt;NUMBER&gt;
-    *       | &lt;STAR_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public void visit(ComponentId n, A argu);
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;TYPEREFERENCE&gt;
-    * nodeToken1 -> &lt;ASSIGN_OP_TKN&gt;
-    * type -> Type()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public void visit(TypeAssignment n, A argu);
 
-   /**
-    * <PRE>
-    * valuereference -> valuereference()
-    * type -> Type()
-    * nodeToken -> &lt;ASSIGN_OP_TKN&gt;
-    * value -> Value()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
+    
    public void visit(ValueAssignment n, A argu);
 
-   /**
-    * <PRE>
-    * valuereference -> valuereference()
-    * nodeToken -> &lt;ASSIGN_OP_TKN&gt;
-    * xMLTypedValue -> XMLTypedValue()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public void visit(XMLValueAssignment n, A argu);
 
-   /**
-    * <PRE>
-    * nodeChoice -> &lt;LESSER_THAN_TKN&gt; &lt;AMPERSAND_TKN&gt; NonParameterizedTypeName() &lt;GREATER_THAN_TKN&gt; XMLValue() &lt;XMLENDTAGBRACKET_TKN&gt; &lt;AMPERSAND_TKN&gt; NonParameterizedTypeName() &lt;GREATER_THAN_TKN&gt;
-    *       | &lt;LESSER_THAN_TKN&gt; &lt;AMPERSAND_TKN&gt; NonParameterizedTypeName() &lt;XMLTAGTERMINATINGBRACKET_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(XMLTypedValue n, A argu);
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;TYPEREFERENCE&gt;
-    * type -> Type()
-    * nodeToken1 -> &lt;ASSIGN_OP_TKN&gt;
-    * valueSet -> ValueSet()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
+    
    public void visit(ValueSetTypeAssignment n, A argu);
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;LEFT_BRACE_TKN&gt;
-    * elementSetSpecs -> ElementSetSpecs()
-    * nodeToken1 -> &lt;RIGHT_BRACE_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public void visit(ValueSet n, A argu);
 
-   /**
-    * <PRE>
-    * nodeChoice -> NormalConstrainedType()
-    *       | TypeWithConstraint()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(Type n, A argu);
 
-   /**
-    * <PRE>
-    * nodeChoice -> ( BuiltinType() | ReferencedType() )
-    * nodeListOptional -> ( Constraint() )*
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(NormalConstrainedType n, A argu);
 
-   /**
-    * <PRE>
-    * nodeChoice -> BitStringType()
-    *       | BooleanType()
-    *       | CharacterStringType()
-    *       | ChoiceType()
-    *       | EmbeddedPDVType()
-    *       | EnumeratedType()
-    *       | ExternalType()
-    *       | IntegerType()
-    *       | NullType()
-    *       | ObjectIdentifierType()
-    *       | OctetStringType()
-    *       | RealType()
-    *       | RelativeOIDType()
-    *       | SequenceOfType()
-    *       | SequenceType()
-    *       | SetOfType()
-    *       | SetType()
-    *       | TaggedType()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
    public void visit(BuiltinType n, A argu);
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;IDENTIFIER&gt;
-    * type -> Type()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(NamedType n, A argu);
 
-   /**
-    * <PRE>
-    * nodeChoice -> DefinedType()
-    *       | UsefulType()
-    *       | SelectionType()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public void visit(ReferencedType n, A argu);
 
-   /**
-    * <PRE>
-    * nodeChoice -> BuiltinValue()
-    *       | ReferencedValue()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(Value n, A argu);
 
-   /**
-    * <PRE>
-    * xMLBuiltinValue -> XMLBuiltinValue()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public void visit(XMLValue n, A argu);
 
-   /**
-    * <PRE>
-    * nodeChoice -> BitStringValue()
-    *       | BooleanValue()
-    *       | CharacterStringValue()
-    *       | ChoiceValue()
-    *       | EmbeddedPDVValue()
-    *       | IntegerValue()
-    *       | NullValue()
-    *       | ObjectIdentifierValue()
-    *       | OctetStringValue()
-    *       | RealValue()
-    *       | RelativeOIDValue()
-    *       | SequenceValue()
-    *       | SequenceOfValue()
-    *       | SetValue()
-    *       | SetOfValue()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
    public void visit(BuiltinValue n, A argu);
 
-   /**
-    * <PRE>
-    * nodeChoice -> [ XMLBitStringValue() ]
-    *       | XMLBooleanValue()
-    *       | XMLCharacterStringValue()
-    *       | XMLChoiceValue()
-    *       | XMLEmbeddedPDVValue()
-    *       | XMLEnumeratedValue()
-    *       | XMLExternalValue()
-    *       | XMLIntegerValue()
-    *       | XMLNullValue()
-    *       | XMLObjectIdentifierValue()
-    *       | XMLOctetStringValue()
-    *       | XMLRealValue()
-    *       | XMLRelativeOIDValue()
-    *       | [ XMLSequenceValue() ]
-    *       | [ XMLSequenceOfValue() ]
-    *       | [ XMLSetValue() ]
-    *       | [ XMLSetOfValue() ]
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
    public void visit(XMLBuiltinValue n, A argu);
 
-   /**
-    * <PRE>
-    * definedValue -> DefinedValue()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public void visit(ReferencedValue n, A argu);
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;IDENTIFIER&gt;
-    * value -> Value()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(NamedValue n, A argu);
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;LESSER_THAN_TKN&gt;
-    * nodeToken1 -> &lt;AMPERSAND_TKN&gt;
-    * nodeToken2 -> &lt;IDENTIFIER&gt;
-    * nodeToken3 -> &lt;GREATER_THAN_TKN&gt;
-    * xMLValue -> XMLValue()
-    * nodeToken4 -> &lt;XMLENDTAGBRACKET_TKN&gt;
-    * nodeToken5 -> &lt;AMPERSAND_TKN&gt;
-    * nodeToken6 -> &lt;IDENTIFIER&gt;
-    * nodeToken7 -> &lt;GREATER_THAN_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
    public void visit(XMLNamedValue n, A argu);
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;BOOLEAN_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public void visit(BooleanType n, A argu);
 
-   /**
-    * <PRE>
-    * nodeChoice -> &lt;TRUE_TKN&gt;
-    *       | &lt;FALSE_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(BooleanValue n, A argu);
 
-   /**
-    * <PRE>
-    * nodeChoice -> &lt;LESSER_THAN_TKN&gt; &lt;AMPERSAND_TKN&gt; &lt;IDENTIFIER&gt; &lt;XMLTAGTERMINATINGBRACKET_TKN&gt;
-    *       | &lt;LESSER_THAN_TKN&gt; &lt;AMPERSAND_TKN&gt; &lt;IDENTIFIER&gt; &lt;XMLTAGTERMINATINGBRACKET_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(XMLBooleanValue n, A argu);
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;INTEGER_TKN&gt;
-    * nodeOptional -> [ &lt;LEFT_BRACE_TKN&gt; NamedNumberList() &lt;RIGHT_BRACE_TKN&gt; ]
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(IntegerType n, A argu);
 
-   /**
-    * <PRE>
-    * namedNumber -> NamedNumber()
-    * nodeListOptional -> ( &lt;COMMA_TKN&gt; NamedNumber() )*
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(NamedNumberList n, A argu);
 
-   /**
-    * <PRE>
-    * nodeChoice -> &lt;IDENTIFIER&gt; &lt;LEFT_PARENTHESIS_TKN&gt; SignedNumber() &lt;RIGHT_PARENTHESIS_TKN&gt;
-    *       | &lt;IDENTIFIER&gt; &lt;LEFT_PARENTHESIS_TKN&gt; DefinedValue() &lt;RIGHT_PARENTHESIS_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(NamedNumber n, A argu);
 
-   /**
-    * <PRE>
-    * nodeOptional -> [ &lt;MINUS_TKN&gt; ]
-    * nodeToken -> &lt;NUMBER&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(SignedNumber n, A argu);
 
-   /**
-    * <PRE>
-    * signedNumber -> SignedNumber()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public void visit(IntegerValue n, A argu);
 
-   /**
-    * <PRE>
-    * nodeChoice -> SignedNumber()
-    *       | &lt;LESSER_THAN_TKN&gt; &lt;AMPERSAND_TKN&gt; &lt;IDENTIFIER&gt; &lt;XMLTAGTERMINATINGBRACKET_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(XMLIntegerValue n, A argu);
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;ENUMERATED_TKN&gt;
-    * nodeToken1 -> &lt;LEFT_BRACE_TKN&gt;
-    * enumerations -> Enumerations()
-    * nodeToken2 -> &lt;RIGHT_BRACE_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
+    
    public void visit(EnumeratedType n, A argu);
 
-   /**
-    * <PRE>
-    * rootEnumeration -> RootEnumeration()
-    * nodeOptional -> [ &lt;COMMA_TKN&gt; &lt;ELLIPSIS_TKN&gt; ]
-    * nodeOptional1 -> [ ExceptionSpec() ]
-    * nodeOptional2 -> [ &lt;COMMA_TKN&gt; AdditionalEnumeration() ]
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
+    
    public void visit(Enumerations n, A argu);
 
-   /**
-    * <PRE>
-    * aSNEnumeration -> ASNEnumeration()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public void visit(RootEnumeration n, A argu);
 
-   /**
-    * <PRE>
-    * aSNEnumeration -> ASNEnumeration()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public void visit(AdditionalEnumeration n, A argu);
 
-   /**
-    * <PRE>
-    * enumerationItem -> EnumerationItem()
-    * nodeListOptional -> ( &lt;COMMA_TKN&gt; EnumerationItem() )*
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(ASNEnumeration n, A argu);
 
-   /**
-    * <PRE>
-    * nodeChoice -> NamedNumber()
-    *       | &lt;IDENTIFIER&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(EnumerationItem n, A argu);
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;IDENTIFIER&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public void visit(EnumeratedValue n, A argu);
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;LESSER_THAN_TKN&gt;
-    * nodeToken1 -> &lt;AMPERSAND_TKN&gt;
-    * nodeToken2 -> &lt;IDENTIFIER&gt;
-    * nodeToken3 -> &lt;XMLTAGTERMINATINGBRACKET_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
+    
    public void visit(XMLEnumeratedValue n, A argu);
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;REAL_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public void visit(RealType n, A argu);
 
-   /**
-    * <PRE>
-    * nodeChoice -> NumericRealValue()
-    *       | SpecialRealValue()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(RealValue n, A argu);
 
-   /**
-    * <PRE>
-    * nodeChoice -> &lt;REALNUMBER&gt;
-    *       | &lt;MINUS_TKN&gt; &lt;REALNUMBER&gt;
-    *       | SequenceValue()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public void visit(NumericRealValue n, A argu);
 
-   /**
-    * <PRE>
-    * nodeChoice -> &lt;PLUS_INFINITY_TKN&gt;
-    *       | &lt;MINUS_INFINITY_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(SpecialRealValue n, A argu);
 
-   /**
-    * <PRE>
-    * nodeChoice -> XMLNumericRealValue()
-    *       | XMLSpecialRealValue()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(XMLRealValue n, A argu);
 
-   /**
-    * <PRE>
-    * nodeChoice -> &lt;REALNUMBER&gt;
-    *       | &lt;MINUS_TKN&gt; &lt;REALNUMBER&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(XMLNumericRealValue n, A argu);
 
-   /**
-    * <PRE>
-    * nodeChoice -> &lt;LESSER_THAN_TKN&gt; &lt;AMPERSAND_TKN&gt; &lt;PLUS_INFINITY_TKN&gt; &lt;XMLTAGTERMINATINGBRACKET_TKN&gt;
-    *       | &lt;LESSER_THAN_TKN&gt; &lt;AMPERSAND_TKN&gt; &lt;MINUS_INFINITY_TKN&gt; &lt;XMLTAGTERMINATINGBRACKET_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(XMLSpecialRealValue n, A argu);
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;BIT_TKN&gt;
-    * nodeToken1 -> &lt;STRING_TKN&gt;
-    * nodeOptional -> [ &lt;LEFT_BRACE_TKN&gt; NamedBitList() &lt;RIGHT_BRACE_TKN&gt; ]
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public void visit(BitStringType n, A argu);
 
-   /**
-    * <PRE>
-    * namedBit -> NamedBit()
-    * nodeListOptional -> ( &lt;COMMA_TKN&gt; NamedBit() )*
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(NamedBitList n, A argu);
 
-   /**
-    * <PRE>
-    * nodeChoice -> &lt;IDENTIFIER&gt; &lt;LEFT_PARENTHESIS_TKN&gt; &lt;NUMBER&gt; &lt;RIGHT_PARENTHESIS_TKN&gt;
-    *       | &lt;IDENTIFIER&gt; &lt;LEFT_PARENTHESIS_TKN&gt; DefinedValue() &lt;RIGHT_PARENTHESIS_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(NamedBit n, A argu);
 
-   /**
-    * <PRE>
-    * nodeChoice -> &lt;BSTRING&gt;
-    *       | &lt;HSTRING&gt;
-    *       | &lt;LEFT_BRACE_TKN&gt; IdentifierList() &lt;RIGHT_BRACE_TKN&gt;
-    *       | &lt;LEFT_BRACE_TKN&gt; &lt;RIGHT_BRACE_TKN&gt;
-    *       | &lt;CONTAINING_TKN&gt; Value()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
+    
+    
    public void visit(BitStringValue n, A argu);
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;IDENTIFIER&gt;
-    * nodeListOptional -> ( &lt;COMMA_TKN&gt; &lt;IDENTIFIER&gt; )*
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(IdentifierList n, A argu);
 
-   /**
-    * <PRE>
-    * nodeChoice -> XMLTypedValue()
-    *       | &lt;CSTRING&gt;
-    *       | XMLIdentifierList()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public void visit(XMLBitStringValue n, A argu);
 
-   /**
-    * <PRE>
-    * nodeList -> ( &lt;LESSER_THAN_TKN&gt; &lt;AMPERSAND_TKN&gt; &lt;IDENTIFIER&gt; &lt;XMLTAGTERMINATINGBRACKET_TKN&gt; )+
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public void visit(XMLIdentifierList n, A argu);
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;OCTET_TKN&gt;
-    * nodeToken1 -> &lt;STRING_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(OctetStringType n, A argu);
 
-   /**
-    * <PRE>
-    * nodeChoice -> &lt;BSTRING&gt;
-    *       | &lt;HSTRING&gt;
-    *       | &lt;CONTAINING_TKN&gt; Value()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public void visit(OctetStringValue n, A argu);
 
-   /**
-    * <PRE>
-    * nodeChoice -> XMLTypedValue()
-    *       | &lt;CSTRING&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(XMLOctetStringValue n, A argu);
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;NULL_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public void visit(NullType n, A argu);
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;NULL_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public void visit(NullValue n, A argu);
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;NULL_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public void visit(XMLNullValue n, A argu);
 
-   /**
-    * <PRE>
-    * nodeChoice -> &lt;SEQUENCE_TKN&gt; &lt;LEFT_BRACE_TKN&gt; ExtensionAndException() [ OptionalExtensionMarker() ] &lt;RIGHT_BRACE_TKN&gt;
-    *       | &lt;SEQUENCE_TKN&gt; &lt;LEFT_BRACE_TKN&gt; ComponentTypeLists() &lt;RIGHT_BRACE_TKN&gt;
-    *       | &lt;SEQUENCE_TKN&gt; &lt;LEFT_BRACE_TKN&gt; &lt;RIGHT_BRACE_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public void visit(SequenceType n, A argu);
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;ELLIPSIS_TKN&gt;
-    * nodeOptional -> [ ExceptionSpec() ]
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(ExtensionAndException n, A argu);
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;COMMA_TKN&gt;
-    * nodeToken1 -> &lt;ELLIPSIS_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(OptionalExtensionMarker n, A argu);
 
-   /**
-    * <PRE>
-    * nodeChoice -> RootComponentTypeList() [ &lt;COMMA_TKN&gt; ExtensionAndException() [ ExtensionAdditions() ] [ ExtensionEndMarker() [ &lt;COMMA_TKN&gt; RootComponentTypeList() ] ] ]
-    *       | ExtensionAndException() [ ExtensionAdditions() ] [ ExtensionEndMarker() [ &lt;COMMA_TKN&gt; RootComponentTypeList() ] ]
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(ComponentTypeLists n, A argu);
 
-   /**
-    * <PRE>
-    * componentTypeList -> ComponentTypeList()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public void visit(RootComponentTypeList n, A argu);
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;COMMA_TKN&gt;
-    * nodeToken1 -> &lt;ELLIPSIS_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(ExtensionEndMarker n, A argu);
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;COMMA_TKN&gt;
-    * extensionAdditionList -> ExtensionAdditionList()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(ExtensionAdditions n, A argu);
 
-   /**
-    * <PRE>
-    * extensionAddition -> ExtensionAddition()
-    * nodeListOptional -> ( &lt;COMMA_TKN&gt; ExtensionAddition() )*
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(ExtensionAdditionList n, A argu);
 
-   /**
-    * <PRE>
-    * nodeChoice -> ComponentType()
-    *       | ExtensionAdditionGroup()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(ExtensionAddition n, A argu);
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;VERSIONBRACKET_START_TKN&gt;
-    * nodeOptional -> [ VersionNumber() ]
-    * componentTypeList -> ComponentTypeList()
-    * nodeToken1 -> &lt;VERSIONBRACKET_END_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
+    
    public void visit(ExtensionAdditionGroup n, A argu);
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;NUMBER&gt;
-    * nodeToken1 -> &lt;COLON_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(VersionNumber n, A argu);
 
-   /**
-    * <PRE>
-    * componentType -> ComponentType()
-    * nodeListOptional -> ( &lt;COMMA_TKN&gt; ComponentType() )*
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(ComponentTypeList n, A argu);
 
-   /**
-    * <PRE>
-    * nodeChoice -> NamedType() [ &lt;OPTIONAL_TKN&gt; | &lt;DEFAULT_TKN&gt; Value() ]
-    *       | &lt;COMPONENTS_TKN&gt; &lt;OF_TKN&gt; Type()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(ComponentType n, A argu);
 
-   /**
-    * <PRE>
-    * nodeChoice -> &lt;LEFT_BRACE_TKN&gt; ComponentValueList() &lt;RIGHT_BRACE_TKN&gt;
-    *       | &lt;LEFT_BRACE_TKN&gt; &lt;RIGHT_BRACE_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(SequenceValue n, A argu);
 
-   /**
-    * <PRE>
-    * namedValue -> NamedValue()
-    * nodeListOptional -> ( &lt;COMMA_TKN&gt; NamedValue() )*
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(ComponentValueList n, A argu);
 
-   /**
-    * <PRE>
-    * xMLComponentValueList -> XMLComponentValueList()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public void visit(XMLSequenceValue n, A argu);
 
-   /**
-    * <PRE>
-    * nodeList -> ( XMLNamedValue() )+
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public void visit(XMLComponentValueList n, A argu);
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;SEQUENCE_TKN&gt;
-    * nodeToken1 -> &lt;OF_TKN&gt;
-    * typeOrNamedType -> TypeOrNamedType()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public void visit(SequenceOfType n, A argu);
 
-   /**
-    * <PRE>
-    * nodeChoice -> &lt;LEFT_BRACE_TKN&gt; ValueList() &lt;RIGHT_BRACE_TKN&gt;
-    *       | &lt;LEFT_BRACE_TKN&gt; NamedValueList() &lt;RIGHT_BRACE_TKN&gt;
-    *       | &lt;LEFT_BRACE_TKN&gt; &lt;RIGHT_BRACE_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public void visit(SequenceOfValue n, A argu);
 
-   /**
-    * <PRE>
-    * value -> Value()
-    * nodeListOptional -> ( &lt;COMMA_TKN&gt; Value() )*
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(ValueList n, A argu);
 
-   /**
-    * <PRE>
-    * nodeChoice -> XMLValueList()
-    *       | XMLDelimitedItemList()
-    *       | XMLSpaceSeparatedList()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public void visit(XMLSequenceOfValue n, A argu);
 
-   /**
-    * <PRE>
-    * nodeList -> ( XMLValueOrEmpty() )+
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public void visit(XMLValueList n, A argu);
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;LESSER_THAN_TKN&gt;
-    * nodeToken1 -> &lt;AMPERSAND_TKN&gt;
-    * nonParameterizedTypeName -> NonParameterizedTypeName()
-    * nodeToken2 -> &lt;XMLTAGTERMINATINGBRACKET_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
+    
    public void visit(XMLValueOrEmpty n, A argu);
 
-   /**
-    * <PRE>
-    * nodeList -> ( XMLValueOrEmpty() )+
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public void visit(XMLSpaceSeparatedList n, A argu);
 
-   /**
-    * <PRE>
-    * nodeChoice -> XMLDelimitedItem()
-    *       | XMLDelimitedItem() XMLDelimitedItemList()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(XMLDelimitedItemList n, A argu);
 
-   /**
-    * <PRE>
-    * nodeChoice -> &lt;LESSER_THAN_TKN&gt; &lt;AMPERSAND_TKN&gt; NonParameterizedTypeName() &lt;GREATER_THAN_TKN&gt; XMLValue() &lt;XMLENDTAGBRACKET_TKN&gt; &lt;AMPERSAND_TKN&gt; NonParameterizedTypeName() &lt;GREATER_THAN_TKN&gt;
-    *       | &lt;LESSER_THAN_TKN&gt; &lt;AMPERSAND_TKN&gt; &lt;IDENTIFIER&gt; &lt;GREATER_THAN_TKN&gt; XMLValue() &lt;XMLENDTAGBRACKET_TKN&gt; &lt;AMPERSAND_TKN&gt; &lt;IDENTIFIER&gt; &lt;GREATER_THAN_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(XMLDelimitedItem n, A argu);
 
-   /**
-    * <PRE>
-    * nodeChoice -> &lt;SET_TKN&gt; &lt;LEFT_BRACE_TKN&gt; &lt;RIGHT_BRACE_TKN&gt;
-    *       | &lt;SET_TKN&gt; &lt;LEFT_BRACE_TKN&gt; ExtensionAndException() [ OptionalExtensionMarker() ] &lt;RIGHT_BRACE_TKN&gt;
-    *       | &lt;SET_TKN&gt; &lt;LEFT_BRACE_TKN&gt; ComponentTypeLists() &lt;RIGHT_BRACE_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public void visit(SetType n, A argu);
 
-   /**
-    * <PRE>
-    * nodeChoice -> &lt;LEFT_BRACE_TKN&gt; ComponentValueList() &lt;RIGHT_BRACE_TKN&gt;
-    *       | &lt;LEFT_BRACE_TKN&gt; &lt;RIGHT_BRACE_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(SetValue n, A argu);
 
-   /**
-    * <PRE>
-    * xMLComponentValueList -> XMLComponentValueList()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public void visit(XMLSetValue n, A argu);
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;SET_TKN&gt;
-    * nodeToken1 -> &lt;OF_TKN&gt;
-    * typeOrNamedType -> TypeOrNamedType()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public void visit(SetOfType n, A argu);
 
-   /**
-    * <PRE>
-    * nodeChoice -> &lt;LEFT_BRACE_TKN&gt; ValueList() &lt;RIGHT_BRACE_TKN&gt;
-    *       | &lt;LEFT_BRACE_TKN&gt; NamedValueList() &lt;RIGHT_BRACE_TKN&gt;
-    *       | &lt;LEFT_BRACE_TKN&gt; &lt;RIGHT_BRACE_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public void visit(SetOfValue n, A argu);
 
-   /**
-    * <PRE>
-    * nodeChoice -> XMLValueList()
-    *       | XMLDelimitedItemList()
-    *       | XMLSpaceSeparatedList()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public void visit(XMLSetOfValue n, A argu);
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;CHOICE_TKN&gt;
-    * nodeToken1 -> &lt;LEFT_BRACE_TKN&gt;
-    * alternativeTypeLists -> AlternativeTypeLists()
-    * nodeToken2 -> &lt;RIGHT_BRACE_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
+    
    public void visit(ChoiceType n, A argu);
 
-   /**
-    * <PRE>
-    * rootAlternativeTypeList -> RootAlternativeTypeList()
-    * nodeOptional -> [ &lt;COMMA_TKN&gt; ExtensionAndException() [ ExtensionAdditionAlternatives() ] [ OptionalExtensionMarker() ] ]
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(AlternativeTypeLists n, A argu);
 
-   /**
-    * <PRE>
-    * alternativeTypeList -> AlternativeTypeList()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public void visit(RootAlternativeTypeList n, A argu);
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;COMMA_TKN&gt;
-    * extensionAdditionAlternativesList -> ExtensionAdditionAlternativesList()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(ExtensionAdditionAlternatives n, A argu);
 
-   /**
-    * <PRE>
-    * extensionAdditionAlternative -> ExtensionAdditionAlternative()
-    * nodeListOptional -> ( &lt;COMMA_TKN&gt; ExtensionAdditionAlternative() )*
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(ExtensionAdditionAlternativesList n, A argu);
 
-   /**
-    * <PRE>
-    * nodeChoice -> ExtensionAdditionAlternativesGroup()
-    *       | NamedType()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(ExtensionAdditionAlternative n, A argu);
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;VERSIONBRACKET_START_TKN&gt;
-    * nodeOptional -> [ VersionNumber() ]
-    * alternativeTypeList -> AlternativeTypeList()
-    * nodeToken1 -> &lt;VERSIONBRACKET_END_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
+    
    public void visit(ExtensionAdditionAlternativesGroup n, A argu);
 
-   /**
-    * <PRE>
-    * namedType -> NamedType()
-    * nodeListOptional -> ( &lt;COMMA_TKN&gt; NamedType() )*
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(AlternativeTypeList n, A argu);
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;IDENTIFIER&gt;
-    * nodeToken1 -> &lt;COLON_TKN&gt;
-    * value -> Value()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public void visit(ChoiceValue n, A argu);
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;LESSER_THAN_TKN&gt;
-    * nodeToken1 -> &lt;AMPERSAND_TKN&gt;
-    * nodeToken2 -> &lt;IDENTIFIER&gt;
-    * nodeToken3 -> &lt;GREATER_THAN_TKN&gt;
-    * xMLValue -> XMLValue()
-    * nodeToken4 -> &lt;XMLENDTAGBRACKET_TKN&gt;
-    * nodeToken5 -> &lt;AMPERSAND_TKN&gt;
-    * nodeToken6 -> &lt;IDENTIFIER&gt;
-    * nodeToken7 -> &lt;GREATER_THAN_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
    public void visit(XMLChoiceValue n, A argu);
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;IDENTIFIER&gt;
-    * nodeToken1 -> &lt;LESSER_THAN_TKN&gt;
-    * type -> Type()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public void visit(SelectionType n, A argu);
 
-   /**
-    * <PRE>
-    * nodeChoice -> Tag() &lt;IMPLICIT_TKN&gt; Type()
-    *       | Tag() &lt;EXPLICIT_TKN&gt; Type()
-    *       | Tag() Type()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public void visit(TaggedType n, A argu);
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;LEFT_BRACKET_TKN&gt;
-    * nodeOptional -> [ TagClass() ]
-    * classNumber -> ClassNumber()
-    * nodeToken1 -> &lt;RIGHT_BRACKET_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
+    
    public void visit(Tag n, A argu);
 
-   /**
-    * <PRE>
-    * nodeChoice -> &lt;NUMBER&gt;
-    *       | DefinedValue()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(ClassNumber n, A argu);
 
-   /**
-    * <PRE>
-    * nodeChoice -> &lt;UNIVERSAL_TKN&gt;
-    *       | &lt;APPLICATION_TKN&gt;
-    *       | &lt;PRIVATE_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public void visit(TagClass n, A argu);
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;EMBEDDED_TKN&gt;
-    * nodeToken1 -> &lt;PDV_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(EmbeddedPDVType n, A argu);
 
-   /**
-    * <PRE>
-    * sequenceValue -> SequenceValue()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public void visit(EmbeddedPDVValue n, A argu);
 
-   /**
-    * <PRE>
-    * nodeOptional -> [ XMLSequenceValue() ]
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public void visit(XMLEmbeddedPDVValue n, A argu);
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;EXTERNAL_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public void visit(ExternalType n, A argu);
 
-   /**
-    * <PRE>
-    * sequenceValue -> SequenceValue()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public void visit(ExternalValue n, A argu);
 
-   /**
-    * <PRE>
-    * nodeOptional -> [ XMLSequenceValue() ]
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public void visit(XMLExternalValue n, A argu);
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;OBJECT_TKN&gt;
-    * nodeToken1 -> &lt;IDENTIFIER_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(ObjectIdentifierType n, A argu);
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;LEFT_BRACE_TKN&gt;
-    * objIdComponentsList -> ObjIdComponentsList()
-    * nodeToken1 -> &lt;RIGHT_BRACE_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public void visit(ObjectIdentifierValue n, A argu);
 
-   /**
-    * <PRE>
-    * nodeListOptional -> ( ObjIdComponents() )*
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public void visit(ObjIdComponentsList n, A argu);
 
-   /**
-    * <PRE>
-    * nodeChoice -> NameAndNumberForm()
-    *       | NameForm()
-    *       | NumberForm()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public void visit(ObjIdComponents n, A argu);
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;IDENTIFIER&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public void visit(NameForm n, A argu);
 
-   /**
-    * <PRE>
-    * nodeChoice -> &lt;NUMBER&gt;
-    *       | DefinedValue()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(NumberForm n, A argu);
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;IDENTIFIER&gt;
-    * nodeToken1 -> &lt;LEFT_PARENTHESIS_TKN&gt;
-    * numberForm -> NumberForm()
-    * nodeToken2 -> &lt;RIGHT_PARENTHESIS_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
+    
    public void visit(NameAndNumberForm n, A argu);
 
-   /**
-    * <PRE>
-    * xMLObjIdComponentList -> XMLObjIdComponentList()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public void visit(XMLObjectIdentifierValue n, A argu);
 
-   /**
-    * <PRE>
-    * nodeChoice -> XMLObjIdComponent()
-    *       | XMLObjIdComponent() &lt;AMPERSAND_TKN&gt; &lt;DOT_TKN&gt; &lt;AMPERSAND_TKN&gt; XMLObjIdComponentList()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(XMLObjIdComponentList n, A argu);
 
-   /**
-    * <PRE>
-    * nodeChoice -> NameForm()
-    *       | XMLNumberForm()
-    *       | XMLNameAndNumberForm()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public void visit(XMLObjIdComponent n, A argu);
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;NUMBER&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public void visit(XMLNumberForm n, A argu);
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;IDENTIFIER&gt;
-    * nodeToken1 -> &lt;AMPERSAND_TKN&gt;
-    * nodeToken2 -> &lt;LEFT_PARENTHESIS_TKN&gt;
-    * nodeToken3 -> &lt;AMPERSAND_TKN&gt;
-    * xMLNumberForm -> XMLNumberForm()
-    * nodeToken4 -> &lt;AMPERSAND_TKN&gt;
-    * nodeToken5 -> &lt;RIGHT_PARENTHESIS_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
    public void visit(XMLNameAndNumberForm n, A argu);
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;RELATIVE_OID_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public void visit(RelativeOIDType n, A argu);
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;LEFT_BRACE_TKN&gt;
-    * relativeOIDComponentsList -> RelativeOIDComponentsList()
-    * nodeToken1 -> &lt;RIGHT_BRACE_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public void visit(RelativeOIDValue n, A argu);
 
-   /**
-    * <PRE>
-    * nodeChoice -> RelativeOIDComponents()
-    *       | RelativeOIDComponents() RelativeOIDComponentsList()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(RelativeOIDComponentsList n, A argu);
 
-   /**
-    * <PRE>
-    * nodeChoice -> NumberForm()
-    *       | NameAndNumberForm()
-    *       | DefinedValue()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public void visit(RelativeOIDComponents n, A argu);
 
-   /**
-    * <PRE>
-    * xMLRelativeOIDComponentList -> XMLRelativeOIDComponentList()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public void visit(XMLRelativeOIDValue n, A argu);
 
-   /**
-    * <PRE>
-    * nodeChoice -> XMLRelativeOIDComponent()
-    *       | XMLRelativeOIDComponent() &lt;AMPERSAND_TKN&gt; &lt;DOT_TKN&gt; &lt;AMPERSAND_TKN&gt; XMLRelativeOIDComponentList()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(XMLRelativeOIDComponentList n, A argu);
 
-   /**
-    * <PRE>
-    * nodeChoice -> XMLNumberForm()
-    *       | XMLNameAndNumberForm()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(XMLRelativeOIDComponent n, A argu);
 
-   /**
-    * <PRE>
-    * nodeChoice -> RestrictedCharacterStringType()
-    *       | UnrestrictedCharacterStringType()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(CharacterStringType n, A argu);
 
-   /**
-    * <PRE>
-    * nodeChoice -> &lt;BMPSTRING_TKN&gt;
-    *       | &lt;GENERALSTRING_TKN&gt;
-    *       | &lt;GRAPHICSTRING_TKN&gt;
-    *       | &lt;IA5STRING_TKN&gt;
-    *       | &lt;ISO646STRING_TKN&gt;
-    *       | &lt;NUMERICSTRING_TKN&gt;
-    *       | &lt;PRINTABLESTRING_TKN&gt;
-    *       | &lt;TELETEXSTRING_TKN&gt;
-    *       | &lt;T61STRING_TKN&gt;
-    *       | &lt;UNIVERSALSTRING_TKN&gt;
-    *       | &lt;UTF8STRING_TKN&gt;
-    *       | &lt;VIDEOTEXSTRING_TKN&gt;
-    *       | &lt;VISIBLESTRING_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
    public void visit(RestrictedCharacterStringType n, A argu);
 
-   /**
-    * <PRE>
-    * nodeChoice -> &lt;CSTRING&gt;
-    *       | CharacterStringList()
-    *       | Quadruple()
-    *       | Tuple()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
+    
    public void visit(RestrictedCharacterStringValue n, A argu);
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;LEFT_BRACE_TKN&gt;
-    * charSyms -> CharSyms()
-    * nodeToken1 -> &lt;RIGHT_BRACE_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public void visit(CharacterStringList n, A argu);
 
-   /**
-    * <PRE>
-    * charsDefn -> CharsDefn()
-    * nodeListOptional -> ( &lt;COMMA_TKN&gt; CharsDefn() )*
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(CharSyms n, A argu);
 
-   /**
-    * <PRE>
-    * nodeChoice -> &lt;CSTRING&gt;
-    *       | Quadruple()
-    *       | Tuple()
-    *       | DefinedValue()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
+    
    public void visit(CharsDefn n, A argu);
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;LEFT_BRACE_TKN&gt;
-    * group -> Group()
-    * nodeToken1 -> &lt;COMMA_TKN&gt;
-    * plane -> Plane()
-    * nodeToken2 -> &lt;COMMA_TKN&gt;
-    * row -> Row()
-    * nodeToken3 -> &lt;COMMA_TKN&gt;
-    * cell -> Cell()
-    * nodeToken4 -> &lt;RIGHT_BRACE_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
    public void visit(Quadruple n, A argu);
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;NUMBER&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public void visit(Group n, A argu);
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;NUMBER&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public void visit(Plane n, A argu);
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;NUMBER&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public void visit(Row n, A argu);
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;NUMBER&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public void visit(Cell n, A argu);
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;LEFT_BRACE_TKN&gt;
-    * tableColumn -> TableColumn()
-    * nodeToken1 -> &lt;COMMA_TKN&gt;
-    * tableRow -> TableRow()
-    * nodeToken2 -> &lt;RIGHT_BRACE_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
+    
+    
    public void visit(Tuple n, A argu);
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;NUMBER&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public void visit(TableColumn n, A argu);
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;NUMBER&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public void visit(TableRow n, A argu);
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;CSTRING&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public void visit(XMLRestrictedCharacterStringValue n, A argu);
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;CHARACTER_TKN&gt;
-    * nodeToken1 -> &lt;STRING_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(UnrestrictedCharacterStringType n, A argu);
 
-   /**
-    * <PRE>
-    * restrictedCharacterStringValue -> RestrictedCharacterStringValue()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public void visit(CharacterStringValue n, A argu);
 
-   /**
-    * <PRE>
-    * nodeChoice -> XMLRestrictedCharacterStringValue()
-    *       | XMLUnrestrictedCharacterStringValue()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(XMLCharacterStringValue n, A argu);
 
-   /**
-    * <PRE>
-    * sequenceValue -> SequenceValue()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public void visit(UnrestrictedCharacterStringValue n, A argu);
 
-   /**
-    * <PRE>
-    * nodeOptional -> [ XMLSequenceValue() ]
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public void visit(XMLUnrestrictedCharacterStringValue n, A argu);
 
-   /**
-    * <PRE>
-    * nodeChoice -> &lt;GENERALIZEDTIME_TKN&gt;
-    *       | &lt;UTCTIME_TKN&gt;
-    *       | &lt;OBJECTDESCRIPTOR_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public void visit(UsefulType n, A argu);
 
-   /**
-    * <PRE>
-    * nodeChoice -> &lt;SET_TKN&gt; Constraint() &lt;OF_TKN&gt; TypeOrNamedType()
-    *       | &lt;SET_TKN&gt; SizeConstraint() &lt;OF_TKN&gt; TypeOrNamedType()
-    *       | &lt;SEQUENCE_TKN&gt; Constraint() &lt;OF_TKN&gt; TypeOrNamedType()
-    *       | &lt;SEQUENCE_TKN&gt; SizeConstraint() &lt;OF_TKN&gt; TypeOrNamedType()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
+    
    public void visit(TypeWithConstraint n, A argu);
 
-   /**
-    * <PRE>
-    * nodeChoice -> Type()
-    *       | NamedType()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(TypeOrNamedType n, A argu);
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;LEFT_PARENTHESIS_TKN&gt;
-    * constraintSpec -> ConstraintSpec()
-    * nodeOptional -> [ ExceptionSpec() ]
-    * nodeToken1 -> &lt;RIGHT_PARENTHESIS_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
+    
    public void visit(Constraint n, A argu);
 
-   /**
-    * <PRE>
-    * subtypeConstraint -> SubtypeConstraint()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public void visit(ConstraintSpec n, A argu);
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;EXCLAMATION_TKN&gt;
-    * exceptionIdentification -> ExceptionIdentification()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(ExceptionSpec n, A argu);
 
-   /**
-    * <PRE>
-    * nodeChoice -> SignedNumber()
-    *       | DefinedValue()
-    *       | Type() &lt;COLON_TKN&gt; Value()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public void visit(ExceptionIdentification n, A argu);
 
-   /**
-    * <PRE>
-    * elementSetSpecs -> ElementSetSpecs()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public void visit(SubtypeConstraint n, A argu);
 
-   /**
-    * <PRE>
-    * rootElementSetSpec -> RootElementSetSpec()
-    * nodeOptional -> [ &lt;COMMA_TKN&gt; &lt;ELLIPSIS_TKN&gt; [ &lt;COMMA_TKN&gt; AdditionalElementSetSpec() ] ]
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(ElementSetSpecs n, A argu);
 
-   /**
-    * <PRE>
-    * elementSetSpec -> ElementSetSpec()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public void visit(RootElementSetSpec n, A argu);
 
-   /**
-    * <PRE>
-    * elementSetSpec -> ElementSetSpec()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public void visit(AdditionalElementSetSpec n, A argu);
 
-   /**
-    * <PRE>
-    * nodeChoice -> Unions()
-    *       | &lt;ALL_TKN&gt; Exclusions()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(ElementSetSpec n, A argu);
 
-   /**
-    * <PRE>
-    * intersections -> Intersections()
-    * nodeListOptional -> ( UnionMark() Intersections() )*
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(Unions n, A argu);
 
-   /**
-    * <PRE>
-    * intersectionElements -> IntersectionElements()
-    * nodeListOptional -> ( IntersectionMark() IntersectionElements() )*
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(Intersections n, A argu);
 
-   /**
-    * <PRE>
-    * elements -> Elements()
-    * nodeOptional -> [ Exclusions() ]
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(IntersectionElements n, A argu);
 
-   /**
-    * <PRE>
-    * elements -> Elements()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public void visit(Elems n, A argu);
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;EXCEPT_TKN&gt;
-    * elements -> Elements()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(Exclusions n, A argu);
 
-   /**
-    * <PRE>
-    * nodeChoice -> &lt;BAR_TKN&gt;
-    *       | &lt;UNION_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(UnionMark n, A argu);
 
-   /**
-    * <PRE>
-    * nodeChoice -> &lt;CIRCUMFLEX_TKN&gt;
-    *       | &lt;INTERSECTION_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(IntersectionMark n, A argu);
 
-   /**
-    * <PRE>
-    * nodeChoice -> SubtypeElements()
-    *       | &lt;LEFT_PARENTHESIS_TKN&gt; ElementSetSpec() &lt;RIGHT_PARENTHESIS_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(Elements n, A argu);
 
-   /**
-    * <PRE>
-    * nodeChoice -> ValueRange()
-    *       | ContainedSubtype()
-    *       | PermittedAlphabet()
-    *       | SizeConstraint()
-    *       | TypeConstraint()
-    *       | InnerTypeConstraints()
-    *       | SingleValue()
-    *       | PatternConstraint()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
    public void visit(SubtypeElements n, A argu);
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;PATTERN_TKN&gt;
-    * value -> Value()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(PatternConstraint n, A argu);
 
-   /**
-    * <PRE>
-    * value -> Value()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public void visit(SingleValue n, A argu);
 
-   /**
-    * <PRE>
-    * nodeOptional -> [ Includes() ]
-    * type -> Type()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(ContainedSubtype n, A argu);
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;INCLUDES_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public void visit(Includes n, A argu);
 
-   /**
-    * <PRE>
-    * lowerEndpoint -> LowerEndpoint()
-    * nodeToken -> &lt;DOTDOT_TKN&gt;
-    * upperEndpoint -> UpperEndpoint()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public void visit(ValueRange n, A argu);
 
-   /**
-    * <PRE>
-    * lowerEndValue -> LowerEndValue()
-    * nodeOptional -> [ &lt;LESSER_THAN_TKN&gt; ]
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(LowerEndpoint n, A argu);
 
-   /**
-    * <PRE>
-    * nodeOptional -> [ &lt;LESSER_THAN_TKN&gt; ]
-    * upperEndValue -> UpperEndValue()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(UpperEndpoint n, A argu);
 
-   /**
-    * <PRE>
-    * nodeChoice -> &lt;MIN_TKN&gt;
-    *       | Value()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(LowerEndValue n, A argu);
 
-   /**
-    * <PRE>
-    * nodeChoice -> &lt;MAX_TKN&gt;
-    *       | Value()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(UpperEndValue n, A argu);
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;SIZE_TKN&gt;
-    * constraint -> Constraint()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(SizeConstraint n, A argu);
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;FROM_TKN&gt;
-    * constraint -> Constraint()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(PermittedAlphabet n, A argu);
 
-   /**
-    * <PRE>
-    * type -> Type()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public void visit(TypeConstraint n, A argu);
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;WITH_TKN&gt;
-    * nodeToken1 -> &lt;COMPONENT_TKN&gt;
-    * nodeChoice -> ( SingleTypeConstraint() | MultipleTypeConstraints() )
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public void visit(InnerTypeConstraints n, A argu);
 
-   /**
-    * <PRE>
-    * constraint -> Constraint()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public void visit(SingleTypeConstraint n, A argu);
 
-   /**
-    * <PRE>
-    * nodeChoice -> FullSpecification()
-    *       | PartialSpecification()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(MultipleTypeConstraints n, A argu);
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;LEFT_BRACE_TKN&gt;
-    * typeConstraints -> TypeConstraints()
-    * nodeToken1 -> &lt;RIGHT_BRACE_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public void visit(FullSpecification n, A argu);
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;LEFT_BRACE_TKN&gt;
-    * nodeToken1 -> &lt;ELLIPSIS_TKN&gt;
-    * nodeToken2 -> &lt;COMMA_TKN&gt;
-    * typeConstraints -> TypeConstraints()
-    * nodeToken3 -> &lt;RIGHT_BRACE_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
+    
+    
    public void visit(PartialSpecification n, A argu);
 
-   /**
-    * <PRE>
-    * namedConstraint -> NamedConstraint()
-    * nodeListOptional -> ( &lt;COMMA_TKN&gt; NamedConstraint() )*
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(TypeConstraints n, A argu);
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;IDENTIFIER&gt;
-    * componentConstraint -> ComponentConstraint()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(NamedConstraint n, A argu);
 
-   /**
-    * <PRE>
-    * nodeOptional -> [ ValueConstraint() ]
-    * nodeOptional1 -> [ PresenceConstraint() ]
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public void visit(ComponentConstraint n, A argu);
 
-   /**
-    * <PRE>
-    * constraint -> Constraint()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public void visit(ValueConstraint n, A argu);
 
-   /**
-    * <PRE>
-    * nodeChoice -> &lt;PRESENT_TKN&gt;
-    *       | &lt;ABSENT_TKN&gt;
-    *       | &lt;OPTIONAL_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public void visit(PresenceConstraint n, A argu);
 
 }

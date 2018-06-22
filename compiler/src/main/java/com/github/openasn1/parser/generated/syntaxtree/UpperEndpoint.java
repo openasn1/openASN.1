@@ -4,13 +4,13 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeOptional -> [ &lt;LESSER_THAN_TKN&gt; ]
- * upperEndValue -> UpperEndValue()
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
 public class UpperEndpoint implements Node {
    private Node parent;
    public NodeOptional nodeOptional;

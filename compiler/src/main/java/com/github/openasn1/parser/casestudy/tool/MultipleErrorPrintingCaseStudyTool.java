@@ -41,16 +41,10 @@ import com.github.openasn1.parser.generated.ParseException;
  */
 public class MultipleErrorPrintingCaseStudyTool extends CaseStudyTool {
 
-	/**
-	 * @param dir
-	 */
 	public MultipleErrorPrintingCaseStudyTool(String dir) {
 		super(dir);
 	}
 
-	/**
-	 * @see com.github.openasn1.parser.casestudy.tool.CaseStudyTool#scandir()
-	 */
 	@Override
 	public void scandir() {
 		File outfile = new File("casestudyresults/errors");
@@ -69,9 +63,6 @@ public class MultipleErrorPrintingCaseStudyTool extends CaseStudyTool {
 		super.scandir();
 	}
 
-	/**
-	 * @see com.github.openasn1.parser.casestudy.tool.CaseStudyTool#handleParseException(com.github.openasn1.parser.generated.ParseException)
-	 */
 	@Override
 	protected void handleParseException(ParseException e) {
 		System.out.println(getDirectoryscanner().getCurrentFileName());
@@ -107,9 +98,6 @@ public class MultipleErrorPrintingCaseStudyTool extends CaseStudyTool {
 		}
 	}
 
-	/**
-	 * @see com.github.openasn1.parser.casestudy.tool.CaseStudyTool#shouldParseMoreFiles(com.github.openasn1.parser.generated.ParseException)
-	 */
 	@Override
 	protected boolean shouldParseMoreFiles(ParseException e) {
 		return true;

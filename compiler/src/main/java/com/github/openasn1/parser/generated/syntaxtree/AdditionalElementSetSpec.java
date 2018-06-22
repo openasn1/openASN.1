@@ -4,12 +4,6 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * elementSetSpec -> ElementSetSpec()
- * </PRE>
- */
 public class AdditionalElementSetSpec implements Node {
    private Node parent;
    public ElementSetSpec elementSetSpec;

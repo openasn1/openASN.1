@@ -4,13 +4,13 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeChoice -> Type()
- *       | NamedType()
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
 public class TypeOrNamedType implements Node {
    private Node parent;
    public NodeChoice nodeChoice;

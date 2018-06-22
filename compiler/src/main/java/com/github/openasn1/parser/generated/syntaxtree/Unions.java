@@ -4,13 +4,13 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * intersections -> Intersections()
- * nodeListOptional -> ( UnionMark() Intersections() )*
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
 public class Unions implements Node {
    private Node parent;
    public Intersections intersections;

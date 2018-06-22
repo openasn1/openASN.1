@@ -4,13 +4,13 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeChoice -> &lt;PLUS_INFINITY_TKN&gt;
- *       | &lt;MINUS_INFINITY_TKN&gt;
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
 public class SpecialRealValue implements Node {
    private Node parent;
    public NodeChoice nodeChoice;

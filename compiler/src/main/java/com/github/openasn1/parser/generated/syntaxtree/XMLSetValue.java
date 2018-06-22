@@ -4,12 +4,12 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * xMLComponentValueList -> XMLComponentValueList()
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
 public class XMLSetValue implements Node {
    private Node parent;
    public XMLComponentValueList xMLComponentValueList;

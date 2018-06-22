@@ -4,13 +4,13 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeOptional -> [ &lt;MINUS_TKN&gt; ]
- * nodeToken -> &lt;NUMBER&gt;
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
 public class SignedNumber implements Node {
    private Node parent;
    public NodeOptional nodeOptional;

@@ -4,12 +4,12 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * componentTypeList -> ComponentTypeList()
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
 public class RootComponentTypeList implements Node {
    private Node parent;
    public ComponentTypeList componentTypeList;

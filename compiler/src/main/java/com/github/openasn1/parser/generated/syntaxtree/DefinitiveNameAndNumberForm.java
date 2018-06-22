@@ -4,15 +4,15 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeToken -> &lt;IDENTIFIER&gt;
- * nodeToken1 -> &lt;LEFT_PARENTHESIS_TKN&gt;
- * definitiveNumberForm -> DefinitiveNumberForm()
- * nodeToken2 -> &lt;RIGHT_PARENTHESIS_TKN&gt;
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 public class DefinitiveNameAndNumberForm implements Node {
    private Node parent;
    public NodeToken nodeToken;

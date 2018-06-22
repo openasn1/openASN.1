@@ -4,13 +4,13 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeChoice -> SubtypeElements()
- *       | &lt;LEFT_PARENTHESIS_TKN&gt; ElementSetSpec() &lt;RIGHT_PARENTHESIS_TKN&gt;
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
 public class Elements implements Node {
    private Node parent;
    public NodeChoice nodeChoice;

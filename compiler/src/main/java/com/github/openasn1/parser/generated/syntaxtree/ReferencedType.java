@@ -4,14 +4,14 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeChoice -> DefinedType()
- *       | UsefulType()
- *       | SelectionType()
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 public class ReferencedType implements Node {
    private Node parent;
    public NodeChoice nodeChoice;

@@ -4,13 +4,13 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeToken -> &lt;ELLIPSIS_TKN&gt;
- * nodeOptional -> [ ExceptionSpec() ]
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
 public class ExtensionAndException implements Node {
    private Node parent;
    public NodeToken nodeToken;

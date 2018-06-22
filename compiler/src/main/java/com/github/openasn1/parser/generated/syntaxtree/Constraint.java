@@ -4,15 +4,15 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeToken -> &lt;LEFT_PARENTHESIS_TKN&gt;
- * constraintSpec -> ConstraintSpec()
- * nodeOptional -> [ ExceptionSpec() ]
- * nodeToken1 -> &lt;RIGHT_PARENTHESIS_TKN&gt;
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 public class Constraint implements Node {
    private Node parent;
    public NodeToken nodeToken;

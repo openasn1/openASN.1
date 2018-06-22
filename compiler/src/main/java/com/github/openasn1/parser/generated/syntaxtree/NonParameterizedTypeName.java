@@ -4,14 +4,14 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeChoice -> ExternalTypeReference()
- *       | &lt;TYPEREFERENCE&gt;
- *       | xmlasn1typename()
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 public class NonParameterizedTypeName implements Node {
    private Node parent;
    public NodeChoice nodeChoice;

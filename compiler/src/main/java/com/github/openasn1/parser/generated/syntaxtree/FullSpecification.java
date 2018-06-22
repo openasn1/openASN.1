@@ -4,14 +4,14 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeToken -> &lt;LEFT_BRACE_TKN&gt;
- * typeConstraints -> TypeConstraints()
- * nodeToken1 -> &lt;RIGHT_BRACE_TKN&gt;
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 public class FullSpecification implements Node {
    private Node parent;
    public NodeToken nodeToken;

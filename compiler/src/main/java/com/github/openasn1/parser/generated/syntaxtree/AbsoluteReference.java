@@ -4,15 +4,6 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeToken -> &lt;AT_TKN&gt;
- * moduleIdentifier -> ModuleIdentifier()
- * nodeToken1 -> &lt;DOT_TKN&gt;
- * itemSpec -> ItemSpec()
- * </PRE>
- */
 public class AbsoluteReference implements Node {
    private Node parent;
    public NodeToken nodeToken;

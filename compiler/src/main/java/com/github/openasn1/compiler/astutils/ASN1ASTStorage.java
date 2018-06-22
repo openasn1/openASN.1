@@ -148,42 +148,35 @@ public class ASN1ASTStorage implements DeepCopyable {
     }
 
     /**
-     * @param n
-     * @param key
-     * @return
-     * @see com.github.openasn1.compiler.astutils.ASN1ASTNodeInfos#deleteInfoFromNode(com.github.openasn1.parser.generated.syntaxtree.Node,
-     *      java.lang.String)
+     * @param n is node
+     * @param key is key
+     * @return generic object
      */
     public Object deleteInfoFromNode(Node n, String key) {
         return this.astNodeInfos.deleteInfoFromNode(n, key);
     }
 
     /**
-     * @param n
-     * @return
-     * @see com.github.openasn1.compiler.astutils.ASN1ASTNodeInfos#getNodeInfoMap(com.github.openasn1.parser.generated.syntaxtree.Node)
+     * @param n is node
+     * @return map
      */
     public Map<String, Object> getNodeInfoMap(Node n) {
         return this.astNodeInfos.getNodeInfoMap(n);
     }
 
     /**
-     * @param n
-     * @param ident
-     * @param o
-     * @see com.github.openasn1.compiler.astutils.ASN1ASTNodeInfos#insertInfoIntoNode(com.github.openasn1.parser.generated.syntaxtree.Node,
-     *      java.lang.String, java.lang.Object)
+     * @param n is node
+     * @param ident is indent
+     * @param o is object
      */
     public void insertInfoIntoNode(Node n, String ident, Object o) {
         this.astNodeInfos.insertInfoIntoNode(n, ident, o);
     }
 
     /**
-     * @param n
-     * @param key
-     * @return
-     * @see com.github.openasn1.compiler.astutils.ASN1ASTNodeInfos#returnInfoFromNode(com.github.openasn1.parser.generated.syntaxtree.Node,
-     *      java.lang.String)
+     * @param n is node
+     * @param key is key
+     * @return object type
      */
     public Object returnInfoFromNode(Node n, String key) {
         return this.astNodeInfos.returnInfoFromNode(n, key);

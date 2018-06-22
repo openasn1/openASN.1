@@ -4,13 +4,13 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeToken -> &lt;COMMA_TKN&gt;
- * nodeToken1 -> &lt;ELLIPSIS_TKN&gt;
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
 public class ExtensionEndMarker implements Node {
    private Node parent;
    public NodeToken nodeToken;

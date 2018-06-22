@@ -6,10 +6,10 @@ package com.github.openasn1.parser.generated.syntaxtree;
 
 import java.util.*;
 
-/**
- * Represents a sequence of nodes nested within a choice, list,
- * optional list, or optional, e.g. ( A B )+ or [ C D E ]
- */
+
+ 
+ 
+ 
 public class NodeSequence implements NodeListInterface {
    public NodeSequence(int n) {
       nodes = new Vector<Node>(n);

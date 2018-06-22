@@ -6,9 +6,9 @@ package com.github.openasn1.parser.generated.syntaxtree;
 
 import java.util.*;
 
-/**
- * Represents an optional grammar list, e.g. ( A )*
- */
+
+ 
+ 
 public class NodeListOptional implements NodeListInterface {
    public NodeListOptional() {
       nodes = new Vector<Node>();

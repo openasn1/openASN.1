@@ -4,13 +4,13 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeChoice -> &lt;IDENTIFIER&gt; &lt;LEFT_PARENTHESIS_TKN&gt; SignedNumber() &lt;RIGHT_PARENTHESIS_TKN&gt;
- *       | &lt;IDENTIFIER&gt; &lt;LEFT_PARENTHESIS_TKN&gt; DefinedValue() &lt;RIGHT_PARENTHESIS_TKN&gt;
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
 public class NamedNumber implements Node {
    private Node parent;
    public NodeChoice nodeChoice;

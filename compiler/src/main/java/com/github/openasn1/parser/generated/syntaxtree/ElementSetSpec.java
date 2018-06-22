@@ -4,13 +4,13 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeChoice -> Unions()
- *       | &lt;ALL_TKN&gt; Exclusions()
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
 public class ElementSetSpec implements Node {
    private Node parent;
    public NodeChoice nodeChoice;

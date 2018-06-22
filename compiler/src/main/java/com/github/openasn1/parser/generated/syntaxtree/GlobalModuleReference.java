@@ -4,13 +4,13 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * modulereference -> modulereference()
- * nodeOptional -> [ AssignedIdentifier() ]
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
 public class GlobalModuleReference implements Node {
    private Node parent;
    public modulereference modulereference;

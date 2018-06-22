@@ -4,12 +4,12 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * signedNumber -> SignedNumber()
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
 public class IntegerValue implements Node {
    private Node parent;
    public SignedNumber signedNumber;

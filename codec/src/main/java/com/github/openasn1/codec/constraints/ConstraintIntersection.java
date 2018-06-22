@@ -40,7 +40,7 @@ public class ConstraintIntersection extends ConstraintList implements Constraint
 	 * 			   Being semantically equivalent but easing the work for further
 	 * 			   processing in the visitors.  
 	 * 
-	 * @param operands
+	 * @param constraints is constraints
 	 */
 	public ConstraintIntersection(Constraint ... constraints) {
 		super(constraints);

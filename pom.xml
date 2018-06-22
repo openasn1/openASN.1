@@ -60,10 +60,15 @@
     </modules>
 
 	  <properties>
+	      <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <jdk.version>1.8</jdk.version>
     <compiler.fork>false</compiler.fork>
     <maven-compiler-plugin-version>3.6.1</maven-compiler-plugin-version>
 	<nexus-staging-maven-plugin-version>1.6.7</nexus-staging-maven-plugin-version>
+	<maven-source-plugin-version>3.0.1</maven-source-plugin-version>
+	<maven-javadoc-plugin-version>3.0.1</maven-javadoc-plugin-version>
+	<maven-gpg-plugin-version>1.6</maven-gpg-plugin-version>
   </properties>
   
     <build>
@@ -98,6 +103,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-source-plugin</artifactId>
+				<version>${maven-source-plugin-version}</version>
 				<executions>
 					<execution>
 						<id>attach-sources</id>
@@ -107,7 +113,7 @@
 					</execution>
 				</executions>
 			</plugin>
-			          <plugin>
+			<plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-javadoc-plugin</artifactId>
             <executions>
@@ -117,6 +123,7 @@
                   <goal>jar</goal>
                 </goals>
                 <configuration>
+				  <excludePackageNames>*.generated.*</excludePackageNames>
                   <additionalparam>-Xdoclint:none</additionalparam>
                 </configuration>
               </execution>
@@ -137,6 +144,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-gpg-plugin</artifactId>
+				<version>${maven-gpg-plugin-version}</version>
 				<executions>
 					<execution>
 						<id>sign-artifacts</id>

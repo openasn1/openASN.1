@@ -4,14 +4,14 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeToken -> &lt;IDENTIFIER&gt;
- * nodeToken1 -> &lt;COLON_TKN&gt;
- * value -> Value()
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 public class ChoiceValue implements Node {
    private Node parent;
    public NodeToken nodeToken;

@@ -4,13 +4,13 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeChoice -> &lt;CIRCUMFLEX_TKN&gt;
- *       | &lt;INTERSECTION_TKN&gt;
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
 public class IntersectionMark implements Node {
    private Node parent;
    public NodeChoice nodeChoice;

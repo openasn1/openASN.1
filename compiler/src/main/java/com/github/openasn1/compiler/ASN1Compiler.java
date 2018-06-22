@@ -54,7 +54,7 @@ public class ASN1Compiler {
 	private PlugableStage<OMAndASN1ASTStorage, ASTModifier<OMAndASN1ASTStorage>> OMStage;
 
 	/**
-	 * @param args
+	 * @param args is the arguments for main
 	 */
 	public static void main(String[] args) {
 		ASN1Compiler compiler = new ASN1Compiler();

@@ -5,10 +5,10 @@
 package com.github.openasn1.parser.generated.syntaxtree;
 
 import java.util.*;
-/**
- * Represents a single token in the grammar.  If the "-tk" option
- * is used, also contains a Vector of preceding special tokens.
- */
+
+ 
+ 
+ 
 public class NodeToken implements Node {
    public NodeToken(String s) {
       this(s, -1, -1, -1, -1, -1);    }

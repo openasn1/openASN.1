@@ -4,14 +4,14 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeToken -> &lt;BIT_TKN&gt;
- * nodeToken1 -> &lt;STRING_TKN&gt;
- * nodeOptional -> [ &lt;LEFT_BRACE_TKN&gt; NamedBitList() &lt;RIGHT_BRACE_TKN&gt; ]
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 public class BitStringType implements Node {
    private Node parent;
    public NodeToken nodeToken;

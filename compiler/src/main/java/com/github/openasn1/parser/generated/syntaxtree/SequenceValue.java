@@ -4,13 +4,13 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeChoice -> &lt;LEFT_BRACE_TKN&gt; ComponentValueList() &lt;RIGHT_BRACE_TKN&gt;
- *       | &lt;LEFT_BRACE_TKN&gt; &lt;RIGHT_BRACE_TKN&gt;
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
 public class SequenceValue implements Node {
    private Node parent;
    public NodeChoice nodeChoice;

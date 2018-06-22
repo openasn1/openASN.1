@@ -35,8 +35,8 @@ public class ConstraintExtension implements Constraint {
 	 * ConstraintExtension conforming to the production
 	 * "(" extensionRootConstraint, ...(, extensionAdditionConstraint)? ")"
 	 * 
-	 * @param extensionRootConstraint
-	 * @param extensionAdditionConstraint
+	 * @param extensionRootConstraint is extensionRootConstraint
+	 * @param extensionAdditionConstraint is extensionAdditionConstraint
 	 */
 	public ConstraintExtension(Constraint extensionRootConstraint, Constraint extensionAdditionConstraint) {
 		if (extensionRootConstraint == null) {
@@ -50,7 +50,7 @@ public class ConstraintExtension implements Constraint {
 	 * ConstraintExtension conforming to the production
 	 * "(" extensionRootConstraint, ... ")"
 	 * 
-	 * @param extensionRootConstraint
+	 * @param extensionRootConstraint is extensionRootConstraint
 	 */
 	public ConstraintExtension(Constraint extensionRootConstraint) {
 		this(extensionRootConstraint, null);

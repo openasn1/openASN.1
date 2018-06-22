@@ -4,9 +4,9 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * The interface which all syntax tree classes must implement.
- */
+
+ 
+ 
 public interface Node extends java.io.Serializable {
    public void accept(com.github.openasn1.parser.generated.visitor.Visitor v);
    public <R,A> R accept(com.github.openasn1.parser.generated.visitor.GJVisitor<R,A> v, A argu);

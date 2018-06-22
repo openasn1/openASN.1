@@ -29,7 +29,7 @@ import com.github.openasn1.codec.coder.ASN1Encoder;
 /**
  * @author Marc Weyland
  *
- * @param <Type>
+ * @param <Type> is a generic type
  */
 public abstract class TypeEncoder<Type> extends TypeCoder {
 	private Type encodable;

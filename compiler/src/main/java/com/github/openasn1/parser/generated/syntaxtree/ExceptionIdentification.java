@@ -4,14 +4,14 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeChoice -> SignedNumber()
- *       | DefinedValue()
- *       | Type() &lt;COLON_TKN&gt; Value()
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 public class ExceptionIdentification implements Node {
    private Node parent;
    public NodeChoice nodeChoice;

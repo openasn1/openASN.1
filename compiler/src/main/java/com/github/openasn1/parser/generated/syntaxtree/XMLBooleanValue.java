@@ -4,13 +4,13 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeChoice -> &lt;LESSER_THAN_TKN&gt; &lt;AMPERSAND_TKN&gt; &lt;IDENTIFIER&gt; &lt;XMLTAGTERMINATINGBRACKET_TKN&gt;
- *       | &lt;LESSER_THAN_TKN&gt; &lt;AMPERSAND_TKN&gt; &lt;IDENTIFIER&gt; &lt;XMLTAGTERMINATINGBRACKET_TKN&gt;
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
 public class XMLBooleanValue implements Node {
    private Node parent;
    public NodeChoice nodeChoice;

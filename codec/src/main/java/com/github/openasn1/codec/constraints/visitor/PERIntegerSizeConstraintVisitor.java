@@ -383,9 +383,6 @@ public class PERIntegerSizeConstraintVisitor extends PERVisibleConstraintVisitor
 		return getMinimumSize() == getMaximumSize();
 	}
 
-	/**
-	 * @see com.github.openasn1.codec.constraints.visitor.DefaultConstraintVisitor#visit(com.github.openasn1.codec.constraints.subtype.SizeConstraint)
-	 */
 	@Override
 	public void visit(SizeConstraint constraint) {
 		super.visit(constraint);
@@ -399,9 +396,7 @@ public class PERIntegerSizeConstraintVisitor extends PERVisibleConstraintVisitor
 		setExtensible(visitor.isExtensible());
 	}
 
-	/**
-	 * @see com.github.openasn1.codec.constraints.visitor.DefaultConstraintVisitor#visit(com.github.openasn1.codec.constraints.subtype.SingleValueConstraint)
-	 */
+
 	@Override
 	public <T> void visit(SingleValueConstraint<T> constraint) {
 		super.visit(constraint);
@@ -847,7 +842,6 @@ public class PERIntegerSizeConstraintVisitor extends PERVisibleConstraintVisitor
 	 *    	 that constraint is simply completely ignored."
 	 * 
 	 * @see "X.691-0207 B.2.2.2"
-	 * @see com.github.openasn1.codec.constraints.visitor.SimpleConstraintVisitor#visit(com.github.openasn1.codec.constraints.ConstraintList)
 	 */
 	@Override
 	public void visit(ConstraintSerialisation constraint) {
@@ -948,7 +942,6 @@ public class PERIntegerSizeConstraintVisitor extends PERVisibleConstraintVisitor
 	 * 		 the EXCEPT is PER-visible or not."
 	 * 
 	 * @see "X.691-0207 9.3.19"
-	 * @see com.github.openasn1.codec.constraints.visitor.DefaultConstraintVisitor#visit(com.github.openasn1.codec.constraints.ConstraintExcept)
 	 */
 	@Override
 	public void visit(ConstraintExcept constraint) {
@@ -967,9 +960,6 @@ public class PERIntegerSizeConstraintVisitor extends PERVisibleConstraintVisitor
 		setExtensible(operandAVisitor.isExtensible());
 	}
 
-	/**
-	 * @see com.github.openasn1.codec.constraints.visitor.ConstraintVisitorImpl#visit(com.github.openasn1.codec.constraints.subtype.ExtensibleConstraint)
-	 */
 	@Override
 	public void visit(ConstraintExtension constraint) {
 		super.visit(constraint);

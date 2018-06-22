@@ -4,13 +4,13 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeToken -> &lt;INTEGER_TKN&gt;
- * nodeOptional -> [ &lt;LEFT_BRACE_TKN&gt; NamedNumberList() &lt;RIGHT_BRACE_TKN&gt; ]
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
 public class IntegerType implements Node {
    private Node parent;
    public NodeToken nodeToken;

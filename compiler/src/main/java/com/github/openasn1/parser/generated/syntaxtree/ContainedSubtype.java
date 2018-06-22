@@ -4,13 +4,13 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeOptional -> [ Includes() ]
- * type -> Type()
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
 public class ContainedSubtype implements Node {
    private Node parent;
    public NodeOptional nodeOptional;

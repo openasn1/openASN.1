@@ -4,12 +4,12 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * constraint -> Constraint()
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
 public class SingleTypeConstraint implements Node {
    private Node parent;
    public Constraint constraint;

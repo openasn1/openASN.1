@@ -50,8 +50,9 @@ public class IdentifierMapHelper {
      * 
      * Note: It does not recursively resolve through Tagged DefinedTypes
      * 
-     * @param type
-     * @return
+     * @param type is type
+	 * @param nodeInfos is node infos
+     * @return DefinedTypeRecursive for all defined types
      */
     public static Type getTypeFromDefinedTypeRecursive(Type type, ASN1ASTNodeInfos nodeInfos) {
         while (TypeAttributes.isDefinedType(type)) {

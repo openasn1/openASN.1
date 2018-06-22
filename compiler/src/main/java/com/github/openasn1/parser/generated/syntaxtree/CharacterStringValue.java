@@ -4,12 +4,12 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * restrictedCharacterStringValue -> RestrictedCharacterStringValue()
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
 public class CharacterStringValue implements Node {
    private Node parent;
    public RestrictedCharacterStringValue restrictedCharacterStringValue;

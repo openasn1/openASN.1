@@ -4,12 +4,12 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeListOptional -> ( ObjIdComponents() )*
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
 public class ObjIdComponentsList implements Node {
    private Node parent;
    public NodeListOptional nodeListOptional;

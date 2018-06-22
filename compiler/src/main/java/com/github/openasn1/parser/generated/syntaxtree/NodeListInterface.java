@@ -4,10 +4,10 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * The interface which NodeList, NodeListOptional, and NodeSequence
- * implement.
- */
+
+ 
+ 
+ 
 public interface NodeListInterface extends Node {
    public void addNode(Node n);
    public Node elementAt(int i);

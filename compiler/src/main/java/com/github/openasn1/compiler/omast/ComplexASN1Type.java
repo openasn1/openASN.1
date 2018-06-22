@@ -34,17 +34,13 @@ public class ComplexASN1Type extends AbstractASN1Type {
 
 	private List<AbstractASN1Type> children = new ArrayList<AbstractASN1Type>();
 
-	/**
-	 * @see com.github.openasn1.compiler.omast.OMVisitable#accept(com.github.openasn1.compiler.omast.OMVisitor)
-	 */
 	public void accept(OMVisitor vis) {
 		vis.visit(this);
 	}
 
 	/**
-	 * @param arg0
-	 * @return
-	 * @see java.util.List#add(java.lang.Object)
+	 * @param arg0 is arg0
+	 * @return boolean value
 	 */
 	public boolean addChild(AbstractASN1Type arg0) {
 		arg0.setParent(this);

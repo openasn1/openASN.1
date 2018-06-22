@@ -30,7 +30,7 @@ import com.github.openasn1.codec.coder.ASN1Decoder;
 /**
  * @author Marc Weyland
  *
- * @param <T>
+ * @param <T> is a generic set type
  */
 public class SetOfDecoder<T> extends TypeDecoder<List<T>> {
 	private TypeDecoder<T> decoderPrototype = null;

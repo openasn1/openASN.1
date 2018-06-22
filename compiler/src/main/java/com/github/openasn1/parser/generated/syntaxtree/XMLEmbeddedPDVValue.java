@@ -4,12 +4,12 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeOptional -> [ XMLSequenceValue() ]
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
 public class XMLEmbeddedPDVValue implements Node {
    private Node parent;
    public NodeOptional nodeOptional;

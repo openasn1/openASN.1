@@ -4,19 +4,19 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeChoice -> ValueRange()
- *       | ContainedSubtype()
- *       | PermittedAlphabet()
- *       | SizeConstraint()
- *       | TypeConstraint()
- *       | InnerTypeConstraints()
- *       | SingleValue()
- *       | PatternConstraint()
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 public class SubtypeElements implements Node {
    private Node parent;
    public NodeChoice nodeChoice;

@@ -30,9 +30,6 @@ import com.github.openasn1.parser.casestudy.tool.FeatureReporting.FeatureReporti
  */
 public class CaseStudyInvoker {
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
 		CaseStudyTool c = new FeatureReportingCaseStudyTool(
 				"C:\\Downloads\\Websites\\ASN1-ITU\\www.itu.int\\ITU-T\\asn1\\database");

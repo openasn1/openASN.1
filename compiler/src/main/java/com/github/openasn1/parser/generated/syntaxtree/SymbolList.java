@@ -4,13 +4,13 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * symbol -> Symbol()
- * nodeListOptional -> ( &lt;COMMA_TKN&gt; Symbol() )*
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
 public class SymbolList implements Node {
    private Node parent;
    public Symbol symbol;

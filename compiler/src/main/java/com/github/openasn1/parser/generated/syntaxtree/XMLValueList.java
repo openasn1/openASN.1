@@ -4,12 +4,12 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeList -> ( XMLValueOrEmpty() )+
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
 public class XMLValueList implements Node {
    private Node parent;
    public NodeList nodeList;

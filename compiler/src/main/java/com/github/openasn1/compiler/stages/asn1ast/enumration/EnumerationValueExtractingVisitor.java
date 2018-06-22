@@ -61,25 +61,16 @@ public class EnumerationValueExtractingVisitor extends DepthFirstVisitor {
 
 	private boolean firstAdditionalItem = true;
 
-	/**
-	 * @param nodeinfos
-	 */
 	public EnumerationValueExtractingVisitor(ASN1ASTNodeInfos nodeinfos) {
 		this.nodeinfos = nodeinfos;
 	}
 
-	/**
-	 * @see com.github.openasn1.parser.generated.visitor.DepthFirstVisitor#visit(com.github.openasn1.parser.generated.syntaxtree.AdditionalEnumeration)
-	 */
 	@Override
 	public void visit(AdditionalEnumeration n) {
 		setCurrentStage(Stage.AddionalEnum);
 		super.visit(n);
 	}
 
-	/**
-	 * @see com.github.openasn1.parser.generated.visitor.DepthFirstVisitor#visit(com.github.openasn1.parser.generated.syntaxtree.EnumeratedType)
-	 */
 	@Override
 	public void visit(EnumeratedType n) {
 		// Initialize all variables
@@ -89,9 +80,6 @@ public class EnumerationValueExtractingVisitor extends DepthFirstVisitor {
 		super.visit(n);
 	}
 
-	/**
-	 * @see com.github.openasn1.parser.generated.visitor.DepthFirstVisitor#visit(com.github.openasn1.parser.generated.syntaxtree.EnumerationItem)
-	 */
 	@Override
 	public void visit(EnumerationItem n) {
 		if (getCurrentStage() == Stage.RootEnumNamedNumberEnums) {
@@ -149,9 +137,6 @@ public class EnumerationValueExtractingVisitor extends DepthFirstVisitor {
 		super.visit(n);
 	}
 
-	/**
-	 * @see com.github.openasn1.parser.generated.visitor.DepthFirstVisitor#visit(com.github.openasn1.parser.generated.syntaxtree.RootEnumeration)
-	 */
 	@Override
 	public void visit(RootEnumeration n) {
 		setCurrentStage(Stage.RootEnumNamedNumberEnums);

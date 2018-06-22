@@ -4,15 +4,15 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeToken -> &lt;VERSIONBRACKET_START_TKN&gt;
- * nodeOptional -> [ VersionNumber() ]
- * alternativeTypeList -> AlternativeTypeList()
- * nodeToken1 -> &lt;VERSIONBRACKET_END_TKN&gt;
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 public class ExtensionAdditionAlternativesGroup implements Node {
    private Node parent;
    public NodeToken nodeToken;

@@ -4,12 +4,6 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * aSNEnumeration -> ASNEnumeration()
- * </PRE>
- */
 public class AdditionalEnumeration implements Node {
    private Node parent;
    public ASNEnumeration aSNEnumeration;

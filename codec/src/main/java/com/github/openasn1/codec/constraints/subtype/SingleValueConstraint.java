@@ -28,7 +28,7 @@ import com.github.openasn1.codec.constraints.visitor.ConstraintVisitor;
 /**
  * @author Marc Weyland
  *
- * @param <T>
+ * @param <T> is a generic type
  */
 public class SingleValueConstraint<T> extends ConstraintImpl {
 	private T value;

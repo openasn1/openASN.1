@@ -34,16 +34,10 @@ public class ProtocolReportingCaseStudyTool extends CaseStudyTool {
 
 	private List<String> passedProtocols = new ArrayList<String>();
 
-	/**
-	 * @param dir
-	 */
 	public ProtocolReportingCaseStudyTool(String dir) {
 		super(dir);
 	}
 
-	/**
-	 * @see com.github.openasn1.parser.casestudy.tool.CaseStudyTool#newProtocolEncountered()
-	 */
 	@Override
 	protected void newProtocolEncountered() {
 		if (getLastProtocolPackage().equals("")) {
@@ -56,9 +50,6 @@ public class ProtocolReportingCaseStudyTool extends CaseStudyTool {
 		}
 	}
 
-	/**
-	 * @see com.github.openasn1.parser.casestudy.tool.CaseStudyTool#scandir()
-	 */
 	@Override
 	public void scandir() {
 		super.scandir();

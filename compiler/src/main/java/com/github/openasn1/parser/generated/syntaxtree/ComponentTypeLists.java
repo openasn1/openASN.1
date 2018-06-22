@@ -4,13 +4,13 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeChoice -> RootComponentTypeList() [ &lt;COMMA_TKN&gt; ExtensionAndException() [ ExtensionAdditions() ] [ ExtensionEndMarker() [ &lt;COMMA_TKN&gt; RootComponentTypeList() ] ] ]
- *       | ExtensionAndException() [ ExtensionAdditions() ] [ ExtensionEndMarker() [ &lt;COMMA_TKN&gt; RootComponentTypeList() ] ]
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
 public class ComponentTypeLists implements Node {
    private Node parent;
    public NodeChoice nodeChoice;

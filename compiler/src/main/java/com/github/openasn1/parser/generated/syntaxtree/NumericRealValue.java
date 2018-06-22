@@ -4,14 +4,14 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeChoice -> &lt;REALNUMBER&gt;
- *       | &lt;MINUS_TKN&gt; &lt;REALNUMBER&gt;
- *       | SequenceValue()
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 public class NumericRealValue implements Node {
    private Node parent;
    public NodeChoice nodeChoice;

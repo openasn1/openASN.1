@@ -22,7 +22,10 @@ public class ParseException extends Exception {
    * This constructor calls its super class with the empty string
    * to force the "toString" method of parent class "Throwable" to
    * print the error message in the form:
-   *     ParseException: <result of getMessage>
+   *     ParseException: (result of getMessage)
+   * @param currentTokenVal is currentTokenVal
+   * @param expectedTokenSequencesVal is expectedTokenSequencesVal
+   * @param tokenImageVal is tokenImageVal
    */
   public ParseException(Token currentTokenVal,
                         int[][] expectedTokenSequencesVal,
@@ -140,6 +143,8 @@ public class ParseException extends Exception {
   protected String eol = System.getProperty("line.separator", "\n");
  
   /**
+   * @param str is str
+   * @return String chars strings
    * Used to convert raw characters to their escaped version
    * when these raw version cannot be used as part of an ASCII
    * string literal.

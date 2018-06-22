@@ -4,12 +4,12 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * value -> Value()
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
 public class SingleValue implements Node {
    private Node parent;
    public Value value;

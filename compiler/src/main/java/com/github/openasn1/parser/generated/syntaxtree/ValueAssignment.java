@@ -4,15 +4,15 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * valuereference -> valuereference()
- * type -> Type()
- * nodeToken -> &lt;ASSIGN_OP_TKN&gt;
- * value -> Value()
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 public class ValueAssignment implements Node {
    private Node parent;
    public valuereference valuereference;

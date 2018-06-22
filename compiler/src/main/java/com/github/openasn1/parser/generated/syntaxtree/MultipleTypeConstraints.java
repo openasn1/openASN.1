@@ -4,13 +4,13 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeChoice -> FullSpecification()
- *       | PartialSpecification()
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
 public class MultipleTypeConstraints implements Node {
    private Node parent;
    public NodeChoice nodeChoice;

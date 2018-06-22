@@ -4,13 +4,6 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * namedType -> NamedType()
- * nodeListOptional -> ( &lt;COMMA_TKN&gt; NamedType() )*
- * </PRE>
- */
 public class AlternativeTypeList implements Node {
    private Node parent;
    public NamedType namedType;

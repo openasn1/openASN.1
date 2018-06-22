@@ -4,12 +4,12 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * elements -> Elements()
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
 public class Elems implements Node {
    private Node parent;
    public Elements elements;

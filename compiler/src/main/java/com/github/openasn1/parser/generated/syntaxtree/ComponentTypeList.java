@@ -4,13 +4,13 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * componentType -> ComponentType()
- * nodeListOptional -> ( &lt;COMMA_TKN&gt; ComponentType() )*
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
 public class ComponentTypeList implements Node {
    private Node parent;
    public ComponentType componentType;

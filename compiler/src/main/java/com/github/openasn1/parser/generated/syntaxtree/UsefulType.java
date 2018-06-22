@@ -4,14 +4,14 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeChoice -> &lt;GENERALIZEDTIME_TKN&gt;
- *       | &lt;UTCTIME_TKN&gt;
- *       | &lt;OBJECTDESCRIPTOR_TKN&gt;
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 public class UsefulType implements Node {
    private Node parent;
    public NodeChoice nodeChoice;

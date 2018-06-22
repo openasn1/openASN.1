@@ -58,9 +58,6 @@ public class FeatureReportingCaseStudyTool extends CaseStudyTool {
 		return this.failedProtocols;
 	}
 
-	/**
-	 * @see com.github.openasn1.parser.casestudy.tool.CaseStudyTool#newProtocolEncountered()
-	 */
 	@Override
 	protected void newProtocolEncountered() {
 		if (getLastProtocolPackage().equals("")) {
@@ -77,9 +74,6 @@ public class FeatureReportingCaseStudyTool extends CaseStudyTool {
 		setCurrentFeatureList(new FeatureListHandler());
 	}
 
-	/**
-	 * @see com.github.openasn1.parser.casestudy.tool.CaseStudyTool#handleParseException(com.github.openasn1.parser.generated.ParseException)
-	 */
 	@Override
 	protected void handleParseException(ParseException e) {
 		super.handleParseException(e);
@@ -154,9 +148,6 @@ public class FeatureReportingCaseStudyTool extends CaseStudyTool {
 		}
 	}
 
-	/**
-	 * @see com.github.openasn1.parser.casestudy.tool.CaseStudyTool#analyzeAST(com.github.openasn1.parser.generated.syntaxtree.Node)
-	 */
 	@Override
 	protected void analyzeAST(Node astroot) {
 		FeatureCountingVisitor vis = new FeatureCountingVisitor();
@@ -165,9 +156,6 @@ public class FeatureReportingCaseStudyTool extends CaseStudyTool {
 		getCurrentFeatureList().incFeatureCount(FeatureList.ParsedFiles);
 	}
 
-	/**
-	 * @param dir
-	 */
 	public FeatureReportingCaseStudyTool(String dir) {
 		super(dir);
 	}
@@ -201,11 +189,6 @@ public class FeatureReportingCaseStudyTool extends CaseStudyTool {
 		this.currentFeatureList = currentFeatureList;
 	}
 
-	
-	
-	/**
-	 * @see com.github.openasn1.parser.casestudy.tool.CaseStudyTool#updateProgressBar()
-	 */
 	@Override
 	protected void updateProgressBar() {
 		if ((getFilesamount() % 160) == 0) {
@@ -214,9 +197,6 @@ public class FeatureReportingCaseStudyTool extends CaseStudyTool {
 		getCurrentFeatureList().incFeatureCount(FeatureList.Files);
 	}
 
-	/**
-	 * @see com.github.openasn1.parser.casestudy.tool.CaseStudyTool#scandir()
-	 */
 	@Override
 	public void scandir() {
 		super.scandir();
@@ -262,9 +242,6 @@ public class FeatureReportingCaseStudyTool extends CaseStudyTool {
 		System.setOut(def);
 	}
 
-	/**
-	 * 
-	 */
 	private PrintStream createOutputPrintStream() {
 		PrintStream file;
 		try {

@@ -39,7 +39,7 @@ public class ConstraintUnion extends ConstraintList implements Constraint {
 	 * 			   Being semantically equivalent but easing the work for further
 	 * 			   processing in the visitors.  
 	 * 
-	 * @param operands
+	 * @param constraints is constraints
 	 */
 	public ConstraintUnion(Constraint ... constraints) {
 		super(constraints);

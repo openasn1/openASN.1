@@ -4,15 +4,15 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * rootEnumeration -> RootEnumeration()
- * nodeOptional -> [ &lt;COMMA_TKN&gt; &lt;ELLIPSIS_TKN&gt; ]
- * nodeOptional1 -> [ ExceptionSpec() ]
- * nodeOptional2 -> [ &lt;COMMA_TKN&gt; AdditionalEnumeration() ]
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 public class Enumerations implements Node {
    private Node parent;
    public RootEnumeration rootEnumeration;

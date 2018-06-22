@@ -6,9 +6,9 @@ package com.github.openasn1.parser.generated.syntaxtree;
 
 import java.util.*;
 
-/**
- * Represents a grammar list, e.g. ( A )+
- */
+
+ 
+ 
 public class NodeList implements NodeListInterface {
    public NodeList() {
       nodes = new Vector<Node>();

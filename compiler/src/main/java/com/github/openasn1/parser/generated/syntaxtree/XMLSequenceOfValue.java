@@ -4,14 +4,14 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeChoice -> XMLValueList()
- *       | XMLDelimitedItemList()
- *       | XMLSpaceSeparatedList()
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 public class XMLSequenceOfValue implements Node {
    private Node parent;
    public NodeChoice nodeChoice;

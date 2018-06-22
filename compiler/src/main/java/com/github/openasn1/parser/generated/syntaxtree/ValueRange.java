@@ -4,14 +4,14 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * lowerEndpoint -> LowerEndpoint()
- * nodeToken -> &lt;DOTDOT_TKN&gt;
- * upperEndpoint -> UpperEndpoint()
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 public class ValueRange implements Node {
    private Node parent;
    public LowerEndpoint lowerEndpoint;

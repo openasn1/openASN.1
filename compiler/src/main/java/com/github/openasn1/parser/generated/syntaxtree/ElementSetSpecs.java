@@ -4,13 +4,13 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * rootElementSetSpec -> RootElementSetSpec()
- * nodeOptional -> [ &lt;COMMA_TKN&gt; &lt;ELLIPSIS_TKN&gt; [ &lt;COMMA_TKN&gt; AdditionalElementSetSpec() ] ]
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
 public class ElementSetSpecs implements Node {
    private Node parent;
    public RootElementSetSpec rootElementSetSpec;

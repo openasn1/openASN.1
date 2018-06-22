@@ -4,12 +4,12 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeToken -> &lt;CSTRING&gt;
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
 public class XMLRestrictedCharacterStringValue implements Node {
    private Node parent;
    public NodeToken nodeToken;

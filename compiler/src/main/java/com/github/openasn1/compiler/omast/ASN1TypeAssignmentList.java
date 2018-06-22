@@ -32,20 +32,11 @@ public class ASN1TypeAssignmentList extends AbstractASN1Type {
 
 	private List<ASN1TypeAssignment> list = new ArrayList<ASN1TypeAssignment>();
 
-	/**
-	 * @see com.github.openasn1.compiler.omast.OMVisitable#accept(com.github.openasn1.compiler.omast.OMVisitor)
-	 */
 	public void accept(OMVisitor vis) {
 		vis.visit(this);
 
 	}
 
-
-	/**
-	 * @param arg0
-	 * @return
-	 * @see java.util.List#add(java.lang.Object)
-	 */
 	public boolean add(ASN1TypeAssignment arg0) {
 		arg0.setParent(this);
 		return this.list.add(arg0);

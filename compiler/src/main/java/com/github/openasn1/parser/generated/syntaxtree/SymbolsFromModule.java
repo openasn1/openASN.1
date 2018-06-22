@@ -4,14 +4,14 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * symbolList -> SymbolList()
- * nodeToken -> &lt;FROM_TKN&gt;
- * globalModuleReference -> GlobalModuleReference()
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 public class SymbolsFromModule implements Node {
    private Node parent;
    public SymbolList symbolList;

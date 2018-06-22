@@ -4,24 +4,24 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeChoice -> &lt;BMPSTRING_TKN&gt;
- *       | &lt;GENERALSTRING_TKN&gt;
- *       | &lt;GRAPHICSTRING_TKN&gt;
- *       | &lt;IA5STRING_TKN&gt;
- *       | &lt;ISO646STRING_TKN&gt;
- *       | &lt;NUMERICSTRING_TKN&gt;
- *       | &lt;PRINTABLESTRING_TKN&gt;
- *       | &lt;TELETEXSTRING_TKN&gt;
- *       | &lt;T61STRING_TKN&gt;
- *       | &lt;UNIVERSALSTRING_TKN&gt;
- *       | &lt;UTF8STRING_TKN&gt;
- *       | &lt;VIDEOTEXSTRING_TKN&gt;
- *       | &lt;VISIBLESTRING_TKN&gt;
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 public class RestrictedCharacterStringType implements Node {
    private Node parent;
    public NodeChoice nodeChoice;

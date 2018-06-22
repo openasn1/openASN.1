@@ -4,13 +4,13 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeToken -> &lt;EXCEPT_TKN&gt;
- * elements -> Elements()
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
 public class Exclusions implements Node {
    private Node parent;
    public NodeToken nodeToken;

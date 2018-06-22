@@ -4,13 +4,13 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * elements -> Elements()
- * nodeOptional -> [ Exclusions() ]
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
 public class IntersectionElements implements Node {
    private Node parent;
    public Elements elements;

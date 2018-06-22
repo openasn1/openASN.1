@@ -32,9 +32,6 @@ public class EnumASN1Type extends AbstractASN1Type {
 
 	private Map<String, Integer> enums = new LinkedHashMap<String, Integer>();
 
-	/**
-	 * @see com.github.openasn1.compiler.omast.OMVisitable#accept(com.github.openasn1.compiler.omast.OMVisitor)
-	 */
 	public void accept(OMVisitor vis){
 		vis.visit(this);
 	}
@@ -47,9 +44,8 @@ public class EnumASN1Type extends AbstractASN1Type {
 	}
 
 	/**
-	 * @param key
-	 * @param value
-	 * @return
+	 * @param key is key
+	 * @param value is value
 	 * @see java.util.HashMap#put(java.lang.Object, java.lang.Object)
 	 */
 	public void addEnum(String key, Integer value) {

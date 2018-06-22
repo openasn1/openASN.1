@@ -4,13 +4,13 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeChoice -> &lt;EXPORTS_TKN&gt; [ SymbolsExported() ] &lt;SEMICOLON_TKN&gt;
- *       | &lt;EXPORTS_TKN&gt; &lt;ALL_TKN&gt; &lt;SEMICOLON_TKN&gt;
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
 public class Exports implements Node {
    private Node parent;
    public NodeChoice nodeChoice;

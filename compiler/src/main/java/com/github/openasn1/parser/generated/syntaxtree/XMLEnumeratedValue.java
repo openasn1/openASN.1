@@ -4,15 +4,15 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeToken -> &lt;LESSER_THAN_TKN&gt;
- * nodeToken1 -> &lt;AMPERSAND_TKN&gt;
- * nodeToken2 -> &lt;IDENTIFIER&gt;
- * nodeToken3 -> &lt;XMLTAGTERMINATINGBRACKET_TKN&gt;
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 public class XMLEnumeratedValue implements Node {
    private Node parent;
    public NodeToken nodeToken;

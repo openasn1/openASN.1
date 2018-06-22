@@ -4,13 +4,6 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * enumerationItem -> EnumerationItem()
- * nodeListOptional -> ( &lt;COMMA_TKN&gt; EnumerationItem() )*
- * </PRE>
- */
 public class ASNEnumeration implements Node {
    private Node parent;
    public EnumerationItem enumerationItem;

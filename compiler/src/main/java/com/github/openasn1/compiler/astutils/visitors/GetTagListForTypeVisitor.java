@@ -43,16 +43,13 @@ public class GetTagListForTypeVisitor extends DepthFirstVisitor {
 	private List<TagValue> taglist = new ArrayList<TagValue>();
 
 	/**
-	 * @param infos
+	 * @param infos is infos
 	 */
 	public GetTagListForTypeVisitor(ASN1ASTNodeInfos infos) {
 		super();
 		this.infos = infos;
 	}
 
-	/**
-	 * @see com.github.openasn1.parser.generated.visitor.DepthFirstVisitor#visit(com.github.openasn1.parser.generated.syntaxtree.Type)
-	 */
 	@Override
 	public void visit(Type n) {
 		TagValue tv = (TagValue) getInfos().getNodeInfoMap(n).get("Tag");

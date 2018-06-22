@@ -4,13 +4,13 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeOptional -> [ ValueConstraint() ]
- * nodeOptional1 -> [ PresenceConstraint() ]
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
 public class ComponentConstraint implements Node {
    private Node parent;
    public NodeOptional nodeOptional;

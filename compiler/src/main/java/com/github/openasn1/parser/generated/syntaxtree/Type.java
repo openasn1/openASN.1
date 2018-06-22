@@ -4,13 +4,13 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeChoice -> NormalConstrainedType()
- *       | TypeWithConstraint()
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
 public class Type implements Node {
    private Node parent;
    public NodeChoice nodeChoice;

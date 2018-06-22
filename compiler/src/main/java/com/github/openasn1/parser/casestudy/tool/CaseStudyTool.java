@@ -60,9 +60,6 @@ public class CaseStudyTool {
 	
 	private String currentProtocolPackage = "";
 
-	/**
-	 * @return the currentProtocolPackage
-	 */
 	protected String getCurrentProtocolPackage() {
 		return this.currentProtocolPackage;
 	}
@@ -82,9 +79,6 @@ public class CaseStudyTool {
 
 	}
 
-	/**
-	 * 
-	 */
 	private void printresults() {
 		DecimalFormat dcf = new DecimalFormat("0.00");
 		DateFormat df = new SimpleDateFormat("HH:mm:ss");
@@ -104,9 +98,6 @@ public class CaseStudyTool {
 		System.out.println(dcf.format(percentile) + "% protocols parsed");
 	}
 
-	/**
-	 * 
-	 */
 	private void parseFilesInDir() {
 		InputStream res = null;
 		try {
@@ -164,11 +155,6 @@ public class CaseStudyTool {
 		setLastProtocolWithoutError(true);
 	}
 
-	/**
-	 * Method that is called after sucessfully parsing an ASN.1 File
-	 * 
-	 * @param astroot
-	 */
 	protected void analyzeAST(Node astroot) {
 
 	}
@@ -177,23 +163,10 @@ public class CaseStudyTool {
 
 	}
 
-	/**
-	 * Handles a ParseException and invokes the further actions (logging the
-	 * exception, etc)
-	 * 
-	 * @param e
-	 */
 	protected void handleParseException(ParseException e) {
 
 	}
 
-	/**
-	 * This method is called when a parseException occurs. Returns a boolean, if
-	 * more files should be parsed
-	 * 
-	 * @param e
-	 * @return
-	 */
 	protected boolean shouldParseMoreFiles(ParseException e) {
 		return true;
 	}

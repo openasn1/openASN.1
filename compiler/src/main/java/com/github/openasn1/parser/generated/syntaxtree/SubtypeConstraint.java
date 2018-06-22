@@ -4,12 +4,12 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * elementSetSpecs -> ElementSetSpecs()
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
 public class SubtypeConstraint implements Node {
    private Node parent;
    public ElementSetSpecs elementSetSpecs;

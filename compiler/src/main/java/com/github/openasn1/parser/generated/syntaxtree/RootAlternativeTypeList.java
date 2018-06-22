@@ -4,12 +4,12 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * alternativeTypeList -> AlternativeTypeList()
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
 public class RootAlternativeTypeList implements Node {
    private Node parent;
    public AlternativeTypeList alternativeTypeList;

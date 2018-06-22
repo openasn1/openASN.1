@@ -53,7 +53,7 @@ public class IntersectionConstraintVisitor extends GJVoidDepthFirst<Constraint> 
 	}
 
 	/**
-	 * @param infos
+	 * @param infos is infos
 	 */
 	public IntersectionConstraintVisitor(ASN1ASTNodeInfos infos) {
 		super();

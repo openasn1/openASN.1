@@ -4,14 +4,14 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeChoice -> Tag() &lt;IMPLICIT_TKN&gt; Type()
- *       | Tag() &lt;EXPLICIT_TKN&gt; Type()
- *       | Tag() Type()
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 public class TaggedType implements Node {
    private Node parent;
    public NodeChoice nodeChoice;

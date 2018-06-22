@@ -4,29 +4,29 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeChoice -> BitStringType()
- *       | BooleanType()
- *       | CharacterStringType()
- *       | ChoiceType()
- *       | EmbeddedPDVType()
- *       | EnumeratedType()
- *       | ExternalType()
- *       | IntegerType()
- *       | NullType()
- *       | ObjectIdentifierType()
- *       | OctetStringType()
- *       | RealType()
- *       | RelativeOIDType()
- *       | SequenceOfType()
- *       | SequenceType()
- *       | SetOfType()
- *       | SetType()
- *       | TaggedType()
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 public class BuiltinType implements Node {
    private Node parent;
    public NodeChoice nodeChoice;

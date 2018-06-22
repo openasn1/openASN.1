@@ -4,13 +4,13 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeToken -> &lt;IDENTIFIER&gt;
- * componentConstraint -> ComponentConstraint()
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
 public class NamedConstraint implements Node {
    private Node parent;
    public NodeToken nodeToken;

@@ -4,13 +4,13 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeChoice -> BuiltinValue()
- *       | ReferencedValue()
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
 public class Value implements Node {
    private Node parent;
    public NodeChoice nodeChoice;

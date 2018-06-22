@@ -30,7 +30,7 @@ import com.github.openasn1.codec.coder.ASN1Encoder;
 /**
  * @author Marc Weyland
  *
- * @param <T>
+ * @param <T> is a generic set type
  */
 public class SetOfEncoder<T> extends TypeEncoder<ArrayList<T>> {
 	private TypeEncoder<T> encoderPrototype = null;

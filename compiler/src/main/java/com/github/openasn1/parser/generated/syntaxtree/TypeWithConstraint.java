@@ -4,15 +4,15 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeChoice -> &lt;SET_TKN&gt; Constraint() &lt;OF_TKN&gt; TypeOrNamedType()
- *       | &lt;SET_TKN&gt; SizeConstraint() &lt;OF_TKN&gt; TypeOrNamedType()
- *       | &lt;SEQUENCE_TKN&gt; Constraint() &lt;OF_TKN&gt; TypeOrNamedType()
- *       | &lt;SEQUENCE_TKN&gt; SizeConstraint() &lt;OF_TKN&gt; TypeOrNamedType()
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 public class TypeWithConstraint implements Node {
    private Node parent;
    public NodeChoice nodeChoice;

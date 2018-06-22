@@ -83,7 +83,7 @@ abstract public class PERDecoder implements ASN1Decoder {
 	/**
 	 * Sets the octet alignment of this encoder
 	 * 
-	 * @param isOctetAligned true if octet alignment should be kept
+	 * @param octetAligned true if octet alignment should be kept
 	 */
 	public void setOctetAligned(boolean octetAligned) {
 		this.isOctetAligned = octetAligned;
@@ -113,7 +113,9 @@ abstract public class PERDecoder implements ASN1Decoder {
 	 * 
 	 * Note: Since there are no bits on the line we don't need decode anything
 	 * 
+	 * @param typeInformation is the type information parameter
 	 * @see com.github.openasn1.codec.coder.ASN1Decoder#decodeNull(com.github.openasn1.codec.coder.typecoder.TypeInformation)
+	 * @return Void.class is the class of Void type
 	 */
 	public Class<Void> decodeNull(TypeInformation typeInformation) throws IOException {
 		/**
@@ -132,8 +134,10 @@ abstract public class PERDecoder implements ASN1Decoder {
      * 
      * Reads the integer from a field which is a fixed number of bits specified
      * by the 'bits' parameter
-     * 
+     * @param bits is the bits integer value
      * @see "X.691-0207 10.3.5"
+     * @return decodeNonNegativeBinaryIntegerFromBits as method purpose
+     * @throws IOException is the exception
      */
 	protected int decodeNonNegativeBinaryIntegerFromBits(int bits) throws IOException {
 		/**
@@ -169,7 +173,10 @@ abstract public class PERDecoder implements ASN1Decoder {
      * specified by the 'octets' parameter. Only one or two octets are
      * permittet.
      * 
+     * @param octets is integer value
      * @see "X.691-0207 10.3.5"
+     * @throws IOException is the exception
+     * @return decodeNonNegativeBinaryIntegerFromOctets as method purpose
      */
 	protected int decodeNonNegativeBinaryIntegerFromOctets(int octets) throws IOException {
 		if ((octets < 1) || (octets > 2)) {
@@ -194,7 +201,10 @@ abstract public class PERDecoder implements ASN1Decoder {
      * Reads the integer from a field which is the minimum number of octets
      * needed to hold it.
      * 
+     * @param octets is the value
      * @see "X.691-0207 10.3.6"
+     * @throws IOException is the exception
+     * @return decodeNonNegativeBinaryInteger as method purpose
      */
 	protected int decodeNonNegativeBinaryInteger(int octets) throws IOException {
 		/**
@@ -230,6 +240,9 @@ abstract public class PERDecoder implements ASN1Decoder {
      * octets needed to hold it
      * 
      * @see "X.691-0207 10.4"
+     * @param octets is octets
+     * @throws IOException is the ecxception
+     * @return int value
      */
 	protected int decode2sComplementBinaryInteger(int octets) throws IOException {
 		/**
@@ -268,6 +281,8 @@ abstract public class PERDecoder implements ASN1Decoder {
      * (e.g. a choice index)
      * 
      * @see "X.691-0207 10.6"
+     * @throws IOException is the exception
+     * @return int value
      */
 	protected int decodeNormallySmallNonNegativeWholeNumber() throws IOException {
 		/**
@@ -301,6 +316,9 @@ abstract public class PERDecoder implements ASN1Decoder {
      * octets is first decoded from a length field L
      * 
      * @see "X.691-0207 10.7"
+     * @param lowerBound is lowerBound
+     * @throws IOException is the exception
+     * @return int value
      */
 	protected int decodeSemiConstrainedWholeNumber(int lowerBound) throws IOException {
 		/**
@@ -324,6 +342,8 @@ abstract public class PERDecoder implements ASN1Decoder {
      * decoded bit-field is not octet-aligned.
      * 
      * @see "X.691-0207 10.8"
+     * @throws IOException is the exception
+     * @return int value
      */
 	protected int decodeUnconstrainedWholeNumber() throws IOException {
 		/**
@@ -371,6 +391,9 @@ abstract public class PERDecoder implements ASN1Decoder {
      * bits.
      * 
      * @see "X.691-0207 16"
+     * @param typeInformation is typeInformation
+     * @throws IOException is the exception
+     * @return byte[] value
      */
 	public byte[] decodeOctetString(TypeInformation typeInformation) throws IOException {
 		if (!typeInformation.hasConstraint()) {
@@ -1173,6 +1196,9 @@ abstract public class PERDecoder implements ASN1Decoder {
      *  
      * @see "X.691-0207 10.9.3 (ALIGNED -> not fully implemented)"
      * @see "X.691-0207 10.9.4 (UNALIGNED)"
+     * @param lowerBound is lowerBound
+     * @throws IOException is the exception
+     * @return int value
      */
 	protected int decodeLengthField(int lowerBound) throws IOException {
 		// TODO: handle ALIGNED variant
@@ -1390,6 +1416,10 @@ abstract public class PERDecoder implements ASN1Decoder {
      * Encoding of a "fully" bounded length determinant (UNALIGNED variant)
      * 
      * @see "X.691-0207 10.9.4"
+     * @param lowerBound is lowerBound
+     * @param upperBound is upperBound
+     * @throws IOException is the exception
+     * @return int value 
      */
 	protected int decodeLengthField(int lowerBound, int upperBound) throws IOException {
 		if ((lowerBound == upperBound) && (lowerBound < SIZE_64K)) {
@@ -1432,6 +1462,10 @@ abstract public class PERDecoder implements ASN1Decoder {
      * interval range. There is no length Field L.
      * 
      * @see "X.691-0207 10.5.3"
+     * @param lowerBound is lowerBound
+     * @param upperBound is upperBound
+     * @throws IOException is the exception
+     * @return int value 
      */
 	protected int decodeConstrainedWholeNumber(int lowerBound, int upperBound) throws IOException {
 		int range = upperBound - lowerBound + 1;

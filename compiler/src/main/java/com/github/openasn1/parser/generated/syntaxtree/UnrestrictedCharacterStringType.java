@@ -4,13 +4,13 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeToken -> &lt;CHARACTER_TKN&gt;
- * nodeToken1 -> &lt;STRING_TKN&gt;
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
 public class UnrestrictedCharacterStringType implements Node {
    private Node parent;
    public NodeToken nodeToken;

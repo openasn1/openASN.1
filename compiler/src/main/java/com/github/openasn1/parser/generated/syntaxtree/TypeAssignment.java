@@ -4,14 +4,14 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeToken -> &lt;TYPEREFERENCE&gt;
- * nodeToken1 -> &lt;ASSIGN_OP_TKN&gt;
- * type -> Type()
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 public class TypeAssignment implements Node {
    private Node parent;
    public NodeToken nodeToken;

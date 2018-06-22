@@ -30,7 +30,7 @@ import com.github.openasn1.codec.coder.ASN1Decoder;
 /**
  * @author Marc Weyland
  *
- * @param <T>
+ * @param <T> is a generic sequence type
  */
 public class SequenceOfDecoder<T> extends TypeDecoder<List<T>> {
 	private TypeDecoder<T> decoderPrototype = null;

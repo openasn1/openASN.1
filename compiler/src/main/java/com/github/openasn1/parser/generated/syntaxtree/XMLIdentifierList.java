@@ -4,12 +4,12 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeList -> ( &lt;LESSER_THAN_TKN&gt; &lt;AMPERSAND_TKN&gt; &lt;IDENTIFIER&gt; &lt;XMLTAGTERMINATINGBRACKET_TKN&gt; )+
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
 public class XMLIdentifierList implements Node {
    private Node parent;
    public NodeList nodeList;

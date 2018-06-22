@@ -68,8 +68,8 @@ public class ASN1Module extends AbstractASN1Type {
 
 
 	/**
-	 * @param arg0
-	 * @return
+	 * @param importList is the import list
+	 * @return boolean value
 	 * @see java.util.List#add(java.lang.Object)
 	 */
 	public boolean add(ASN1ImportListFromModule importList) {

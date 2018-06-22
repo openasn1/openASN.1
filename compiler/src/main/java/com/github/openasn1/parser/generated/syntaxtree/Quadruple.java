@@ -4,20 +4,20 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeToken -> &lt;LEFT_BRACE_TKN&gt;
- * group -> Group()
- * nodeToken1 -> &lt;COMMA_TKN&gt;
- * plane -> Plane()
- * nodeToken2 -> &lt;COMMA_TKN&gt;
- * row -> Row()
- * nodeToken3 -> &lt;COMMA_TKN&gt;
- * cell -> Cell()
- * nodeToken4 -> &lt;RIGHT_BRACE_TKN&gt;
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 public class Quadruple implements Node {
    private Node parent;
    public NodeToken nodeToken;

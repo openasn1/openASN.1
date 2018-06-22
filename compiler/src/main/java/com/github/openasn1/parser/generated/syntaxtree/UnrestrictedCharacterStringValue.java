@@ -4,12 +4,12 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * sequenceValue -> SequenceValue()
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
 public class UnrestrictedCharacterStringValue implements Node {
    private Node parent;
    public SequenceValue sequenceValue;

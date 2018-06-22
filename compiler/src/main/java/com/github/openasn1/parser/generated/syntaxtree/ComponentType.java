@@ -4,13 +4,13 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeChoice -> NamedType() [ &lt;OPTIONAL_TKN&gt; | &lt;DEFAULT_TKN&gt; Value() ]
- *       | &lt;COMPONENTS_TKN&gt; &lt;OF_TKN&gt; Type()
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
 public class ComponentType implements Node {
    private Node parent;
    public NodeChoice nodeChoice;

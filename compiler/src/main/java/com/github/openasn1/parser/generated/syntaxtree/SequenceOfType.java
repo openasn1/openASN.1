@@ -4,14 +4,14 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeToken -> &lt;SEQUENCE_TKN&gt;
- * nodeToken1 -> &lt;OF_TKN&gt;
- * typeOrNamedType -> TypeOrNamedType()
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 public class SequenceOfType implements Node {
    private Node parent;
    public NodeToken nodeToken;

@@ -31,23 +31,15 @@ import java.util.List;
  */
 public class ItuDirectoryScanner extends DirectoryScanner {
 
-	/**
-	 * 
-	 */
 	public ItuDirectoryScanner() {
 		super();
 	}
 
-	/**
-	 * @param basepath
-	 */
+
 	public ItuDirectoryScanner(String basepath) {
 		super(basepath);
 	}
 
-	/**
-	 * @see com.github.openasn1.parser.casestudy.DirectoryScanner#modifyFileList(java.io.File[])
-	 */
 	@Override
 	protected File[] modifyFileList(File[] files) {
 		List<File> pkgs = new ArrayList<File>();

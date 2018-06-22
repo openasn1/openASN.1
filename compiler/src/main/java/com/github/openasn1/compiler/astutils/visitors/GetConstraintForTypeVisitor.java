@@ -79,7 +79,7 @@ public class GetConstraintForTypeVisitor extends GJVoidDepthFirst<Constraint> {
 	private Class containingType;
 
 	/**
-	 * @param infos
+	 * @param infos is infos
 	 */
 	public GetConstraintForTypeVisitor(ASN1ASTNodeInfos infos) {
 		super();
@@ -87,7 +87,8 @@ public class GetConstraintForTypeVisitor extends GJVoidDepthFirst<Constraint> {
 	}
 
 	/**
-	 * @param infos
+	 * @param infos is infos
+	 * @param containingType is containingType
 	 */
 	public GetConstraintForTypeVisitor(ASN1ASTNodeInfos infos, Class containingType) {
 		super();

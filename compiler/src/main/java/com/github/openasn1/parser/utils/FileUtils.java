@@ -32,10 +32,10 @@ public class FileUtils {
 	 * Deletes a directory recursivly
 	 * 
 	 * Shamelessly stolen from
-	 * http://forum.java.sun.com/thread.jspa?threadID=563148&messageID=2772354
+	 * http://forum.java.sun.com/thread.jspa?threadID=563148&amp;messageID=2772354
 	 * 
-	 * @param dir
-	 * @return
+	 * @param dir is dir
+	 * @return boolean value
 	 */
 	public static boolean deleteRecursive(File dir) {
 		if (!dir.exists()) {

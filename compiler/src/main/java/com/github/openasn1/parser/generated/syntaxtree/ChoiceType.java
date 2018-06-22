@@ -4,15 +4,15 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeToken -> &lt;CHOICE_TKN&gt;
- * nodeToken1 -> &lt;LEFT_BRACE_TKN&gt;
- * alternativeTypeLists -> AlternativeTypeLists()
- * nodeToken2 -> &lt;RIGHT_BRACE_TKN&gt;
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 public class ChoiceType implements Node {
    private Node parent;
    public NodeToken nodeToken;

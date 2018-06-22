@@ -4,14 +4,14 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeChoice -> &lt;BSTRING&gt;
- *       | &lt;HSTRING&gt;
- *       | &lt;CONTAINING_TKN&gt; Value()
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 public class OctetStringValue implements Node {
    private Node parent;
    public NodeChoice nodeChoice;

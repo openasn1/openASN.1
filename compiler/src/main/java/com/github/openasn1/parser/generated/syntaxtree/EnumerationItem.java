@@ -4,13 +4,13 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeChoice -> NamedNumber()
- *       | &lt;IDENTIFIER&gt;
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
 public class EnumerationItem implements Node {
    private Node parent;
    public NodeChoice nodeChoice;

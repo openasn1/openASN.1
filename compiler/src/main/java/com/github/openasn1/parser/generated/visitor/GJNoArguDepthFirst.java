@@ -7,10 +7,10 @@ import java.util.*;
 
 import com.github.openasn1.parser.generated.syntaxtree.*;
 
-/**
- * Provides default methods which visit each node in the tree in depth-first
- * order.  Your visitors may extend this class.
- */
+
+ 
+ 
+ 
 public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
    //
    // Auto class visitors--probably don't need to be overridden.
@@ -62,45 +62,45 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
    // User-generated visitor methods below
    //
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;TYPEREFERENCE&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public R visit(modulereference n) {
       R _ret=null;
       n.nodeToken.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;IDENTIFIER&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public R visit(valuereference n) {
       R _ret=null;
       n.nodeToken.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;TYPEREFERENCE&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public R visit(xmlasn1typename n) {
       R _ret=null;
       n.nodeToken.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * namedValue -> NamedValue()
-    * nodeListOptional -> ( &lt;COMMA_TKN&gt; NamedValue() )*
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(NamedValueList n) {
       R _ret=null;
       n.namedValue.accept(this);
@@ -108,18 +108,18 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * moduleIdentifier -> ModuleIdentifier()
-    * nodeToken -> &lt;DEFINITIONS_TKN&gt;
-    * nodeOptional -> [ TagDefault() ]
-    * nodeOptional1 -> [ ExtensionDefault() ]
-    * nodeToken1 -> &lt;ASSIGN_OP_TKN&gt;
-    * nodeToken2 -> &lt;BEGIN_TKN&gt;
-    * moduleBody -> ModuleBody()
-    * nodeToken3 -> &lt;END_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
    public R visit(ModuleDefinition n) {
       R _ret=null;
       n.moduleIdentifier.accept(this);
@@ -133,12 +133,12 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * modulereference -> modulereference()
-    * nodeOptional -> [ DefinitiveIdentifier() ]
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(ModuleIdentifier n) {
       R _ret=null;
       n.modulereference.accept(this);
@@ -146,13 +146,13 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;LEFT_BRACE_TKN&gt;
-    * definitiveObjIdComponentList -> DefinitiveObjIdComponentList()
-    * nodeToken1 -> &lt;RIGHT_BRACE_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public R visit(DefinitiveIdentifier n) {
       R _ret=null;
       n.nodeToken.accept(this);
@@ -161,49 +161,49 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeList -> ( DefinitiveObjIdComponent() )+
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public R visit(DefinitiveObjIdComponentList n) {
       R _ret=null;
       n.nodeList.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeChoice -> DefinitiveNameAndNumberForm()
-    *       | NameForm()
-    *       | DefinitiveNumberForm()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public R visit(DefinitiveObjIdComponent n) {
       R _ret=null;
       n.nodeChoice.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;NUMBER&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public R visit(DefinitiveNumberForm n) {
       R _ret=null;
       n.nodeToken.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;IDENTIFIER&gt;
-    * nodeToken1 -> &lt;LEFT_PARENTHESIS_TKN&gt;
-    * definitiveNumberForm -> DefinitiveNumberForm()
-    * nodeToken2 -> &lt;RIGHT_PARENTHESIS_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
+    
    public R visit(DefinitiveNameAndNumberForm n) {
       R _ret=null;
       n.nodeToken.accept(this);
@@ -213,25 +213,25 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeChoice -> &lt;EXPLICIT_TKN&gt; &lt;TAGS_TKN&gt;
-    *       | &lt;IMPLICIT_TKN&gt; &lt;TAGS_TKN&gt;
-    *       | &lt;AUTOMATIC_TKN&gt; &lt;TAGS_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public R visit(TagDefault n) {
       R _ret=null;
       n.nodeChoice.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;EXTENSIBILITY_TKN&gt;
-    * nodeToken1 -> &lt;IMPLIED_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(ExtensionDefault n) {
       R _ret=null;
       n.nodeToken.accept(this);
@@ -239,13 +239,13 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeOptional -> [ Exports() ]
-    * nodeOptional1 -> [ Imports() ]
-    * assignmentList -> AssignmentList()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public R visit(ModuleBody n) {
       R _ret=null;
       n.nodeOptional.accept(this);
@@ -254,36 +254,36 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeChoice -> &lt;EXPORTS_TKN&gt; [ SymbolsExported() ] &lt;SEMICOLON_TKN&gt;
-    *       | &lt;EXPORTS_TKN&gt; &lt;ALL_TKN&gt; &lt;SEMICOLON_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(Exports n) {
       R _ret=null;
       n.nodeChoice.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * symbolList -> SymbolList()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public R visit(SymbolsExported n) {
       R _ret=null;
       n.symbolList.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;IMPORTS_TKN&gt;
-    * nodeOptional -> [ SymbolsImported() ]
-    * nodeToken1 -> &lt;SEMICOLON_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public R visit(Imports n) {
       R _ret=null;
       n.nodeToken.accept(this);
@@ -292,35 +292,35 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * symbolsFromModuleList -> SymbolsFromModuleList()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public R visit(SymbolsImported n) {
       R _ret=null;
       n.symbolsFromModuleList.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeList -> ( SymbolsFromModule() )+
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public R visit(SymbolsFromModuleList n) {
       R _ret=null;
       n.nodeList.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * symbolList -> SymbolList()
-    * nodeToken -> &lt;FROM_TKN&gt;
-    * globalModuleReference -> GlobalModuleReference()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public R visit(SymbolsFromModule n) {
       R _ret=null;
       n.symbolList.accept(this);
@@ -329,12 +329,12 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * modulereference -> modulereference()
-    * nodeOptional -> [ AssignedIdentifier() ]
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(GlobalModuleReference n) {
       R _ret=null;
       n.modulereference.accept(this);
@@ -342,24 +342,24 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeChoice -> ObjectIdentifierValue()
-    *       | DefinedValue()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(AssignedIdentifier n) {
       R _ret=null;
       n.nodeChoice.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * symbol -> Symbol()
-    * nodeListOptional -> ( &lt;COMMA_TKN&gt; Symbol() )*
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(SymbolList n) {
       R _ret=null;
       n.symbol.accept(this);
@@ -367,73 +367,73 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * reference -> Reference()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public R visit(Symbol n) {
       R _ret=null;
       n.reference.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeChoice -> &lt;TYPEREFERENCE&gt;
-    *       | valuereference()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(Reference n) {
       R _ret=null;
       n.nodeChoice.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeList -> ( Assignment() )+
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public R visit(AssignmentList n) {
       R _ret=null;
       n.nodeList.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeChoice -> TypeAssignment()
-    *       | ValueAssignment()
-    *       | XMLValueAssignment()
-    *       | ValueSetTypeAssignment()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
+    
    public R visit(Assignment n) {
       R _ret=null;
       n.nodeChoice.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeChoice -> ExternalTypeReference()
-    *       | &lt;TYPEREFERENCE&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(DefinedType n) {
       R _ret=null;
       n.nodeChoice.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * modulereference -> modulereference()
-    * nodeToken -> &lt;DOT_TKN&gt;
-    * nodeToken1 -> &lt;TYPEREFERENCE&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public R visit(ExternalTypeReference n) {
       R _ret=null;
       n.modulereference.accept(this);
@@ -442,38 +442,38 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeChoice -> ExternalTypeReference()
-    *       | &lt;TYPEREFERENCE&gt;
-    *       | xmlasn1typename()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public R visit(NonParameterizedTypeName n) {
       R _ret=null;
       n.nodeChoice.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeChoice -> ExternalValueReference()
-    *       | valuereference()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(DefinedValue n) {
       R _ret=null;
       n.nodeChoice.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * modulereference -> modulereference()
-    * nodeToken -> &lt;DOT_TKN&gt;
-    * valuereference -> valuereference()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public R visit(ExternalValueReference n) {
       R _ret=null;
       n.modulereference.accept(this);
@@ -482,14 +482,14 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;AT_TKN&gt;
-    * moduleIdentifier -> ModuleIdentifier()
-    * nodeToken1 -> &lt;DOT_TKN&gt;
-    * itemSpec -> ItemSpec()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
+    
    public R visit(AbsoluteReference n) {
       R _ret=null;
       n.nodeToken.accept(this);
@@ -499,12 +499,12 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;TYPEREFERENCE&gt;
-    * nodeListOptional -> ( &lt;DOT_TKN&gt; ComponentId() )*
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(ItemSpec n) {
       R _ret=null;
       n.nodeToken.accept(this);
@@ -512,26 +512,26 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeChoice -> &lt;IDENTIFIER&gt;
-    *       | &lt;NUMBER&gt;
-    *       | &lt;STAR_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public R visit(ComponentId n) {
       R _ret=null;
       n.nodeChoice.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;TYPEREFERENCE&gt;
-    * nodeToken1 -> &lt;ASSIGN_OP_TKN&gt;
-    * type -> Type()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public R visit(TypeAssignment n) {
       R _ret=null;
       n.nodeToken.accept(this);
@@ -540,14 +540,14 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * valuereference -> valuereference()
-    * type -> Type()
-    * nodeToken -> &lt;ASSIGN_OP_TKN&gt;
-    * value -> Value()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
+    
    public R visit(ValueAssignment n) {
       R _ret=null;
       n.valuereference.accept(this);
@@ -557,13 +557,13 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * valuereference -> valuereference()
-    * nodeToken -> &lt;ASSIGN_OP_TKN&gt;
-    * xMLTypedValue -> XMLTypedValue()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public R visit(XMLValueAssignment n) {
       R _ret=null;
       n.valuereference.accept(this);
@@ -572,26 +572,26 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeChoice -> &lt;LESSER_THAN_TKN&gt; &lt;AMPERSAND_TKN&gt; NonParameterizedTypeName() &lt;GREATER_THAN_TKN&gt; XMLValue() &lt;XMLENDTAGBRACKET_TKN&gt; &lt;AMPERSAND_TKN&gt; NonParameterizedTypeName() &lt;GREATER_THAN_TKN&gt;
-    *       | &lt;LESSER_THAN_TKN&gt; &lt;AMPERSAND_TKN&gt; NonParameterizedTypeName() &lt;XMLTAGTERMINATINGBRACKET_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(XMLTypedValue n) {
       R _ret=null;
       n.nodeChoice.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;TYPEREFERENCE&gt;
-    * type -> Type()
-    * nodeToken1 -> &lt;ASSIGN_OP_TKN&gt;
-    * valueSet -> ValueSet()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
+    
    public R visit(ValueSetTypeAssignment n) {
       R _ret=null;
       n.nodeToken.accept(this);
@@ -601,13 +601,13 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;LEFT_BRACE_TKN&gt;
-    * elementSetSpecs -> ElementSetSpecs()
-    * nodeToken1 -> &lt;RIGHT_BRACE_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public R visit(ValueSet n) {
       R _ret=null;
       n.nodeToken.accept(this);
@@ -616,24 +616,24 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeChoice -> NormalConstrainedType()
-    *       | TypeWithConstraint()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(Type n) {
       R _ret=null;
       n.nodeChoice.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeChoice -> ( BuiltinType() | ReferencedType() )
-    * nodeListOptional -> ( Constraint() )*
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(NormalConstrainedType n) {
       R _ret=null;
       n.nodeChoice.accept(this);
@@ -641,40 +641,40 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeChoice -> BitStringType()
-    *       | BooleanType()
-    *       | CharacterStringType()
-    *       | ChoiceType()
-    *       | EmbeddedPDVType()
-    *       | EnumeratedType()
-    *       | ExternalType()
-    *       | IntegerType()
-    *       | NullType()
-    *       | ObjectIdentifierType()
-    *       | OctetStringType()
-    *       | RealType()
-    *       | RelativeOIDType()
-    *       | SequenceOfType()
-    *       | SequenceType()
-    *       | SetOfType()
-    *       | SetType()
-    *       | TaggedType()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
    public R visit(BuiltinType n) {
       R _ret=null;
       n.nodeChoice.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;IDENTIFIER&gt;
-    * type -> Type()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(NamedType n) {
       R _ret=null;
       n.nodeToken.accept(this);
@@ -682,111 +682,111 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeChoice -> DefinedType()
-    *       | UsefulType()
-    *       | SelectionType()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public R visit(ReferencedType n) {
       R _ret=null;
       n.nodeChoice.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeChoice -> BuiltinValue()
-    *       | ReferencedValue()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(Value n) {
       R _ret=null;
       n.nodeChoice.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * xMLBuiltinValue -> XMLBuiltinValue()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public R visit(XMLValue n) {
       R _ret=null;
       n.xMLBuiltinValue.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeChoice -> BitStringValue()
-    *       | BooleanValue()
-    *       | CharacterStringValue()
-    *       | ChoiceValue()
-    *       | EmbeddedPDVValue()
-    *       | IntegerValue()
-    *       | NullValue()
-    *       | ObjectIdentifierValue()
-    *       | OctetStringValue()
-    *       | RealValue()
-    *       | RelativeOIDValue()
-    *       | SequenceValue()
-    *       | SequenceOfValue()
-    *       | SetValue()
-    *       | SetOfValue()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
    public R visit(BuiltinValue n) {
       R _ret=null;
       n.nodeChoice.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeChoice -> [ XMLBitStringValue() ]
-    *       | XMLBooleanValue()
-    *       | XMLCharacterStringValue()
-    *       | XMLChoiceValue()
-    *       | XMLEmbeddedPDVValue()
-    *       | XMLEnumeratedValue()
-    *       | XMLExternalValue()
-    *       | XMLIntegerValue()
-    *       | XMLNullValue()
-    *       | XMLObjectIdentifierValue()
-    *       | XMLOctetStringValue()
-    *       | XMLRealValue()
-    *       | XMLRelativeOIDValue()
-    *       | [ XMLSequenceValue() ]
-    *       | [ XMLSequenceOfValue() ]
-    *       | [ XMLSetValue() ]
-    *       | [ XMLSetOfValue() ]
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
    public R visit(XMLBuiltinValue n) {
       R _ret=null;
       n.nodeChoice.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * definedValue -> DefinedValue()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public R visit(ReferencedValue n) {
       R _ret=null;
       n.definedValue.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;IDENTIFIER&gt;
-    * value -> Value()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(NamedValue n) {
       R _ret=null;
       n.nodeToken.accept(this);
@@ -794,19 +794,19 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;LESSER_THAN_TKN&gt;
-    * nodeToken1 -> &lt;AMPERSAND_TKN&gt;
-    * nodeToken2 -> &lt;IDENTIFIER&gt;
-    * nodeToken3 -> &lt;GREATER_THAN_TKN&gt;
-    * xMLValue -> XMLValue()
-    * nodeToken4 -> &lt;XMLENDTAGBRACKET_TKN&gt;
-    * nodeToken5 -> &lt;AMPERSAND_TKN&gt;
-    * nodeToken6 -> &lt;IDENTIFIER&gt;
-    * nodeToken7 -> &lt;GREATER_THAN_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
    public R visit(XMLNamedValue n) {
       R _ret=null;
       n.nodeToken.accept(this);
@@ -821,47 +821,47 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;BOOLEAN_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public R visit(BooleanType n) {
       R _ret=null;
       n.nodeToken.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeChoice -> &lt;TRUE_TKN&gt;
-    *       | &lt;FALSE_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(BooleanValue n) {
       R _ret=null;
       n.nodeChoice.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeChoice -> &lt;LESSER_THAN_TKN&gt; &lt;AMPERSAND_TKN&gt; &lt;IDENTIFIER&gt; &lt;XMLTAGTERMINATINGBRACKET_TKN&gt;
-    *       | &lt;LESSER_THAN_TKN&gt; &lt;AMPERSAND_TKN&gt; &lt;IDENTIFIER&gt; &lt;XMLTAGTERMINATINGBRACKET_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(XMLBooleanValue n) {
       R _ret=null;
       n.nodeChoice.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;INTEGER_TKN&gt;
-    * nodeOptional -> [ &lt;LEFT_BRACE_TKN&gt; NamedNumberList() &lt;RIGHT_BRACE_TKN&gt; ]
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(IntegerType n) {
       R _ret=null;
       n.nodeToken.accept(this);
@@ -869,12 +869,12 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * namedNumber -> NamedNumber()
-    * nodeListOptional -> ( &lt;COMMA_TKN&gt; NamedNumber() )*
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(NamedNumberList n) {
       R _ret=null;
       n.namedNumber.accept(this);
@@ -882,24 +882,24 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeChoice -> &lt;IDENTIFIER&gt; &lt;LEFT_PARENTHESIS_TKN&gt; SignedNumber() &lt;RIGHT_PARENTHESIS_TKN&gt;
-    *       | &lt;IDENTIFIER&gt; &lt;LEFT_PARENTHESIS_TKN&gt; DefinedValue() &lt;RIGHT_PARENTHESIS_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(NamedNumber n) {
       R _ret=null;
       n.nodeChoice.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeOptional -> [ &lt;MINUS_TKN&gt; ]
-    * nodeToken -> &lt;NUMBER&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(SignedNumber n) {
       R _ret=null;
       n.nodeOptional.accept(this);
@@ -907,37 +907,37 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * signedNumber -> SignedNumber()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public R visit(IntegerValue n) {
       R _ret=null;
       n.signedNumber.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeChoice -> SignedNumber()
-    *       | &lt;LESSER_THAN_TKN&gt; &lt;AMPERSAND_TKN&gt; &lt;IDENTIFIER&gt; &lt;XMLTAGTERMINATINGBRACKET_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(XMLIntegerValue n) {
       R _ret=null;
       n.nodeChoice.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;ENUMERATED_TKN&gt;
-    * nodeToken1 -> &lt;LEFT_BRACE_TKN&gt;
-    * enumerations -> Enumerations()
-    * nodeToken2 -> &lt;RIGHT_BRACE_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
+    
    public R visit(EnumeratedType n) {
       R _ret=null;
       n.nodeToken.accept(this);
@@ -947,14 +947,14 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * rootEnumeration -> RootEnumeration()
-    * nodeOptional -> [ &lt;COMMA_TKN&gt; &lt;ELLIPSIS_TKN&gt; ]
-    * nodeOptional1 -> [ ExceptionSpec() ]
-    * nodeOptional2 -> [ &lt;COMMA_TKN&gt; AdditionalEnumeration() ]
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
+    
    public R visit(Enumerations n) {
       R _ret=null;
       n.rootEnumeration.accept(this);
@@ -964,34 +964,34 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * aSNEnumeration -> ASNEnumeration()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public R visit(RootEnumeration n) {
       R _ret=null;
       n.aSNEnumeration.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * aSNEnumeration -> ASNEnumeration()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public R visit(AdditionalEnumeration n) {
       R _ret=null;
       n.aSNEnumeration.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * enumerationItem -> EnumerationItem()
-    * nodeListOptional -> ( &lt;COMMA_TKN&gt; EnumerationItem() )*
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(ASNEnumeration n) {
       R _ret=null;
       n.enumerationItem.accept(this);
@@ -999,37 +999,37 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeChoice -> NamedNumber()
-    *       | &lt;IDENTIFIER&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(EnumerationItem n) {
       R _ret=null;
       n.nodeChoice.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;IDENTIFIER&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public R visit(EnumeratedValue n) {
       R _ret=null;
       n.nodeToken.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;LESSER_THAN_TKN&gt;
-    * nodeToken1 -> &lt;AMPERSAND_TKN&gt;
-    * nodeToken2 -> &lt;IDENTIFIER&gt;
-    * nodeToken3 -> &lt;XMLTAGTERMINATINGBRACKET_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
+    
    public R visit(XMLEnumeratedValue n) {
       R _ret=null;
       n.nodeToken.accept(this);
@@ -1039,97 +1039,97 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;REAL_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public R visit(RealType n) {
       R _ret=null;
       n.nodeToken.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeChoice -> NumericRealValue()
-    *       | SpecialRealValue()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(RealValue n) {
       R _ret=null;
       n.nodeChoice.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeChoice -> &lt;REALNUMBER&gt;
-    *       | &lt;MINUS_TKN&gt; &lt;REALNUMBER&gt;
-    *       | SequenceValue()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public R visit(NumericRealValue n) {
       R _ret=null;
       n.nodeChoice.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeChoice -> &lt;PLUS_INFINITY_TKN&gt;
-    *       | &lt;MINUS_INFINITY_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(SpecialRealValue n) {
       R _ret=null;
       n.nodeChoice.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeChoice -> XMLNumericRealValue()
-    *       | XMLSpecialRealValue()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(XMLRealValue n) {
       R _ret=null;
       n.nodeChoice.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeChoice -> &lt;REALNUMBER&gt;
-    *       | &lt;MINUS_TKN&gt; &lt;REALNUMBER&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(XMLNumericRealValue n) {
       R _ret=null;
       n.nodeChoice.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeChoice -> &lt;LESSER_THAN_TKN&gt; &lt;AMPERSAND_TKN&gt; &lt;PLUS_INFINITY_TKN&gt; &lt;XMLTAGTERMINATINGBRACKET_TKN&gt;
-    *       | &lt;LESSER_THAN_TKN&gt; &lt;AMPERSAND_TKN&gt; &lt;MINUS_INFINITY_TKN&gt; &lt;XMLTAGTERMINATINGBRACKET_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(XMLSpecialRealValue n) {
       R _ret=null;
       n.nodeChoice.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;BIT_TKN&gt;
-    * nodeToken1 -> &lt;STRING_TKN&gt;
-    * nodeOptional -> [ &lt;LEFT_BRACE_TKN&gt; NamedBitList() &lt;RIGHT_BRACE_TKN&gt; ]
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public R visit(BitStringType n) {
       R _ret=null;
       n.nodeToken.accept(this);
@@ -1138,12 +1138,12 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * namedBit -> NamedBit()
-    * nodeListOptional -> ( &lt;COMMA_TKN&gt; NamedBit() )*
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(NamedBitList n) {
       R _ret=null;
       n.namedBit.accept(this);
@@ -1151,39 +1151,39 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeChoice -> &lt;IDENTIFIER&gt; &lt;LEFT_PARENTHESIS_TKN&gt; &lt;NUMBER&gt; &lt;RIGHT_PARENTHESIS_TKN&gt;
-    *       | &lt;IDENTIFIER&gt; &lt;LEFT_PARENTHESIS_TKN&gt; DefinedValue() &lt;RIGHT_PARENTHESIS_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(NamedBit n) {
       R _ret=null;
       n.nodeChoice.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeChoice -> &lt;BSTRING&gt;
-    *       | &lt;HSTRING&gt;
-    *       | &lt;LEFT_BRACE_TKN&gt; IdentifierList() &lt;RIGHT_BRACE_TKN&gt;
-    *       | &lt;LEFT_BRACE_TKN&gt; &lt;RIGHT_BRACE_TKN&gt;
-    *       | &lt;CONTAINING_TKN&gt; Value()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
+    
+    
    public R visit(BitStringValue n) {
       R _ret=null;
       n.nodeChoice.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;IDENTIFIER&gt;
-    * nodeListOptional -> ( &lt;COMMA_TKN&gt; &lt;IDENTIFIER&gt; )*
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(IdentifierList n) {
       R _ret=null;
       n.nodeToken.accept(this);
@@ -1191,36 +1191,36 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeChoice -> XMLTypedValue()
-    *       | &lt;CSTRING&gt;
-    *       | XMLIdentifierList()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public R visit(XMLBitStringValue n) {
       R _ret=null;
       n.nodeChoice.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeList -> ( &lt;LESSER_THAN_TKN&gt; &lt;AMPERSAND_TKN&gt; &lt;IDENTIFIER&gt; &lt;XMLTAGTERMINATINGBRACKET_TKN&gt; )+
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public R visit(XMLIdentifierList n) {
       R _ret=null;
       n.nodeList.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;OCTET_TKN&gt;
-    * nodeToken1 -> &lt;STRING_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(OctetStringType n) {
       R _ret=null;
       n.nodeToken.accept(this);
@@ -1228,83 +1228,83 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeChoice -> &lt;BSTRING&gt;
-    *       | &lt;HSTRING&gt;
-    *       | &lt;CONTAINING_TKN&gt; Value()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public R visit(OctetStringValue n) {
       R _ret=null;
       n.nodeChoice.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeChoice -> XMLTypedValue()
-    *       | &lt;CSTRING&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(XMLOctetStringValue n) {
       R _ret=null;
       n.nodeChoice.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;NULL_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public R visit(NullType n) {
       R _ret=null;
       n.nodeToken.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;NULL_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public R visit(NullValue n) {
       R _ret=null;
       n.nodeToken.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;NULL_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public R visit(XMLNullValue n) {
       R _ret=null;
       n.nodeToken.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeChoice -> &lt;SEQUENCE_TKN&gt; &lt;LEFT_BRACE_TKN&gt; ExtensionAndException() [ OptionalExtensionMarker() ] &lt;RIGHT_BRACE_TKN&gt;
-    *       | &lt;SEQUENCE_TKN&gt; &lt;LEFT_BRACE_TKN&gt; ComponentTypeLists() &lt;RIGHT_BRACE_TKN&gt;
-    *       | &lt;SEQUENCE_TKN&gt; &lt;LEFT_BRACE_TKN&gt; &lt;RIGHT_BRACE_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public R visit(SequenceType n) {
       R _ret=null;
       n.nodeChoice.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;ELLIPSIS_TKN&gt;
-    * nodeOptional -> [ ExceptionSpec() ]
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(ExtensionAndException n) {
       R _ret=null;
       n.nodeToken.accept(this);
@@ -1312,12 +1312,12 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;COMMA_TKN&gt;
-    * nodeToken1 -> &lt;ELLIPSIS_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(OptionalExtensionMarker n) {
       R _ret=null;
       n.nodeToken.accept(this);
@@ -1325,35 +1325,35 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeChoice -> RootComponentTypeList() [ &lt;COMMA_TKN&gt; ExtensionAndException() [ ExtensionAdditions() ] [ ExtensionEndMarker() [ &lt;COMMA_TKN&gt; RootComponentTypeList() ] ] ]
-    *       | ExtensionAndException() [ ExtensionAdditions() ] [ ExtensionEndMarker() [ &lt;COMMA_TKN&gt; RootComponentTypeList() ] ]
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(ComponentTypeLists n) {
       R _ret=null;
       n.nodeChoice.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * componentTypeList -> ComponentTypeList()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public R visit(RootComponentTypeList n) {
       R _ret=null;
       n.componentTypeList.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;COMMA_TKN&gt;
-    * nodeToken1 -> &lt;ELLIPSIS_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(ExtensionEndMarker n) {
       R _ret=null;
       n.nodeToken.accept(this);
@@ -1361,12 +1361,12 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;COMMA_TKN&gt;
-    * extensionAdditionList -> ExtensionAdditionList()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(ExtensionAdditions n) {
       R _ret=null;
       n.nodeToken.accept(this);
@@ -1374,12 +1374,12 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * extensionAddition -> ExtensionAddition()
-    * nodeListOptional -> ( &lt;COMMA_TKN&gt; ExtensionAddition() )*
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(ExtensionAdditionList n) {
       R _ret=null;
       n.extensionAddition.accept(this);
@@ -1387,26 +1387,26 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeChoice -> ComponentType()
-    *       | ExtensionAdditionGroup()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(ExtensionAddition n) {
       R _ret=null;
       n.nodeChoice.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;VERSIONBRACKET_START_TKN&gt;
-    * nodeOptional -> [ VersionNumber() ]
-    * componentTypeList -> ComponentTypeList()
-    * nodeToken1 -> &lt;VERSIONBRACKET_END_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
+    
    public R visit(ExtensionAdditionGroup n) {
       R _ret=null;
       n.nodeToken.accept(this);
@@ -1416,12 +1416,12 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;NUMBER&gt;
-    * nodeToken1 -> &lt;COLON_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(VersionNumber n) {
       R _ret=null;
       n.nodeToken.accept(this);
@@ -1429,12 +1429,12 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * componentType -> ComponentType()
-    * nodeListOptional -> ( &lt;COMMA_TKN&gt; ComponentType() )*
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(ComponentTypeList n) {
       R _ret=null;
       n.componentType.accept(this);
@@ -1442,36 +1442,36 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeChoice -> NamedType() [ &lt;OPTIONAL_TKN&gt; | &lt;DEFAULT_TKN&gt; Value() ]
-    *       | &lt;COMPONENTS_TKN&gt; &lt;OF_TKN&gt; Type()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(ComponentType n) {
       R _ret=null;
       n.nodeChoice.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeChoice -> &lt;LEFT_BRACE_TKN&gt; ComponentValueList() &lt;RIGHT_BRACE_TKN&gt;
-    *       | &lt;LEFT_BRACE_TKN&gt; &lt;RIGHT_BRACE_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(SequenceValue n) {
       R _ret=null;
       n.nodeChoice.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * namedValue -> NamedValue()
-    * nodeListOptional -> ( &lt;COMMA_TKN&gt; NamedValue() )*
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(ComponentValueList n) {
       R _ret=null;
       n.namedValue.accept(this);
@@ -1479,35 +1479,35 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * xMLComponentValueList -> XMLComponentValueList()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public R visit(XMLSequenceValue n) {
       R _ret=null;
       n.xMLComponentValueList.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeList -> ( XMLNamedValue() )+
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public R visit(XMLComponentValueList n) {
       R _ret=null;
       n.nodeList.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;SEQUENCE_TKN&gt;
-    * nodeToken1 -> &lt;OF_TKN&gt;
-    * typeOrNamedType -> TypeOrNamedType()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public R visit(SequenceOfType n) {
       R _ret=null;
       n.nodeToken.accept(this);
@@ -1516,25 +1516,25 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeChoice -> &lt;LEFT_BRACE_TKN&gt; ValueList() &lt;RIGHT_BRACE_TKN&gt;
-    *       | &lt;LEFT_BRACE_TKN&gt; NamedValueList() &lt;RIGHT_BRACE_TKN&gt;
-    *       | &lt;LEFT_BRACE_TKN&gt; &lt;RIGHT_BRACE_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public R visit(SequenceOfValue n) {
       R _ret=null;
       n.nodeChoice.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * value -> Value()
-    * nodeListOptional -> ( &lt;COMMA_TKN&gt; Value() )*
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(ValueList n) {
       R _ret=null;
       n.value.accept(this);
@@ -1542,38 +1542,38 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeChoice -> XMLValueList()
-    *       | XMLDelimitedItemList()
-    *       | XMLSpaceSeparatedList()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public R visit(XMLSequenceOfValue n) {
       R _ret=null;
       n.nodeChoice.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeList -> ( XMLValueOrEmpty() )+
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public R visit(XMLValueList n) {
       R _ret=null;
       n.nodeList.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;LESSER_THAN_TKN&gt;
-    * nodeToken1 -> &lt;AMPERSAND_TKN&gt;
-    * nonParameterizedTypeName -> NonParameterizedTypeName()
-    * nodeToken2 -> &lt;XMLTAGTERMINATINGBRACKET_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
+    
    public R visit(XMLValueOrEmpty n) {
       R _ret=null;
       n.nodeToken.accept(this);
@@ -1583,84 +1583,84 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeList -> ( XMLValueOrEmpty() )+
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public R visit(XMLSpaceSeparatedList n) {
       R _ret=null;
       n.nodeList.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeChoice -> XMLDelimitedItem()
-    *       | XMLDelimitedItem() XMLDelimitedItemList()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(XMLDelimitedItemList n) {
       R _ret=null;
       n.nodeChoice.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeChoice -> &lt;LESSER_THAN_TKN&gt; &lt;AMPERSAND_TKN&gt; NonParameterizedTypeName() &lt;GREATER_THAN_TKN&gt; XMLValue() &lt;XMLENDTAGBRACKET_TKN&gt; &lt;AMPERSAND_TKN&gt; NonParameterizedTypeName() &lt;GREATER_THAN_TKN&gt;
-    *       | &lt;LESSER_THAN_TKN&gt; &lt;AMPERSAND_TKN&gt; &lt;IDENTIFIER&gt; &lt;GREATER_THAN_TKN&gt; XMLValue() &lt;XMLENDTAGBRACKET_TKN&gt; &lt;AMPERSAND_TKN&gt; &lt;IDENTIFIER&gt; &lt;GREATER_THAN_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(XMLDelimitedItem n) {
       R _ret=null;
       n.nodeChoice.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeChoice -> &lt;SET_TKN&gt; &lt;LEFT_BRACE_TKN&gt; &lt;RIGHT_BRACE_TKN&gt;
-    *       | &lt;SET_TKN&gt; &lt;LEFT_BRACE_TKN&gt; ExtensionAndException() [ OptionalExtensionMarker() ] &lt;RIGHT_BRACE_TKN&gt;
-    *       | &lt;SET_TKN&gt; &lt;LEFT_BRACE_TKN&gt; ComponentTypeLists() &lt;RIGHT_BRACE_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public R visit(SetType n) {
       R _ret=null;
       n.nodeChoice.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeChoice -> &lt;LEFT_BRACE_TKN&gt; ComponentValueList() &lt;RIGHT_BRACE_TKN&gt;
-    *       | &lt;LEFT_BRACE_TKN&gt; &lt;RIGHT_BRACE_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(SetValue n) {
       R _ret=null;
       n.nodeChoice.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * xMLComponentValueList -> XMLComponentValueList()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public R visit(XMLSetValue n) {
       R _ret=null;
       n.xMLComponentValueList.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;SET_TKN&gt;
-    * nodeToken1 -> &lt;OF_TKN&gt;
-    * typeOrNamedType -> TypeOrNamedType()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public R visit(SetOfType n) {
       R _ret=null;
       n.nodeToken.accept(this);
@@ -1669,40 +1669,40 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeChoice -> &lt;LEFT_BRACE_TKN&gt; ValueList() &lt;RIGHT_BRACE_TKN&gt;
-    *       | &lt;LEFT_BRACE_TKN&gt; NamedValueList() &lt;RIGHT_BRACE_TKN&gt;
-    *       | &lt;LEFT_BRACE_TKN&gt; &lt;RIGHT_BRACE_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public R visit(SetOfValue n) {
       R _ret=null;
       n.nodeChoice.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeChoice -> XMLValueList()
-    *       | XMLDelimitedItemList()
-    *       | XMLSpaceSeparatedList()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public R visit(XMLSetOfValue n) {
       R _ret=null;
       n.nodeChoice.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;CHOICE_TKN&gt;
-    * nodeToken1 -> &lt;LEFT_BRACE_TKN&gt;
-    * alternativeTypeLists -> AlternativeTypeLists()
-    * nodeToken2 -> &lt;RIGHT_BRACE_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
+    
    public R visit(ChoiceType n) {
       R _ret=null;
       n.nodeToken.accept(this);
@@ -1712,12 +1712,12 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * rootAlternativeTypeList -> RootAlternativeTypeList()
-    * nodeOptional -> [ &lt;COMMA_TKN&gt; ExtensionAndException() [ ExtensionAdditionAlternatives() ] [ OptionalExtensionMarker() ] ]
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(AlternativeTypeLists n) {
       R _ret=null;
       n.rootAlternativeTypeList.accept(this);
@@ -1725,23 +1725,23 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * alternativeTypeList -> AlternativeTypeList()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public R visit(RootAlternativeTypeList n) {
       R _ret=null;
       n.alternativeTypeList.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;COMMA_TKN&gt;
-    * extensionAdditionAlternativesList -> ExtensionAdditionAlternativesList()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(ExtensionAdditionAlternatives n) {
       R _ret=null;
       n.nodeToken.accept(this);
@@ -1749,12 +1749,12 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * extensionAdditionAlternative -> ExtensionAdditionAlternative()
-    * nodeListOptional -> ( &lt;COMMA_TKN&gt; ExtensionAdditionAlternative() )*
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(ExtensionAdditionAlternativesList n) {
       R _ret=null;
       n.extensionAdditionAlternative.accept(this);
@@ -1762,26 +1762,26 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeChoice -> ExtensionAdditionAlternativesGroup()
-    *       | NamedType()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(ExtensionAdditionAlternative n) {
       R _ret=null;
       n.nodeChoice.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;VERSIONBRACKET_START_TKN&gt;
-    * nodeOptional -> [ VersionNumber() ]
-    * alternativeTypeList -> AlternativeTypeList()
-    * nodeToken1 -> &lt;VERSIONBRACKET_END_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
+    
    public R visit(ExtensionAdditionAlternativesGroup n) {
       R _ret=null;
       n.nodeToken.accept(this);
@@ -1791,12 +1791,12 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * namedType -> NamedType()
-    * nodeListOptional -> ( &lt;COMMA_TKN&gt; NamedType() )*
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(AlternativeTypeList n) {
       R _ret=null;
       n.namedType.accept(this);
@@ -1804,13 +1804,13 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;IDENTIFIER&gt;
-    * nodeToken1 -> &lt;COLON_TKN&gt;
-    * value -> Value()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public R visit(ChoiceValue n) {
       R _ret=null;
       n.nodeToken.accept(this);
@@ -1819,19 +1819,19 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;LESSER_THAN_TKN&gt;
-    * nodeToken1 -> &lt;AMPERSAND_TKN&gt;
-    * nodeToken2 -> &lt;IDENTIFIER&gt;
-    * nodeToken3 -> &lt;GREATER_THAN_TKN&gt;
-    * xMLValue -> XMLValue()
-    * nodeToken4 -> &lt;XMLENDTAGBRACKET_TKN&gt;
-    * nodeToken5 -> &lt;AMPERSAND_TKN&gt;
-    * nodeToken6 -> &lt;IDENTIFIER&gt;
-    * nodeToken7 -> &lt;GREATER_THAN_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
    public R visit(XMLChoiceValue n) {
       R _ret=null;
       n.nodeToken.accept(this);
@@ -1846,13 +1846,13 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;IDENTIFIER&gt;
-    * nodeToken1 -> &lt;LESSER_THAN_TKN&gt;
-    * type -> Type()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public R visit(SelectionType n) {
       R _ret=null;
       n.nodeToken.accept(this);
@@ -1861,27 +1861,27 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeChoice -> Tag() &lt;IMPLICIT_TKN&gt; Type()
-    *       | Tag() &lt;EXPLICIT_TKN&gt; Type()
-    *       | Tag() Type()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public R visit(TaggedType n) {
       R _ret=null;
       n.nodeChoice.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;LEFT_BRACKET_TKN&gt;
-    * nodeOptional -> [ TagClass() ]
-    * classNumber -> ClassNumber()
-    * nodeToken1 -> &lt;RIGHT_BRACKET_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
+    
    public R visit(Tag n) {
       R _ret=null;
       n.nodeToken.accept(this);
@@ -1891,37 +1891,37 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeChoice -> &lt;NUMBER&gt;
-    *       | DefinedValue()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(ClassNumber n) {
       R _ret=null;
       n.nodeChoice.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeChoice -> &lt;UNIVERSAL_TKN&gt;
-    *       | &lt;APPLICATION_TKN&gt;
-    *       | &lt;PRIVATE_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public R visit(TagClass n) {
       R _ret=null;
       n.nodeChoice.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;EMBEDDED_TKN&gt;
-    * nodeToken1 -> &lt;PDV_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(EmbeddedPDVType n) {
       R _ret=null;
       n.nodeToken.accept(this);
@@ -1929,67 +1929,67 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * sequenceValue -> SequenceValue()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public R visit(EmbeddedPDVValue n) {
       R _ret=null;
       n.sequenceValue.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeOptional -> [ XMLSequenceValue() ]
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public R visit(XMLEmbeddedPDVValue n) {
       R _ret=null;
       n.nodeOptional.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;EXTERNAL_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public R visit(ExternalType n) {
       R _ret=null;
       n.nodeToken.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * sequenceValue -> SequenceValue()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public R visit(ExternalValue n) {
       R _ret=null;
       n.sequenceValue.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeOptional -> [ XMLSequenceValue() ]
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public R visit(XMLExternalValue n) {
       R _ret=null;
       n.nodeOptional.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;OBJECT_TKN&gt;
-    * nodeToken1 -> &lt;IDENTIFIER_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(ObjectIdentifierType n) {
       R _ret=null;
       n.nodeToken.accept(this);
@@ -1997,13 +1997,13 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;LEFT_BRACE_TKN&gt;
-    * objIdComponentsList -> ObjIdComponentsList()
-    * nodeToken1 -> &lt;RIGHT_BRACE_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public R visit(ObjectIdentifierValue n) {
       R _ret=null;
       n.nodeToken.accept(this);
@@ -2012,61 +2012,61 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeListOptional -> ( ObjIdComponents() )*
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public R visit(ObjIdComponentsList n) {
       R _ret=null;
       n.nodeListOptional.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeChoice -> NameAndNumberForm()
-    *       | NameForm()
-    *       | NumberForm()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public R visit(ObjIdComponents n) {
       R _ret=null;
       n.nodeChoice.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;IDENTIFIER&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public R visit(NameForm n) {
       R _ret=null;
       n.nodeToken.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeChoice -> &lt;NUMBER&gt;
-    *       | DefinedValue()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(NumberForm n) {
       R _ret=null;
       n.nodeChoice.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;IDENTIFIER&gt;
-    * nodeToken1 -> &lt;LEFT_PARENTHESIS_TKN&gt;
-    * numberForm -> NumberForm()
-    * nodeToken2 -> &lt;RIGHT_PARENTHESIS_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
+    
    public R visit(NameAndNumberForm n) {
       R _ret=null;
       n.nodeToken.accept(this);
@@ -2076,64 +2076,64 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * xMLObjIdComponentList -> XMLObjIdComponentList()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public R visit(XMLObjectIdentifierValue n) {
       R _ret=null;
       n.xMLObjIdComponentList.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeChoice -> XMLObjIdComponent()
-    *       | XMLObjIdComponent() &lt;AMPERSAND_TKN&gt; &lt;DOT_TKN&gt; &lt;AMPERSAND_TKN&gt; XMLObjIdComponentList()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(XMLObjIdComponentList n) {
       R _ret=null;
       n.nodeChoice.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeChoice -> NameForm()
-    *       | XMLNumberForm()
-    *       | XMLNameAndNumberForm()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public R visit(XMLObjIdComponent n) {
       R _ret=null;
       n.nodeChoice.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;NUMBER&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public R visit(XMLNumberForm n) {
       R _ret=null;
       n.nodeToken.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;IDENTIFIER&gt;
-    * nodeToken1 -> &lt;AMPERSAND_TKN&gt;
-    * nodeToken2 -> &lt;LEFT_PARENTHESIS_TKN&gt;
-    * nodeToken3 -> &lt;AMPERSAND_TKN&gt;
-    * xMLNumberForm -> XMLNumberForm()
-    * nodeToken4 -> &lt;AMPERSAND_TKN&gt;
-    * nodeToken5 -> &lt;RIGHT_PARENTHESIS_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
    public R visit(XMLNameAndNumberForm n) {
       R _ret=null;
       n.nodeToken.accept(this);
@@ -2146,24 +2146,24 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;RELATIVE_OID_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public R visit(RelativeOIDType n) {
       R _ret=null;
       n.nodeToken.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;LEFT_BRACE_TKN&gt;
-    * relativeOIDComponentsList -> RelativeOIDComponentsList()
-    * nodeToken1 -> &lt;RIGHT_BRACE_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public R visit(RelativeOIDValue n) {
       R _ret=null;
       n.nodeToken.accept(this);
@@ -2172,122 +2172,122 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeChoice -> RelativeOIDComponents()
-    *       | RelativeOIDComponents() RelativeOIDComponentsList()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(RelativeOIDComponentsList n) {
       R _ret=null;
       n.nodeChoice.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeChoice -> NumberForm()
-    *       | NameAndNumberForm()
-    *       | DefinedValue()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public R visit(RelativeOIDComponents n) {
       R _ret=null;
       n.nodeChoice.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * xMLRelativeOIDComponentList -> XMLRelativeOIDComponentList()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public R visit(XMLRelativeOIDValue n) {
       R _ret=null;
       n.xMLRelativeOIDComponentList.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeChoice -> XMLRelativeOIDComponent()
-    *       | XMLRelativeOIDComponent() &lt;AMPERSAND_TKN&gt; &lt;DOT_TKN&gt; &lt;AMPERSAND_TKN&gt; XMLRelativeOIDComponentList()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(XMLRelativeOIDComponentList n) {
       R _ret=null;
       n.nodeChoice.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeChoice -> XMLNumberForm()
-    *       | XMLNameAndNumberForm()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(XMLRelativeOIDComponent n) {
       R _ret=null;
       n.nodeChoice.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeChoice -> RestrictedCharacterStringType()
-    *       | UnrestrictedCharacterStringType()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(CharacterStringType n) {
       R _ret=null;
       n.nodeChoice.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeChoice -> &lt;BMPSTRING_TKN&gt;
-    *       | &lt;GENERALSTRING_TKN&gt;
-    *       | &lt;GRAPHICSTRING_TKN&gt;
-    *       | &lt;IA5STRING_TKN&gt;
-    *       | &lt;ISO646STRING_TKN&gt;
-    *       | &lt;NUMERICSTRING_TKN&gt;
-    *       | &lt;PRINTABLESTRING_TKN&gt;
-    *       | &lt;TELETEXSTRING_TKN&gt;
-    *       | &lt;T61STRING_TKN&gt;
-    *       | &lt;UNIVERSALSTRING_TKN&gt;
-    *       | &lt;UTF8STRING_TKN&gt;
-    *       | &lt;VIDEOTEXSTRING_TKN&gt;
-    *       | &lt;VISIBLESTRING_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
    public R visit(RestrictedCharacterStringType n) {
       R _ret=null;
       n.nodeChoice.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeChoice -> &lt;CSTRING&gt;
-    *       | CharacterStringList()
-    *       | Quadruple()
-    *       | Tuple()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
+    
    public R visit(RestrictedCharacterStringValue n) {
       R _ret=null;
       n.nodeChoice.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;LEFT_BRACE_TKN&gt;
-    * charSyms -> CharSyms()
-    * nodeToken1 -> &lt;RIGHT_BRACE_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public R visit(CharacterStringList n) {
       R _ret=null;
       n.nodeToken.accept(this);
@@ -2296,12 +2296,12 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * charsDefn -> CharsDefn()
-    * nodeListOptional -> ( &lt;COMMA_TKN&gt; CharsDefn() )*
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(CharSyms n) {
       R _ret=null;
       n.charsDefn.accept(this);
@@ -2309,33 +2309,33 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeChoice -> &lt;CSTRING&gt;
-    *       | Quadruple()
-    *       | Tuple()
-    *       | DefinedValue()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
+    
    public R visit(CharsDefn n) {
       R _ret=null;
       n.nodeChoice.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;LEFT_BRACE_TKN&gt;
-    * group -> Group()
-    * nodeToken1 -> &lt;COMMA_TKN&gt;
-    * plane -> Plane()
-    * nodeToken2 -> &lt;COMMA_TKN&gt;
-    * row -> Row()
-    * nodeToken3 -> &lt;COMMA_TKN&gt;
-    * cell -> Cell()
-    * nodeToken4 -> &lt;RIGHT_BRACE_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
    public R visit(Quadruple n) {
       R _ret=null;
       n.nodeToken.accept(this);
@@ -2350,59 +2350,59 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;NUMBER&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public R visit(Group n) {
       R _ret=null;
       n.nodeToken.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;NUMBER&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public R visit(Plane n) {
       R _ret=null;
       n.nodeToken.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;NUMBER&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public R visit(Row n) {
       R _ret=null;
       n.nodeToken.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;NUMBER&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public R visit(Cell n) {
       R _ret=null;
       n.nodeToken.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;LEFT_BRACE_TKN&gt;
-    * tableColumn -> TableColumn()
-    * nodeToken1 -> &lt;COMMA_TKN&gt;
-    * tableRow -> TableRow()
-    * nodeToken2 -> &lt;RIGHT_BRACE_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
+    
+    
    public R visit(Tuple n) {
       R _ret=null;
       n.nodeToken.accept(this);
@@ -2413,45 +2413,45 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;NUMBER&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public R visit(TableColumn n) {
       R _ret=null;
       n.nodeToken.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;NUMBER&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public R visit(TableRow n) {
       R _ret=null;
       n.nodeToken.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;CSTRING&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public R visit(XMLRestrictedCharacterStringValue n) {
       R _ret=null;
       n.nodeToken.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;CHARACTER_TKN&gt;
-    * nodeToken1 -> &lt;STRING_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(UnrestrictedCharacterStringType n) {
       R _ret=null;
       n.nodeToken.accept(this);
@@ -2459,98 +2459,98 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * restrictedCharacterStringValue -> RestrictedCharacterStringValue()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public R visit(CharacterStringValue n) {
       R _ret=null;
       n.restrictedCharacterStringValue.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeChoice -> XMLRestrictedCharacterStringValue()
-    *       | XMLUnrestrictedCharacterStringValue()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(XMLCharacterStringValue n) {
       R _ret=null;
       n.nodeChoice.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * sequenceValue -> SequenceValue()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public R visit(UnrestrictedCharacterStringValue n) {
       R _ret=null;
       n.sequenceValue.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeOptional -> [ XMLSequenceValue() ]
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public R visit(XMLUnrestrictedCharacterStringValue n) {
       R _ret=null;
       n.nodeOptional.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeChoice -> &lt;GENERALIZEDTIME_TKN&gt;
-    *       | &lt;UTCTIME_TKN&gt;
-    *       | &lt;OBJECTDESCRIPTOR_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public R visit(UsefulType n) {
       R _ret=null;
       n.nodeChoice.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeChoice -> &lt;SET_TKN&gt; Constraint() &lt;OF_TKN&gt; TypeOrNamedType()
-    *       | &lt;SET_TKN&gt; SizeConstraint() &lt;OF_TKN&gt; TypeOrNamedType()
-    *       | &lt;SEQUENCE_TKN&gt; Constraint() &lt;OF_TKN&gt; TypeOrNamedType()
-    *       | &lt;SEQUENCE_TKN&gt; SizeConstraint() &lt;OF_TKN&gt; TypeOrNamedType()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
+    
    public R visit(TypeWithConstraint n) {
       R _ret=null;
       n.nodeChoice.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeChoice -> Type()
-    *       | NamedType()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(TypeOrNamedType n) {
       R _ret=null;
       n.nodeChoice.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;LEFT_PARENTHESIS_TKN&gt;
-    * constraintSpec -> ConstraintSpec()
-    * nodeOptional -> [ ExceptionSpec() ]
-    * nodeToken1 -> &lt;RIGHT_PARENTHESIS_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
+    
    public R visit(Constraint n) {
       R _ret=null;
       n.nodeToken.accept(this);
@@ -2560,23 +2560,23 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * subtypeConstraint -> SubtypeConstraint()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public R visit(ConstraintSpec n) {
       R _ret=null;
       n.subtypeConstraint.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;EXCLAMATION_TKN&gt;
-    * exceptionIdentification -> ExceptionIdentification()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(ExceptionSpec n) {
       R _ret=null;
       n.nodeToken.accept(this);
@@ -2584,36 +2584,36 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeChoice -> SignedNumber()
-    *       | DefinedValue()
-    *       | Type() &lt;COLON_TKN&gt; Value()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public R visit(ExceptionIdentification n) {
       R _ret=null;
       n.nodeChoice.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * elementSetSpecs -> ElementSetSpecs()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public R visit(SubtypeConstraint n) {
       R _ret=null;
       n.elementSetSpecs.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * rootElementSetSpec -> RootElementSetSpec()
-    * nodeOptional -> [ &lt;COMMA_TKN&gt; &lt;ELLIPSIS_TKN&gt; [ &lt;COMMA_TKN&gt; AdditionalElementSetSpec() ] ]
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(ElementSetSpecs n) {
       R _ret=null;
       n.rootElementSetSpec.accept(this);
@@ -2621,46 +2621,46 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * elementSetSpec -> ElementSetSpec()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public R visit(RootElementSetSpec n) {
       R _ret=null;
       n.elementSetSpec.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * elementSetSpec -> ElementSetSpec()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public R visit(AdditionalElementSetSpec n) {
       R _ret=null;
       n.elementSetSpec.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeChoice -> Unions()
-    *       | &lt;ALL_TKN&gt; Exclusions()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(ElementSetSpec n) {
       R _ret=null;
       n.nodeChoice.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * intersections -> Intersections()
-    * nodeListOptional -> ( UnionMark() Intersections() )*
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(Unions n) {
       R _ret=null;
       n.intersections.accept(this);
@@ -2668,12 +2668,12 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * intersectionElements -> IntersectionElements()
-    * nodeListOptional -> ( IntersectionMark() IntersectionElements() )*
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(Intersections n) {
       R _ret=null;
       n.intersectionElements.accept(this);
@@ -2681,12 +2681,12 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * elements -> Elements()
-    * nodeOptional -> [ Exclusions() ]
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(IntersectionElements n) {
       R _ret=null;
       n.elements.accept(this);
@@ -2694,23 +2694,23 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * elements -> Elements()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public R visit(Elems n) {
       R _ret=null;
       n.elements.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;EXCEPT_TKN&gt;
-    * elements -> Elements()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(Exclusions n) {
       R _ret=null;
       n.nodeToken.accept(this);
@@ -2718,66 +2718,66 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeChoice -> &lt;BAR_TKN&gt;
-    *       | &lt;UNION_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(UnionMark n) {
       R _ret=null;
       n.nodeChoice.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeChoice -> &lt;CIRCUMFLEX_TKN&gt;
-    *       | &lt;INTERSECTION_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(IntersectionMark n) {
       R _ret=null;
       n.nodeChoice.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeChoice -> SubtypeElements()
-    *       | &lt;LEFT_PARENTHESIS_TKN&gt; ElementSetSpec() &lt;RIGHT_PARENTHESIS_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(Elements n) {
       R _ret=null;
       n.nodeChoice.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeChoice -> ValueRange()
-    *       | ContainedSubtype()
-    *       | PermittedAlphabet()
-    *       | SizeConstraint()
-    *       | TypeConstraint()
-    *       | InnerTypeConstraints()
-    *       | SingleValue()
-    *       | PatternConstraint()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
    public R visit(SubtypeElements n) {
       R _ret=null;
       n.nodeChoice.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;PATTERN_TKN&gt;
-    * value -> Value()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(PatternConstraint n) {
       R _ret=null;
       n.nodeToken.accept(this);
@@ -2785,23 +2785,23 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * value -> Value()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public R visit(SingleValue n) {
       R _ret=null;
       n.value.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeOptional -> [ Includes() ]
-    * type -> Type()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(ContainedSubtype n) {
       R _ret=null;
       n.nodeOptional.accept(this);
@@ -2809,24 +2809,24 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;INCLUDES_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public R visit(Includes n) {
       R _ret=null;
       n.nodeToken.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * lowerEndpoint -> LowerEndpoint()
-    * nodeToken -> &lt;DOTDOT_TKN&gt;
-    * upperEndpoint -> UpperEndpoint()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public R visit(ValueRange n) {
       R _ret=null;
       n.lowerEndpoint.accept(this);
@@ -2835,12 +2835,12 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * lowerEndValue -> LowerEndValue()
-    * nodeOptional -> [ &lt;LESSER_THAN_TKN&gt; ]
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(LowerEndpoint n) {
       R _ret=null;
       n.lowerEndValue.accept(this);
@@ -2848,12 +2848,12 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeOptional -> [ &lt;LESSER_THAN_TKN&gt; ]
-    * upperEndValue -> UpperEndValue()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(UpperEndpoint n) {
       R _ret=null;
       n.nodeOptional.accept(this);
@@ -2861,36 +2861,36 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeChoice -> &lt;MIN_TKN&gt;
-    *       | Value()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(LowerEndValue n) {
       R _ret=null;
       n.nodeChoice.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeChoice -> &lt;MAX_TKN&gt;
-    *       | Value()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(UpperEndValue n) {
       R _ret=null;
       n.nodeChoice.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;SIZE_TKN&gt;
-    * constraint -> Constraint()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(SizeConstraint n) {
       R _ret=null;
       n.nodeToken.accept(this);
@@ -2898,12 +2898,12 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;FROM_TKN&gt;
-    * constraint -> Constraint()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(PermittedAlphabet n) {
       R _ret=null;
       n.nodeToken.accept(this);
@@ -2911,24 +2911,24 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * type -> Type()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public R visit(TypeConstraint n) {
       R _ret=null;
       n.type.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;WITH_TKN&gt;
-    * nodeToken1 -> &lt;COMPONENT_TKN&gt;
-    * nodeChoice -> ( SingleTypeConstraint() | MultipleTypeConstraints() )
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public R visit(InnerTypeConstraints n) {
       R _ret=null;
       n.nodeToken.accept(this);
@@ -2937,36 +2937,36 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * constraint -> Constraint()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public R visit(SingleTypeConstraint n) {
       R _ret=null;
       n.constraint.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeChoice -> FullSpecification()
-    *       | PartialSpecification()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(MultipleTypeConstraints n) {
       R _ret=null;
       n.nodeChoice.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;LEFT_BRACE_TKN&gt;
-    * typeConstraints -> TypeConstraints()
-    * nodeToken1 -> &lt;RIGHT_BRACE_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public R visit(FullSpecification n) {
       R _ret=null;
       n.nodeToken.accept(this);
@@ -2975,15 +2975,15 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;LEFT_BRACE_TKN&gt;
-    * nodeToken1 -> &lt;ELLIPSIS_TKN&gt;
-    * nodeToken2 -> &lt;COMMA_TKN&gt;
-    * typeConstraints -> TypeConstraints()
-    * nodeToken3 -> &lt;RIGHT_BRACE_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
+    
+    
    public R visit(PartialSpecification n) {
       R _ret=null;
       n.nodeToken.accept(this);
@@ -2994,12 +2994,12 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * namedConstraint -> NamedConstraint()
-    * nodeListOptional -> ( &lt;COMMA_TKN&gt; NamedConstraint() )*
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(TypeConstraints n) {
       R _ret=null;
       n.namedConstraint.accept(this);
@@ -3007,12 +3007,12 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeToken -> &lt;IDENTIFIER&gt;
-    * componentConstraint -> ComponentConstraint()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(NamedConstraint n) {
       R _ret=null;
       n.nodeToken.accept(this);
@@ -3020,12 +3020,12 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeOptional -> [ ValueConstraint() ]
-    * nodeOptional1 -> [ PresenceConstraint() ]
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
    public R visit(ComponentConstraint n) {
       R _ret=null;
       n.nodeOptional.accept(this);
@@ -3033,24 +3033,24 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * constraint -> Constraint()
-    * </PRE>
-    */
+   
+    
+    
+    
+    
    public R visit(ValueConstraint n) {
       R _ret=null;
       n.constraint.accept(this);
       return _ret;
    }
 
-   /**
-    * <PRE>
-    * nodeChoice -> &lt;PRESENT_TKN&gt;
-    *       | &lt;ABSENT_TKN&gt;
-    *       | &lt;OPTIONAL_TKN&gt;
-    * </PRE>
-    */
+   
+    
+    
+    
+    
+    
+    
    public R visit(PresenceConstraint n) {
       R _ret=null;
       n.nodeChoice.accept(this);

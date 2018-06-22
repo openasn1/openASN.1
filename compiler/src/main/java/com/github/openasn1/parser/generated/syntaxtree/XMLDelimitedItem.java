@@ -4,13 +4,13 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeChoice -> &lt;LESSER_THAN_TKN&gt; &lt;AMPERSAND_TKN&gt; NonParameterizedTypeName() &lt;GREATER_THAN_TKN&gt; XMLValue() &lt;XMLENDTAGBRACKET_TKN&gt; &lt;AMPERSAND_TKN&gt; NonParameterizedTypeName() &lt;GREATER_THAN_TKN&gt;
- *       | &lt;LESSER_THAN_TKN&gt; &lt;AMPERSAND_TKN&gt; &lt;IDENTIFIER&gt; &lt;GREATER_THAN_TKN&gt; XMLValue() &lt;XMLENDTAGBRACKET_TKN&gt; &lt;AMPERSAND_TKN&gt; &lt;IDENTIFIER&gt; &lt;GREATER_THAN_TKN&gt;
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
 public class XMLDelimitedItem implements Node {
    private Node parent;
    public NodeChoice nodeChoice;

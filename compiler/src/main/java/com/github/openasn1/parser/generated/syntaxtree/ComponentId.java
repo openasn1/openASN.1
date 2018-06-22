@@ -4,14 +4,14 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeChoice -> &lt;IDENTIFIER&gt;
- *       | &lt;NUMBER&gt;
- *       | &lt;STAR_TKN&gt;
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 public class ComponentId implements Node {
    private Node parent;
    public NodeChoice nodeChoice;

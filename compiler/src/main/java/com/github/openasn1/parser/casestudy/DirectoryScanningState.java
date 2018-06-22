@@ -39,9 +39,6 @@ public class DirectoryScanningState {
 
 	private int filepos;
 
-	/**
-	 * 
-	 */
 	public DirectoryScanningState(File[] dirs, File[] files) {
 		setFiles(files);
 		setDirs(dirs);

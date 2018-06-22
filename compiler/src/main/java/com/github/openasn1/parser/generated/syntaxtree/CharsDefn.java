@@ -4,15 +4,15 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeChoice -> &lt;CSTRING&gt;
- *       | Quadruple()
- *       | Tuple()
- *       | DefinedValue()
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 public class CharsDefn implements Node {
    private Node parent;
    public NodeChoice nodeChoice;

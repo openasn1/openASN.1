@@ -4,13 +4,13 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeToken -> &lt;TYPEREFERENCE&gt;
- * nodeListOptional -> ( &lt;DOT_TKN&gt; ComponentId() )*
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
 public class ItemSpec implements Node {
    private Node parent;
    public NodeToken nodeToken;

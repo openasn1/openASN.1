@@ -30,7 +30,7 @@ import com.github.openasn1.codec.coder.ASN1Encoder;
 /**
  * @author Marc Weyland
  *
- * @param <T>
+ * @param <T> is a generic sequence type
  */
 public class SequenceOfEncoder<T> extends TypeEncoder<List<T>> {
 	private TypeEncoder<T> encoderPrototype = null;

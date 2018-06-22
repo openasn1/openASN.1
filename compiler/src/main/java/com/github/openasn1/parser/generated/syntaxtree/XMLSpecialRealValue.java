@@ -4,13 +4,13 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeChoice -> &lt;LESSER_THAN_TKN&gt; &lt;AMPERSAND_TKN&gt; &lt;PLUS_INFINITY_TKN&gt; &lt;XMLTAGTERMINATINGBRACKET_TKN&gt;
- *       | &lt;LESSER_THAN_TKN&gt; &lt;AMPERSAND_TKN&gt; &lt;MINUS_INFINITY_TKN&gt; &lt;XMLTAGTERMINATINGBRACKET_TKN&gt;
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
 public class XMLSpecialRealValue implements Node {
    private Node parent;
    public NodeChoice nodeChoice;

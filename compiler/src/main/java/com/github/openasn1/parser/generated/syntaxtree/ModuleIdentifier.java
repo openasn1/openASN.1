@@ -4,13 +4,13 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * modulereference -> modulereference()
- * nodeOptional -> [ DefinitiveIdentifier() ]
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
 public class ModuleIdentifier implements Node {
    private Node parent;
    public modulereference modulereference;

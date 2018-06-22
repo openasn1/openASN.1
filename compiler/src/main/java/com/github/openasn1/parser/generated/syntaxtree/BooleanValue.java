@@ -4,13 +4,13 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeChoice -> &lt;TRUE_TKN&gt;
- *       | &lt;FALSE_TKN&gt;
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
 public class BooleanValue implements Node {
    private Node parent;
    public NodeChoice nodeChoice;

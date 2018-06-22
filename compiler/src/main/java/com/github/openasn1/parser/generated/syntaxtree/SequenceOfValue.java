@@ -4,14 +4,14 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeChoice -> &lt;LEFT_BRACE_TKN&gt; ValueList() &lt;RIGHT_BRACE_TKN&gt;
- *       | &lt;LEFT_BRACE_TKN&gt; NamedValueList() &lt;RIGHT_BRACE_TKN&gt;
- *       | &lt;LEFT_BRACE_TKN&gt; &lt;RIGHT_BRACE_TKN&gt;
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 public class SequenceOfValue implements Node {
    private Node parent;
    public NodeChoice nodeChoice;

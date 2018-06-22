@@ -4,12 +4,12 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * xMLObjIdComponentList -> XMLObjIdComponentList()
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
 public class XMLObjectIdentifierValue implements Node {
    private Node parent;
    public XMLObjIdComponentList xMLObjIdComponentList;

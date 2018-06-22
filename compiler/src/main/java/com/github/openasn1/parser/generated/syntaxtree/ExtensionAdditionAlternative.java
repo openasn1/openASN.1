@@ -4,13 +4,13 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeChoice -> ExtensionAdditionAlternativesGroup()
- *       | NamedType()
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
 public class ExtensionAdditionAlternative implements Node {
    private Node parent;
    public NodeChoice nodeChoice;

@@ -41,22 +41,22 @@ public class DuplicateFileInPathException extends CompilationStoppingException {
 	}
 
 	/**
-	 * @param message
-	 * @param cause
+	 * @param message is message
+	 * @param cause is cause
 	 */
 	public DuplicateFileInPathException(String message, Throwable cause) {
 		super(message, cause);
 	}
 
 	/**
-	 * @param message
+	 * @param message is message
 	 */
 	public DuplicateFileInPathException(String message) {
 		super(message);
 	}
 
 	/**
-	 * @param cause
+	 * @param cause is cause
 	 */
 	public DuplicateFileInPathException(Throwable cause) {
 		super(cause);

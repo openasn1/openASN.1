@@ -4,13 +4,13 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeChoice -> &lt;NUMBER&gt;
- *       | DefinedValue()
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
 public class NumberForm implements Node {
    private Node parent;
    public NodeChoice nodeChoice;

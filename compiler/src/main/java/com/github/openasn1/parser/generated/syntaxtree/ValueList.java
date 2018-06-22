@@ -4,13 +4,13 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * value -> Value()
- * nodeListOptional -> ( &lt;COMMA_TKN&gt; Value() )*
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
 public class ValueList implements Node {
    private Node parent;
    public Value value;

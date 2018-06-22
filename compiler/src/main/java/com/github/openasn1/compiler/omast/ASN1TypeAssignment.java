@@ -32,8 +32,8 @@ public class ASN1TypeAssignment extends AbstractASN1Type {
 	private boolean primitive;
 
 	/**
-	 * @param asn1type
-	 * @param primitive
+	 * @param asn1type is asn1type
+	 * @param primitive is primitive
 	 */
 	public ASN1TypeAssignment(AbstractASN1Type asn1type, boolean primitive) {
 		super();
@@ -42,9 +42,6 @@ public class ASN1TypeAssignment extends AbstractASN1Type {
 		this.primitive = primitive;
 	}
 
-	/**
-	 * @see com.github.openasn1.compiler.omast.OMVisitable#accept(com.github.openasn1.compiler.omast.OMVisitor)
-	 */
 	public void accept(OMVisitor vis) {
 		vis.visit(this);
 	}

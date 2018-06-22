@@ -4,12 +4,12 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * xMLBuiltinValue -> XMLBuiltinValue()
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
 public class XMLValue implements Node {
    private Node parent;
    public XMLBuiltinValue xMLBuiltinValue;

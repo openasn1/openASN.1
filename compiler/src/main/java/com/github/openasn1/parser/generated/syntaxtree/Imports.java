@@ -4,14 +4,14 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeToken -> &lt;IMPORTS_TKN&gt;
- * nodeOptional -> [ SymbolsImported() ]
- * nodeToken1 -> &lt;SEMICOLON_TKN&gt;
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 public class Imports implements Node {
    private Node parent;
    public NodeToken nodeToken;

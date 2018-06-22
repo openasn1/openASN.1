@@ -54,7 +54,7 @@ public class OMAndASN1ASTStorage implements DeepCopyable {
 	private OMASTNodeInfos OMastNodeInfos = new OMASTNodeInfos();
 
 	/**
-	 * @param storage
+	 * @param storage is asn1 storage
 	 */
 	public OMAndASN1ASTStorage(ASN1ASTStorage storage) {
 		super();
@@ -93,11 +93,9 @@ public class OMAndASN1ASTStorage implements DeepCopyable {
 	}
 
 	/**
-	 * @param filename
-	 * @param astroot
-	 * @throws DuplicateFileInPathException
-	 * @see com.github.openasn1.compiler.astutils.ASN1ASTStorage#addAstToStorage(java.lang.String,
-	 *      com.github.openasn1.parser.generated.syntaxtree.Node)
+	 * @param filename is filename
+	 * @param astroot is root node
+	 * @throws DuplicateFileInPathException is exception
 	 */
 	public void addAstToStorage(String filename, Node astroot)
 			throws DuplicateFileInPathException {
@@ -105,154 +103,132 @@ public class OMAndASN1ASTStorage implements DeepCopyable {
 	}
 
 	/**
-	 * @param name
-	 * @return
-	 * @see com.github.openasn1.compiler.astutils.ASN1ASTStorage#containsASTWithFileName(java.lang.String)
+	 * @param name is name
+	 * @return boolean value
 	 */
 	public boolean containsASTWithFileName(String name) {
 		return this.storage.containsASTWithFileName(name);
 	}
 
 	/**
-	 * @param name
-	 * @return
-	 * @see com.github.openasn1.compiler.astutils.ASN1ASTStorage#containsASTWithModuleName(java.lang.String)
+	 * @param name is name
+	 * @return boolean value
 	 */
 	public boolean containsASTWithModuleName(String name) {
 		return this.storage.containsASTWithModuleName(name);
 	}
 
 	/**
-	 * @param oid
-	 * @return
-	 * @see com.github.openasn1.compiler.astutils.ASN1ASTStorage#containsASTWithOID(com.github.openasn1.compiler.astutils.valueobjects.ObjectIdentifierValueObject)
+	 * @param oid is oid
+	 * @return boolean value
 	 */
 	public boolean containsASTWithOID(ObjectIdentifierValueObject oid) {
 		return this.storage.containsASTWithOID(oid);
 	}
 
 	/**
-	 * @param n
-	 * @param key
-	 * @return
-	 * @see com.github.openasn1.compiler.astutils.ASN1ASTStorage#deleteInfoFromNode(com.github.openasn1.parser.generated.syntaxtree.Node,
-	 *      java.lang.String)
+	 * @param n is node
+	 * @param key is key
+	 * @return generic object
 	 */
 	public Object deleteInfoFromNode(Node n, String key) {
 		return this.storage.deleteInfoFromNode(n, key);
 	}
 
 	/**
-	 * @return
-	 * @see com.github.openasn1.compiler.astutils.ASN1ASTStorage#getAsn1AstList()
+	 * @return list of nodes
 	 */
 	public List<Node> getAsn1AstList() {
 		return this.storage.getAsn1AstList();
 	}
 
 	/**
-	 * @return
-	 * @see com.github.openasn1.compiler.astutils.ASN1ASTStorage#getAstNodeInfos()
+	 * @return ASN1ASTNodeInfos
 	 */
 	public ASN1ASTNodeInfos getAstNodeInfos() {
 		return this.storage.getAstNodeInfos();
 	}
 
 	/**
-	 * @param name
-	 * @return
-	 * @see com.github.openasn1.compiler.astutils.ASN1ASTStorage#getAstRootByFileName(java.lang.String)
+	 * @param name is name 
+	 * @return node is node
 	 */
 	public Node getAstRootByFileName(String name) {
 		return this.storage.getAstRootByFileName(name);
 	}
 
 	/**
-	 * @param name
-	 * @return
-	 * @see com.github.openasn1.compiler.astutils.ASN1ASTStorage#getAstRootByModuleName(java.lang.String)
+	 * @param name is name
+	 * @return node is node
 	 */
 	public Node getAstRootByModuleName(String name) {
 		return this.storage.getAstRootByModuleName(name);
 	}
 
 	/**
-	 * @param oid
-	 * @return
-	 * @see com.github.openasn1.compiler.astutils.ASN1ASTStorage#getAstRootByObjectIdentifier(com.github.openasn1.compiler.astutils.valueobjects.ObjectIdentifierValueObject)
+	 * @param oid is oid
+	 * @return node is node
 	 */
 	public Node getAstRootByObjectIdentifier(ObjectIdentifierValueObject oid) {
 		return this.storage.getAstRootByObjectIdentifier(oid);
 	}
 
 	/**
-	 * @param n
-	 * @return
-	 * @see com.github.openasn1.compiler.astutils.ASN1ASTStorage#getNodeInfoMap(com.github.openasn1.parser.generated.syntaxtree.Node)
+	 * @param n is node
+	 * @return map is map
 	 */
 	public Map<String, Object> getNodeInfoMap(Node n) {
 		return this.storage.getNodeInfoMap(n);
 	}
 
 	/**
-	 * @param n
-	 * @param ident
-	 * @param o
-	 * @see com.github.openasn1.compiler.astutils.ASN1ASTStorage#insertInfoIntoNode(com.github.openasn1.parser.generated.syntaxtree.Node,
-	 *      java.lang.String, java.lang.Object)
+	 * @param n is node
+	 * @param ident is ident
+	 * @param o is object
 	 */
 	public void insertInfoIntoNode(Node n, String ident, Object o) {
 		this.storage.insertInfoIntoNode(n, ident, o);
 	}
 
 	/**
-	 * @param n
-	 * @param key
-	 * @return
-	 * @see com.github.openasn1.compiler.astutils.ASN1ASTStorage#returnInfoFromNode(com.github.openasn1.parser.generated.syntaxtree.Node,
-	 *      java.lang.String)
+	 * @param n is node
+	 * @param key is key
+	 * @return object is object
 	 */
 	public Object returnInfoFromNode(Node n, String key) {
 		return this.storage.returnInfoFromNode(n, key);
 	}
 
 	/**
-	 * @param n
-	 * @param key
-	 * @return
-	 * @see com.github.openasn1.compiler.astutils.GenericNodeInfos#deleteInfoFromNode(java.lang.Object,
-	 *      java.lang.String)
+	 * @param n is node
+	 * @param key is key
+	 * @return object is object
 	 */
 	public Object deleteInfoFromNode(AbstractASN1Type n, String key) {
 		return this.nodeinfos.deleteInfoFromNode(n, key);
 	}
 
 	/**
-	 * @param n
-	 * @return
-	 * @see com.github.openasn1.compiler.astutils.GenericNodeInfos#getNodeInfoMap(java.lang.Object)
+	 * @param n AbstractASN1Type
+	 * @return map is map
 	 */
 	public Map<String, Object> getNodeInfoMap(AbstractASN1Type n) {
 		return this.nodeinfos.getNodeInfoMap(n);
 	}
 
 	/**
-	 * @param n
-	 * @param ident
-	 * @param o
-	 * @see com.github.openasn1.compiler.astutils.GenericNodeInfos#insertInfoIntoNode(java.lang.Object,
-	 *      java.lang.String, java.lang.Object)
+	 * @param n is AbstractASN1Type
+	 * @param ident is ident
+	 * @param o is object
 	 */
 	public void insertInfoIntoNode(AbstractASN1Type n, String ident, Object o) {
 		this.nodeinfos.insertInfoIntoNode(n, ident, o);
 	}
 
 	/**
-	 * @param n
-	 * @param key
-	 * @return
-	 * @see com.github.openasn1.compiler.astutils.GenericNodeInfos#returnInfoFromNode(java.lang.Object,
-	 *      java.lang.String)
+	 * @param n AbstractASN1Type
+	 * @param key is key
+	 * @return is object
 	 */
 	public Object returnInfoFromNode(AbstractASN1Type n, String key) {
 		return this.nodeinfos.returnInfoFromNode(n, key);
@@ -265,6 +241,9 @@ public class OMAndASN1ASTStorage implements DeepCopyable {
 		return this.moduleNameToListPosition;
 	}
 
+	/**
+	 * @return the moduleNameToList
+	 */
 	public Set<String> getModuleNameList() {
 		return this.moduleNameToListPosition.keySet();
 	}

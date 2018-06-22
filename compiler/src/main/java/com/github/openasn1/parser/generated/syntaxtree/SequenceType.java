@@ -4,14 +4,14 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeChoice -> &lt;SEQUENCE_TKN&gt; &lt;LEFT_BRACE_TKN&gt; ExtensionAndException() [ OptionalExtensionMarker() ] &lt;RIGHT_BRACE_TKN&gt;
- *       | &lt;SEQUENCE_TKN&gt; &lt;LEFT_BRACE_TKN&gt; ComponentTypeLists() &lt;RIGHT_BRACE_TKN&gt;
- *       | &lt;SEQUENCE_TKN&gt; &lt;LEFT_BRACE_TKN&gt; &lt;RIGHT_BRACE_TKN&gt;
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 public class SequenceType implements Node {
    private Node parent;
    public NodeChoice nodeChoice;

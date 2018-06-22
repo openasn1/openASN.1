@@ -4,13 +4,13 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeToken -> &lt;EXTENSIBILITY_TKN&gt;
- * nodeToken1 -> &lt;IMPLIED_TKN&gt;
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
 public class ExtensionDefault implements Node {
    private Node parent;
    public NodeToken nodeToken;

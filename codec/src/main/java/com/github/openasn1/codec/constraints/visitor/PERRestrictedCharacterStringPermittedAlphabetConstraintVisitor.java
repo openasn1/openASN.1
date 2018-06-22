@@ -374,7 +374,6 @@ public class PERRestrictedCharacterStringPermittedAlphabetConstraintVisitor exte
 	 *    	 that constraint is simply completely ignored."
 	 * 
 	 * @see "X.691-0207 B.2.2.2"
-	 * @see com.github.openasn1.codec.constraints.visitor.SimpleConstraintVisitor#visit(com.github.openasn1.codec.constraints.ConstraintList)
 	 */
 	@Override
 	public void visit(ConstraintSerialisation constraint) {

@@ -4,13 +4,13 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeToken -> &lt;OBJECT_TKN&gt;
- * nodeToken1 -> &lt;IDENTIFIER_TKN&gt;
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
 public class ObjectIdentifierType implements Node {
    private Node parent;
    public NodeToken nodeToken;

@@ -4,13 +4,13 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeChoice -> XMLDelimitedItem()
- *       | XMLDelimitedItem() XMLDelimitedItemList()
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
 public class XMLDelimitedItemList implements Node {
    private Node parent;
    public NodeChoice nodeChoice;

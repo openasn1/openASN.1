@@ -30,7 +30,7 @@ import com.github.openasn1.codec.coder.ASN1Encoder;
 /**
  * @author Marc Weyland
  *
- * @param <T>
+ * @param <T> is a generic enum type
  */
 public class EnumeratedEncoder<T extends Enum> extends TypeEncoder<T> {
 	private HashMap<T, EnumeratedItemTypeInformation> enumTypeMap;

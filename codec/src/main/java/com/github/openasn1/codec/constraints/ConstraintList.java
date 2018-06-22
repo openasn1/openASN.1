@@ -32,9 +32,9 @@ abstract public class ConstraintList {
 	private ArrayList<Constraint> constraintList = new ArrayList<Constraint>();
 	
 	/**
-	 * Creates a constraint list putting all constraints into an ArrayList<Constraint> 
+	 * Creates a constraint list putting all constraints into an ArrayList Constraint
 	 * 
-	 * @param operands
+	 * @param constraints is constraints
 	 */	
 	public ConstraintList(Constraint ... constraints) {
 		java.util.Collections.addAll(this.constraintList, constraints);

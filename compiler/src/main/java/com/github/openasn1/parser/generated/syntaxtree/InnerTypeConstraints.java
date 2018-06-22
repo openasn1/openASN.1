@@ -4,14 +4,14 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeToken -> &lt;WITH_TKN&gt;
- * nodeToken1 -> &lt;COMPONENT_TKN&gt;
- * nodeChoice -> ( SingleTypeConstraint() | MultipleTypeConstraints() )
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 public class InnerTypeConstraints implements Node {
    private Node parent;
    public NodeToken nodeToken;

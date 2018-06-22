@@ -4,12 +4,12 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * symbolList -> SymbolList()
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
 public class SymbolsExported implements Node {
    private Node parent;
    public SymbolList symbolList;

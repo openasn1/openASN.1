@@ -4,13 +4,13 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeChoice -> &lt;REALNUMBER&gt;
- *       | &lt;MINUS_TKN&gt; &lt;REALNUMBER&gt;
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
 public class XMLNumericRealValue implements Node {
    private Node parent;
    public NodeChoice nodeChoice;

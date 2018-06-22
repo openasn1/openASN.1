@@ -4,13 +4,13 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeToken -> &lt;SIZE_TKN&gt;
- * constraint -> Constraint()
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
 public class SizeConstraint implements Node {
    private Node parent;
    public NodeToken nodeToken;

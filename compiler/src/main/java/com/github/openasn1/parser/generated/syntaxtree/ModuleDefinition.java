@@ -4,19 +4,19 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * moduleIdentifier -> ModuleIdentifier()
- * nodeToken -> &lt;DEFINITIONS_TKN&gt;
- * nodeOptional -> [ TagDefault() ]
- * nodeOptional1 -> [ ExtensionDefault() ]
- * nodeToken1 -> &lt;ASSIGN_OP_TKN&gt;
- * nodeToken2 -> &lt;BEGIN_TKN&gt;
- * moduleBody -> ModuleBody()
- * nodeToken3 -> &lt;END_TKN&gt;
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 public class ModuleDefinition implements Node {
    private Node parent;
    public ModuleIdentifier moduleIdentifier;

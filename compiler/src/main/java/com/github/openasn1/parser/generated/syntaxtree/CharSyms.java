@@ -4,13 +4,13 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * charsDefn -> CharsDefn()
- * nodeListOptional -> ( &lt;COMMA_TKN&gt; CharsDefn() )*
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
 public class CharSyms implements Node {
    private Node parent;
    public CharsDefn charsDefn;

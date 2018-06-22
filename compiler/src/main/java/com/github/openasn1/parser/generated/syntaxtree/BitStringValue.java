@@ -4,16 +4,16 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Grammar production:
- * <PRE>
- * nodeChoice -> &lt;BSTRING&gt;
- *       | &lt;HSTRING&gt;
- *       | &lt;LEFT_BRACE_TKN&gt; IdentifierList() &lt;RIGHT_BRACE_TKN&gt;
- *       | &lt;LEFT_BRACE_TKN&gt; &lt;RIGHT_BRACE_TKN&gt;
- *       | &lt;CONTAINING_TKN&gt; Value()
- * </PRE>
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 public class BitStringValue implements Node {
    private Node parent;
    public NodeChoice nodeChoice;

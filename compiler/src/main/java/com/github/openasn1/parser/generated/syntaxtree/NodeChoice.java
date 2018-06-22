@@ -4,9 +4,9 @@
 
 package com.github.openasn1.parser.generated.syntaxtree;
 
-/**
- * Represents a grammar choice, e.g. ( A | B )
- */
+
+ 
+ 
 public class NodeChoice implements Node {
    public NodeChoice(Node node) {
       this(node, -1);

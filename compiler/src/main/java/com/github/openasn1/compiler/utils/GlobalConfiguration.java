@@ -58,21 +58,11 @@ public class GlobalConfiguration {
 		}
 	}
 
-	/**
-	 * @param key
-	 * @return
-	 * @see java.util.Properties#getProperty(java.lang.String)
-	 */
 	public String getProperty(String key) {
 		return this.config.getProperty(key);
 	}
 
-	/**
-	 * @param key
-	 * @param value
-	 * @return
-	 * @see java.util.Properties#setProperty(java.lang.String, java.lang.String)
-	 */
+
 	public Object setProperty(String key, String value) {
 		return this.config.setProperty(key, value);
 	}
